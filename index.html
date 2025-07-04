@@ -1109,41 +1109,40 @@
                 viewedCompetitors: []
             },
             
-            // Initialize app
-            async init() {
-                try {
-                    // Show loading state
-                    this.showLoadingState();
-                    
-                    // Load all data from JSON files
-                    await this.loadAllData();
-                    
-                    // Load saved progress
-                    this.loadProgress();
-                    
-                    // Initialize screens
-                    this.browse.init();
-                    this.predictions.init();
-                    this.results.init();
-                    this.games.init();
-                    this.scores.init();
-                    this.storage.init();
-                    
-                    // Update finals status based on current time
-                    this.updateFinalsStatus();
-                    
-                    // Start countdown timer
-                    this.startCountdown();
-                    
-                    // Hide loading state
-                    this.hideLoadingState();
-                    
-                } catch (error) {
-                    console.error('Error initializing app:', error);
-                    alert('Error loading app data. Please check your internet connection and refresh.');
-                }
-            },
-            
+        // Initialize app
+async init() {
+    try {
+        // Show loading state
+        this.showLoadingState();
+        
+        // Load all data from JSON files
+        await this.loadAllData();
+        
+        // Load saved progress
+        this.loadProgress();
+        
+        // Update finals status based on current time
+        this.updateFinalsStatus();
+        
+        // Start countdown timer
+        this.startCountdown();
+        
+        // Initialize screens AFTER all data is loaded
+        this.browse.init();
+        this.predictions.init();
+        this.results.init();
+        this.games.init();
+        this.scores.init();
+        this.storage.init();
+        
+        // Hide loading state
+        this.hideLoadingState();
+        
+    } catch (error) {
+        console.error('Error initializing app:', error);
+        alert('Error loading app data. Please check your internet connection and refresh.');
+    }
+},
             // Show loading state
             showLoadingState() {
                 const screens = document.querySelectorAll('.screen');
