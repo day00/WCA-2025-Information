@@ -1575,6 +1575,12 @@ if (!this.gameConfig.finalsStatus) {
     if (screenElement) {
         screenElement.classList.add('active');
         screenElement.style.display = 'block';  // Add this line
+        // Special handling for certain screens
+    if (screen === 'scores') {
+        // Reload progress from localStorage before showing scores
+        this.loadProgress();
+        this.scores.renderScores();
+    }
     }
 
     // Update nav bar
