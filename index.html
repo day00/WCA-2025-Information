@@ -3544,8 +3544,23 @@ if (!this.gameConfig.finalsStatus) {
                 },
 
                 renderScores() {
-                    const list = document.getElementById('scoresList');
-                    list.innerHTML = '';
+    console.log('=== SCORES DEBUG ===');
+    console.log('1. userProgress.gameScores:', WCAGuideApp.userProgress.gameScores);
+    
+    const saved = localStorage.getItem('wca2025_liam');
+    console.log('2. Raw localStorage:', saved);
+    
+    if (saved) {
+        const parsed = JSON.parse(saved);
+        console.log('3. Parsed gameScores:', parsed.gameScores);
+    }
+    
+    const list = document.getElementById('scoresList');
+    console.log('4. scoresList element exists:', !!list);
+    
+    // Continue with your original renderScores code...
+    list.innerHTML = '';
+    // ... rest of the function
 
                     const games = [
                         { key: 'faces', name: 'Faces Quiz', icon: '😊' },
