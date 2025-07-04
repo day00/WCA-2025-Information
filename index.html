@@ -1233,7 +1233,7 @@ async init() {
             console.log(`Loaded ${Object.keys(this.competitors).length} competitors`);
         } else {
             console.error('Failed to load competitors');
-            this.loadSampleData();
+             
         }
         
         // Use hardcoded facts instead of empty facts.json
@@ -1297,7 +1297,7 @@ if (!this.gameConfig.finalsStatus) {
     } catch (error) {
         console.error('Error loading data:', error);
         // Fallback to sample data
-        this.loadSampleData();
+         
         this.loadFacts();
     }
 },
