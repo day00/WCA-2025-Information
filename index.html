@@ -872,7 +872,7 @@
             </div>
 
             <div class="menu-grid">
-                <div class="menu-btn browse" onclick="WCAGuideApp.browse.checkForExistingMode() || WCAGuideApp.navigate('browse')">
+                <div class="menu-btn browse" onclick="WCAGuideApp.browse.handleBrowseClick()">
                     <span class="icon">📚</span>
                     <span class="label">Competitors<br>& Top 10</span>
                 </div>
@@ -1085,66 +1085,23 @@
             onerror="console.warn('QR code library failed to load. Manual codes will still work.')"></script>
 
     <script>
+        // Initialize competitor data from CSV processing
+        window.competitorsData = {
+            // This would normally be populated from your CSV data
+            // For now, the app will use the sample data with 8 competitors
+        };
+        
+        // Quick test - log when script loads
+        console.log('WCA 2025 Guide App Loading...');
+    </script>
+
+    <script>
         // Main App Object
         const WCAGuideApp = {
             // Data storage
             competitors: {},
             facts: {},
-            gameConfig: {
-                events: {
-                    "222": { name: "2x2x2", icon: "🎲" },
-                    "333": { name: "3x3x3", icon: "📦" },
-                    "444": { name: "4x4x4", icon: "🎯" },
-                    "555": { name: "5x5x5", icon: "⭐" },
-                    "666": { name: "6x6x6", icon: "🌟" },
-                    "777": { name: "7x7x7", icon: "💫" },
-                    "333bf": { name: "3x3x3 Blindfolded", icon: "🙈" },
-                    "333fm": { name: "3x3x3 Fewest Moves", icon: "🎯" },
-                    "333oh": { name: "3x3x3 One-Handed", icon: "✋" },
-                    "333mbf": { name: "3x3x3 Multi-Blind", icon: "🙈" },
-                    "444bf": { name: "4x4x4 Blindfolded", icon: "🙈" },
-                    "555bf": { name: "5x5x5 Blindfolded", icon: "🙈" },
-                    "clock": { name: "Clock", icon: "🕐" },
-                    "minx": { name: "Megaminx", icon: "🔷" },
-                    "pyram": { name: "Pyraminx", icon: "🔺" },
-                    "skewb": { name: "Skewb", icon: "💠" },
-                    "sq1": { name: "Square-1", icon: "⬜" }
-                },
-                finalsStatus: {
-                    "555bf": "complete",
-                    "555": "ready",
-                    "clock": "ready"
-                },
-                finals: {
-                    "555bf": { time: "2025-07-03T08:45:00-07:00", status: "complete" },
-                    "555": { time: "2025-07-04T17:25:00-07:00", status: "ready" },
-                    "clock": { time: "2025-07-04T17:50:00-07:00", status: "ready" },
-                    "333oh": { time: "2025-07-04T18:40:00-07:00", status: "pending" },
-                    "pyram": { time: "2025-07-04T18:15:00-07:00", status: "pending" },
-                    "777": { time: "2025-07-05T18:40:00-07:00", status: "pending" },
-                    "minx": { time: "2025-07-05T17:50:00-07:00", status: "pending" },
-                    "444": { time: "2025-07-05T17:25:00-07:00", status: "pending" },
-                    "222": { time: "2025-07-05T18:15:00-07:00", status: "pending" },
-                    "skewb": { time: "2025-07-06T14:25:00-07:00", status: "pending" },
-                    "444bf": { time: "2025-07-06T08:30:00-07:00", status: "pending" },
-                    "666": { time: "2025-07-06T14:50:00-07:00", status: "pending" },
-                    "333bf": { time: "2025-07-06T15:40:00-07:00", status: "pending" },
-                    "sq1": { time: "2025-07-06T15:15:00-07:00", status: "pending" },
-                    "333": { time: "2025-07-06T16:15:00-07:00", status: "pending" }
-                },
-                eventTimings: {
-                    "333": {
-                        saveSeats: 120,    // 2 hours
-                        snacks: 90,        // 1.5 hours
-                        seats: 60,         // 1 hour
-                        ready: 10,
-                        go: 5
-                    },
-                    "222": { snacks: 45, seats: 30, ready: 10, go: 5 },
-                    "444": { snacks: 45, seats: 30, ready: 10, go: 5 },
-                    "default": { snacks: 45, seats: 25, ready: 10, go: 5 }
-                }
-            },
+            gameConfig: {},
             userProgress: {
                 predictions: {},
                 results: {},
@@ -1152,101 +1109,165 @@
                 viewedCompetitors: []
             },
             
-            // Event results from qualifying
-            eventResults: {
-                clock: {
-                    "Jonathan Wang": { seed: 1, average: "2.86", best: "2.64", achievement: "NR" },
-                    "Carter Thomas": { seed: 2, average: "2.91", best: "2.48" },
-                    "Alessandro Diomampo": { seed: 3, average: "3.07", best: "2.67", achievement: "PR" },
-                    "Antoni Stojek": { seed: 4, average: "3.09", best: "2.60" },
-                    "Anders Barhaugen": { seed: 5, average: "3.14", best: "2.77", achievement: "PR" },
-                    "Jasper Wolfe-Tham": { seed: 6, average: "3.22", best: "2.92", achievement: "PR" },
-                    "Jaidon Poraminthara Lin": { seed: 7, average: "3.28", best: "2.70" },
-                    "Aarni Salakari": { seed: 8, average: "3.28", best: "2.76", achievement: "NR" },
-                    "Eryk Kasperek": { seed: 9, average: "3.30", best: "3.16" },
-                    "Volodymyr Kapustianskyi": { seed: 10, average: "3.34", best: "1.93" },
-                    "Brendyn Dunagan": { seed: 11, average: "3.37", best: "2.70" },
-                    "Drake Denton Richard": { seed: 12, average: "3.39", best: "2.82" },
-                    "Quinn Maloney": { seed: 13, average: "3.43", best: "3.13" },
-                    "Alex Moscibroda": { seed: 14, average: "3.48", best: "3.18" },
-                    "Clement D. Tucker": { seed: 15, average: "3.57", best: "2.71" },
-                    "Kyle Jones": { seed: 16, average: "3.58", best: "2.96" },
-                    "Aaron Jake Wong": { seed: 17, average: "3.58", best: "2.99" },
-                    "Zachary Cribb": { seed: 18, average: "3.65", best: "3.40", achievement: "PR" },
-                    "Eddie Artze": { seed: 19, average: "3.69", best: "3.15" },
-                    "Greyson James": { seed: 20, average: "3.71", best: "3.47" }
-                },
-                "555": {
-                    "Tymon Kolasiński": { seed: 1, average: "35.49", best: "33.05" },
-                    "Max Park": { seed: 2, average: "36.48", best: "33.05" },
-                    "Henry Lichner": { seed: 3, average: "40.32", best: "37.05", achievement: "PR" },
-                    "Timofei Tarasenko": { seed: 4, average: "40.68", best: "35.58" },
-                    "Kai-Wen Wang": { seed: 5, average: "40.97", best: "38.71" },
-                    "Seung Hyuk Nahm": { seed: 6, average: "41.70", best: "40.74" },
-                    "Matty Hiroto Inaba": { seed: 7, average: "41.88", best: "37.72" },
-                    "Burno Li Chak Kwan": { seed: 8, average: "42.00", best: "39.67" },
-                    "Feliks Zemdegs": { seed: 9, average: "42.32", best: "38.20" },
-                    "Ciarán Beahan": { seed: 10, average: "42.38", best: "33.20", achievement: "NR" },
-                    "Lim Hung": { seed: 11, average: "42.63", best: "36.53", achievement: "NR" },
-                    "Patrick Ponce": { seed: 12, average: "42.65", best: "39.81" },
-                    "Richard Delacoste": { seed: 13, average: "44.02", best: "41.06" },
-                    "Emmanuel Kao": { seed: 14, average: "44.37", best: "40.75" },
-                    "Arhaan Sareen": { seed: 15, average: "44.61", best: "41.65" },
-                    "Sebastian Weyer": { seed: 16, average: "44.89", best: "42.92" },
-                    "Inigo Miguel B. Palisoc": { seed: 17, average: "45.11", best: "42.45" },
-                    "Varun Mohanraj": { seed: 18, average: "45.20", best: "44.36" },
-                    "Dwyane Ramos": { seed: 19, average: "45.61", best: "44.39", achievement: "PR" },
-                    "Brendyn Dunagan": { seed: 20, average: "45.70", best: "41.79", achievement: "PR" }
+            // Initialize app
+            async init() {
+                try {
+                    // Show loading state
+                    this.showLoadingState();
+                    
+                    // Load all data from JSON files
+                    await this.loadAllData();
+                    
+                    // Load saved progress
+                    this.loadProgress();
+                    
+                    // Initialize screens
+                    this.browse.init();
+                    this.predictions.init();
+                    this.results.init();
+                    this.games.init();
+                    this.scores.init();
+                    this.storage.init();
+                    
+                    // Update finals status based on current time
+                    this.updateFinalsStatus();
+                    
+                    // Start countdown timer
+                    this.startCountdown();
+                    
+                    // Hide loading state
+                    this.hideLoadingState();
+                    
+                } catch (error) {
+                    console.error('Error initializing app:', error);
+                    alert('Error loading app data. Please check your internet connection and refresh.');
                 }
             },
-
-            // Initialize app
-            init() {
-                // Load competitor data from our earlier processing
-                this.loadCompetitorData();
-
-                // Load facts
-                this.loadFacts();
-
-                // Load saved progress
-                this.loadProgress();
-
-                // Update finalists
-                this.updateFinalists();
-
-                // Initialize screens
-                this.browse.init();
-                this.predictions.init();
-                this.results.init();
-                this.games.init();
-                this.scores.init();
-                this.storage.init();
-
-                // Update finals status based on current time
-                this.updateFinalsStatus();
-
-                // Start countdown timer
-                this.startCountdown();
+            
+            // Show loading state
+            showLoadingState() {
+                const screens = document.querySelectorAll('.screen');
+                screens.forEach(s => s.style.display = 'none');
+                
+                const homeScreen = document.getElementById('homeScreen');
+                homeScreen.style.display = 'block';
+                homeScreen.innerHTML = '<div class="loading">Loading WCA 2025 Guide...</div>';
             },
+            
+            // Hide loading state and restore home screen
+            hideLoadingState() {
+                const homeScreen = document.getElementById('homeScreen');
+                homeScreen.innerHTML = `
+                    <div class="countdown-box" id="nextEventBox">
+                        <h3>⏰ Next Finals</h3>
+                        <div class="event-name" id="nextEventName">Loading...</div>
+                        <div class="time" id="nextEventTime">Calculating...</div>
+                        <div class="countdown-message" id="nextEventMessage"></div>
+                    </div>
 
-            // Load competitor data
-            loadCompetitorData() {
-                // Check if we have the data from our earlier processing
-                if (window.competitorsData && Object.keys(window.competitorsData).length > 100) {
-                    this.competitors = window.competitorsData;
-                    console.log('Loaded', Object.keys(this.competitors).length, 'competitors');
-                } else {
-                    // If no data, we need to notify that data is missing
-                    console.warn('Competitor data not found, using sample data');
-                    this.loadSampleData();
+                    <div class="countdown-box" id="mainEventBox" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <h3>🏆 3x3x3 Finals</h3>
+                        <div class="time" id="mainEventTime">Sunday at 4:15 PM</div>
+                        <div class="countdown-message" id="mainEventMessage"></div>
+                    </div>
+
+                    <div class="menu-grid">
+                        <div class="menu-btn browse" onclick="WCAGuideApp.browse.handleBrowseClick()">
+                            <span class="icon">📚</span>
+                            <span class="label">Competitors<br>& Top 10</span>
+                        </div>
+
+                        <div class="menu-btn predictions" onclick="WCAGuideApp.navigate('predictions')">
+                            <span class="icon">🎯</span>
+                            <span class="label">Make My<br>Predictions</span>
+                        </div>
+
+                        <div class="menu-btn results" onclick="WCAGuideApp.navigate('results')">
+                            <span class="icon">🏁</span>
+                            <span class="label">How Did<br>My Picks Do?</span>
+                        </div>
+
+                        <div class="menu-btn games" onclick="WCAGuideApp.navigate('games')">
+                            <span class="icon">🎮</span>
+                            <span class="label">Play<br>Games</span>
+                        </div>
+
+                        <div class="menu-btn scores" onclick="WCAGuideApp.navigate('scores')">
+                            <span class="icon">🏆</span>
+                            <span class="label">Game<br>Scores</span>
+                        </div>
+
+                        <div class="menu-btn save" onclick="WCAGuideApp.navigate('save')">
+                            <span class="icon">💾</span>
+                            <span class="label">Save/<br>Load</span>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        ℹ️ Game facts are for fun!<br>
+                        Found a mistake? Let us know!
+                    </div>
+                `;
+            },
+            
+            // Load all data from JSON files
+            async loadAllData() {
+                try {
+                    // Load all JSON files in parallel
+                    const [competitorsData, factsData, gameConfigData] = await Promise.all([
+                        fetch('./data/competitors.json').then(r => r.json()),
+                        fetch('./data/facts.json').then(r => r.json()),
+                        fetch('./data/gameConfig.json').then(r => r.json())
+                    ]);
                     
-                    // Show a one-time alert
-                    if (!localStorage.getItem('wca2025_data_warning')) {
-                        setTimeout(() => {
-                            alert('Note: Using sample data. For full functionality, competitor data needs to be loaded.');
-                            localStorage.setItem('wca2025_data_warning', 'shown');
-                        }, 2000);
-                    }
+                    // Store the data
+                    this.competitors = competitorsData;
+                    this.facts = factsData;
+                    
+                    // Merge gameConfig with loaded data
+                    this.gameConfig = {
+                        ...this.gameConfig,
+                        ...gameConfigData,
+                        // Keep our countdown timers and event order
+                        eventOrder: ['555bf', '555', 'clock', '333oh', 'pyram', '777', 'minx', '444', '222', 'skewb', '444bf', '666', '333bf', 'sq1', '333'],
+                        finals: {
+                            "555bf": { time: "2025-07-03T08:45:00-07:00", status: "complete" },
+                            "555": { time: "2025-07-04T17:25:00-07:00", status: "ready" },
+                            "clock": { time: "2025-07-04T17:50:00-07:00", status: "ready" },
+                            "333oh": { time: "2025-07-04T18:40:00-07:00", status: "pending" },
+                            "pyram": { time: "2025-07-04T18:15:00-07:00", status: "pending" },
+                            "777": { time: "2025-07-05T18:40:00-07:00", status: "pending" },
+                            "minx": { time: "2025-07-05T17:50:00-07:00", status: "pending" },
+                            "444": { time: "2025-07-05T17:25:00-07:00", status: "pending" },
+                            "222": { time: "2025-07-05T18:15:00-07:00", status: "pending" },
+                            "skewb": { time: "2025-07-06T14:25:00-07:00", status: "pending" },
+                            "444bf": { time: "2025-07-06T08:30:00-07:00", status: "pending" },
+                            "666": { time: "2025-07-06T14:50:00-07:00", status: "pending" },
+                            "333bf": { time: "2025-07-06T15:40:00-07:00", status: "pending" },
+                            "sq1": { time: "2025-07-06T15:15:00-07:00", status: "pending" },
+                            "333": { time: "2025-07-06T16:15:00-07:00", status: "pending" }
+                        },
+                        eventTimings: {
+                            "333": {
+                                saveSeats: 120,
+                                snacks: 90,
+                                seats: 60,
+                                ready: 10,
+                                go: 5
+                            },
+                            "222": { snacks: 45, seats: 30, ready: 10, go: 5 },
+                            "444": { snacks: 45, seats: 30, ready: 10, go: 5 },
+                            "default": { snacks: 45, seats: 25, ready: 10, go: 5 }
+                        }
+                    };
+                    
+                    console.log(`Loaded ${Object.keys(this.competitors).length} competitors`);
+                    console.log(`Loaded ${Object.keys(this.facts).length} fact categories`);
+                    console.log('Game config loaded successfully');
+                    
+                } catch (error) {
+                    console.error('Error loading data:', error);
+                    throw new Error('Failed to load app data. Please check that JSON files are available.');
                 }
             },
 
@@ -1422,11 +1443,7 @@
 
                 // Special Sunday marathon handling for seat saving
                 if (event.id === '666' && now.getDay() === 0) { // Sunday
-                    const threeHoursBefore = 180; // 3 hours in minutes
-                    const twoHoursBefore = 120; // 2 hours in minutes
-                    const ninetyMinBefore = 90; // 1.5 hours in minutes
-                    
-                    if (minutes >= twoHoursBefore && minutes <= threeHoursBefore) {
+                    if (minutes >= 120 && minutes <= 180) { // 2-3 hours before
                         messageEl.textContent = '🏃 Consider someone saving seats today!';
                         return;
                     }
@@ -1582,14 +1599,14 @@
 
             // Load sample data for testing
             loadSampleData() {
-                // Sample competitors for testing
+                // Extended sample data with more competitors for testing
                 this.competitors = {
                     "2015PARK01": {
                         name: "Max Park",
                         country: "USA",
                         countryFull: "United States",
-                        photoUrl: "https://via.placeholder.com/150",
-                        photoThumbUrl: "https://via.placeholder.com/150",
+                        photoUrl: "https://avatars.worldcubeassociation.org/uploads/user/avatar/2015PARK01/1580357802.jpg",
+                        photoThumbUrl: "https://avatars.worldcubeassociation.org/uploads/user/avatar/2015PARK01/1580357802_thumb.jpg",
                         gender: "m",
                         competitions: 125,
                         medals: { gold: 523, silver: 234, bronze: 112, total: 869 },
@@ -1618,8 +1635,127 @@
                         },
                         difficulty: "easy",
                         isFinalist: { "333": true }
+                    },
+                    "2016KOLA02": {
+                        name: "Tymon Kolasiński",
+                        country: "POL",
+                        countryFull: "Poland",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 89,
+                        medals: { gold: 312, silver: 189, bronze: 98, total: 599 },
+                        topEvents: ["333", "444", "555"],
+                        worldRankings: {
+                            "333": { single: 4, singleTime: 389, average: 3, averageTime: 598 },
+                            "444": { single: 3, singleTime: 1893, average: 4, averageTime: 2234 },
+                            "555": { single: 2, singleTime: 3549, average: 2, averageTime: 3901 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "555": true }
+                    },
+                    "2019GARR01": {
+                        name: "Luke Garrett",
+                        country: "USA", 
+                        countryFull: "United States",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 67,
+                        medals: { gold: 203, silver: 147, bronze: 89, total: 439 },
+                        topEvents: ["333", "333oh"],
+                        worldRankings: {
+                            "333": { single: 8, singleTime: 412, average: 12, averageTime: 634 },
+                            "333oh": { single: 15, singleTime: 834, average: 18, averageTime: 1123 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "333": true, "333oh": true }
+                    },
+                    "2013NAHRA01": {
+                        name: "Seung Hyuk Nahm",
+                        country: "KOR",
+                        countryFull: "Republic of Korea",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 112,
+                        medals: { gold: 287, silver: 198, bronze: 145, total: 630 },
+                        topEvents: ["555", "666", "777"],
+                        worldRankings: {
+                            "555": { single: 6, singleTime: 3745, average: 8, averageTime: 4170 },
+                            "666": { single: 4, singleTime: 7234, average: 5, averageTime: 7856 },
+                            "777": { single: 5, singleTime: 12456, average: 7, averageTime: 13234 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "555": true }
+                    },
+                    "2009ZEMD01": {
+                        name: "Feliks Zemdegs",
+                        country: "AUS",
+                        countryFull: "Australia",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 134,
+                        medals: { gold: 689, silver: 234, bronze: 89, total: 1012 },
+                        topEvents: ["333", "444", "555", "333oh"],
+                        worldRankings: {
+                            "333": { single: 9, singleTime: 423, average: 15, averageTime: 645 },
+                            "444": { single: 12, singleTime: 2134, average: 14, averageTime: 2456 },
+                            "555": { single: 14, singleTime: 3856, average: 11, averageTime: 4232 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "555": true }
+                    },
+                    "2017WONG08": {
+                        name: "Jonathan Wang",
+                        country: "CAN",
+                        countryFull: "Canada",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 45,
+                        medals: { gold: 89, silver: 67, bronze: 45, total: 201 },
+                        topEvents: ["clock"],
+                        worldRankings: {
+                            "clock": { single: 2, singleTime: 264, average: 1, averageTime: 286 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "clock": true }
+                    },
+                    "2018THOM02": {
+                        name: "Carter Thomas",
+                        country: "USA",
+                        countryFull: "United States",
+                        photoUrl: "https://via.placeholder.com/150",
+                        photoThumbUrl: "https://via.placeholder.com/150",
+                        gender: "m",
+                        competitions: 38,
+                        medals: { gold: 67, silver: 45, bronze: 34, total: 146 },
+                        topEvents: ["clock", "pyram"],
+                        worldRankings: {
+                            "clock": { single: 5, singleTime: 291, average: 4, averageTime: 334 },
+                            "pyram": { single: 89, singleTime: 234, average: 112, averageTime: 367 }
+                        },
+                        difficulty: "easy",
+                        isFinalist: { "clock": true }
                     }
                 };
+                
+                // Add isFinalist data for the ones we know
+                const clockFinalistNames = ["Jonathan Wang", "Carter Thomas"];
+                const fiveFinalistNames = ["Tymon Kolasiński", "Max Park", "Seung Hyuk Nahm", "Feliks Zemdegs"];
+                
+                Object.values(this.competitors).forEach(comp => {
+                    if (!comp.isFinalist) comp.isFinalist = {};
+                    
+                    if (clockFinalistNames.includes(comp.name)) {
+                        comp.isFinalist.clock = true;
+                    }
+                    if (fiveFinalistNames.includes(comp.name)) {
+                        comp.isFinalist["555"] = true;
+                    }
+                });
             },
 
             // Update finalists based on results
@@ -1645,6 +1781,11 @@
 
                 // Match names to competitors and update isFinalist
                 Object.entries(this.competitors).forEach(([id, comp]) => {
+                    // Initialize isFinalist if it doesn't exist
+                    if (!comp.isFinalist) {
+                        comp.isFinalist = {};
+                    }
+                    
                     // Check if competitor made clock finals
                     if (clockFinalists.some(name => 
                         comp.name.toLowerCase().includes(name.toLowerCase()) || 
@@ -2109,6 +2250,20 @@
                 
                 init() {
                     // Initialize browse system
+                },
+
+                handleBrowseClick() {
+                    if (this.mode) {
+                        // Already selected a mode, go directly to event browser
+                        WCAGuideApp.navigate('eventBrowser');
+                        if (window.innerWidth >= 768) {
+                            this.renderEventTabs();
+                        }
+                        this.showCurrentEvent();
+                    } else {
+                        // Show mode selection
+                        WCAGuideApp.navigate('browse');
+                    }
                 },
 
                 checkForExistingMode() {
@@ -3051,9 +3206,21 @@
                 },
 
                 generateFactQuestion(difficulty) {
-                    const factPool = WCAGuideApp.facts.general[difficulty] || WCAGuideApp.facts.general.easy;
-                    if (factPool.length === 0) {
-                        return WCAGuideApp.facts.general.easy[Math.floor(Math.random() * WCAGuideApp.facts.general.easy.length)];
+                    const factPool = WCAGuideApp.facts.general[difficulty];
+                    
+                    // Fallback to easy if requested difficulty has no questions
+                    if (!factPool || factPool.length === 0) {
+                        const easyPool = WCAGuideApp.facts.general.easy;
+                        if (!easyPool || easyPool.length === 0) {
+                            // Return a default question if no facts are loaded
+                            return {
+                                id: "default_001",
+                                question: "How many stickers are on a 3x3x3 cube?",
+                                answer: "54",
+                                options: ["36", "48", "54", "60"]
+                            };
+                        }
+                        return easyPool[Math.floor(Math.random() * easyPool.length)];
                     }
                     
                     // Try to find an unused question
@@ -3074,7 +3241,9 @@
                     // If all questions used, clear and start over
                     this.usedQuestionIds.clear();
                     question = factPool[Math.floor(Math.random() * factPool.length)];
-                    this.usedQuestionIds.add(question.id);
+                    if (question && question.id) {
+                        this.usedQuestionIds.add(question.id);
+                    }
                     return question;
                 },
 
@@ -3506,7 +3675,13 @@
 
         // Initialize app when page loads
         window.addEventListener('DOMContentLoaded', () => {
-            WCAGuideApp.init();
+            try {
+                WCAGuideApp.init();
+                console.log('WCA Guide App initialized successfully');
+            } catch (error) {
+                console.error('Error initializing app:', error);
+                alert('Error loading app. Please refresh the page.');
+            }
         });
 
         // Cleanup when page unloads
