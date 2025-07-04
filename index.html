@@ -2558,7 +2558,7 @@ if (!this.gameConfig.finalsStatus) {
                     detail.innerHTML = `
                         <div style="text-align: center;">
                             <img src="${comp.photoUrl}" style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px;"
-                                 onerror="this.src='https://via.placeholder.com/200'">
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'"
                             <h1 style="font-size: 28px; color: #2d3748; margin-bottom: 10px;">${comp.name}</h1>
                             <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull}</div>
                             
