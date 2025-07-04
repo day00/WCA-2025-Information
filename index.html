@@ -3561,9 +3561,7 @@ const results = WCAGuideApp.eventResults[eventId];
                     
                     const gameData = WCAGuideApp.userProgress.gameScores[gameKey];
                     gameData.totalGames++;
-                    if (this.score > gameData.highScore) {
-                        gameData.highScore = this.score;
-                    }
+                    gameData.highScore = Math.min(gameData.highScore + this.score, 100);
                     
                     WCAGuideApp.saveProgress();
                     
@@ -3642,7 +3640,7 @@ const results = WCAGuideApp.eventResults[eventId];
                                 </div>
                                 <div style="text-align: right;">
                                     <div style="font-size: 24px; font-weight: bold; color: #48bb78;">
-                                        ${data.highScore}/10 ⭐
+                                        ${data.highScore}/100 ⭐
                                     </div>
                                     <div style="font-size: 14px; color: #718096;">
                                         ${data.totalGames} game${data.totalGames !== 1 ? 's' : ''} played
