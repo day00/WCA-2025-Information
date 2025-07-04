@@ -1616,16 +1616,30 @@ if (!this.gameConfig.finalsStatus) {
 
             // Load/Save Progress
             loadProgress() {
-                const saved = localStorage.getItem('wca2025_liam');
-                if (saved) {
-                    try {
-                        const data = JSON.parse(saved);
-                        this.userProgress = data;
-                    } catch (e) {
-                        console.error('Error loading progress:', e);
-                    }
-                }
-            },
+    const saved = localStorage.getItem('wca2025_liam');
+    if (saved) {
+        try {
+            const data = JSON.parse(saved);
+            this.userProgress = data;
+        } catch (e) {
+            console.error('Error loading progress:', e);
+            this.userProgress = {
+                predictions: {},
+                results: {},
+                gameScores: {},
+                viewedCompetitors: []
+            };
+        }
+    } else {
+        // No saved data, use defaults
+        this.userProgress = {
+            predictions: {},
+            results: {},
+            gameScores: {},
+            viewedCompetitors: []
+        };
+    }
+},
 
             saveProgress() {
                 localStorage.setItem('wca2025_liam', JSON.stringify(this.userProgress));
