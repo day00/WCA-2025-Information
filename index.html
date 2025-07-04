@@ -2418,20 +2418,30 @@ updateFinalsStatus() {
                 },
 
                 showCurrentEvent() {
-                    const eventId = this.eventOrder[this.currentEventIndex];
-                    const event = WCAGuideApp.gameConfig.events[eventId];
-                    
-                    // Update header
-                    document.getElementById('currentEventName').textContent = 
-                        `${event.icon} ${event.name}`;
-                    
-                    // Get event time
-                    const eventTime = this.getEventDay(eventId);
-                    document.getElementById('currentEventTime').textContent = eventTime;
-                    
-                    // Show competitors
-                    this.showCompetitors(eventId);
-                },
+    const eventId = this.eventOrder[this.currentEventIndex];
+    const event = WCAGuideApp.gameConfig.events[eventId];
+    
+    // Update header
+    document.getElementById('currentEventName').textContent = 
+        `${event.icon} ${event.name}`;
+    
+    // Get event time
+    const eventTime = this.getEventDay(eventId);
+    document.getElementById('currentEventTime').textContent = eventTime;
+    
+    // Update nav title based on mode
+    const navTitle = document.getElementById('navTitle');
+    if (navTitle) {
+        if (this.mode === 'world') {
+            navTitle.textContent = 'World Top 10';
+        } else if (this.mode === 'finalists') {
+            navTitle.textContent = '2025 WCA Finalists';
+        }
+    }
+    
+    // Show competitors
+    this.showCompetitors(eventId);
+},
 
                 getEventDay(eventId) {
                     const eventDate = new Date(WCAGuideApp.gameConfig.finals[eventId]?.time);
