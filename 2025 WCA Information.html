@@ -668,6 +668,18 @@
             border: 2px dashed #cbd5e0;
         }
 
+        #qrcode {
+            margin: 20px auto;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        #qrcode img {
+            display: block;
+        }
+
         .input-field {
             width: 100%;
             padding: 15px;
@@ -1048,22 +1060,29 @@
             
             <div class="save-code-box">
                 <h3>📱 Your Save Code</h3>
+                <div id="qrcode" style="margin: 20px auto; width: 256px; height: 256px;"></div>
                 <div class="save-code" id="saveCode">LOADING...</div>
                 <button class="action-btn" onclick="WCAGuideApp.storage.copyCode()">Copy Code</button>
+                <button class="action-btn secondary" onclick="WCAGuideApp.storage.refreshSave()">Update Code</button>
             </div>
 
             <div class="save-code-box">
                 <h3>📥 Load Data</h3>
+                <p style="margin-bottom: 15px;">Scan QR code or enter manual code:</p>
                 <input type="text" class="input-field" id="loadCodeInput" 
-                       placeholder="Enter code here" maxlength="10">
+                       placeholder="Enter code here">
                 <button class="action-btn success" onclick="WCAGuideApp.storage.loadData()">Load Data</button>
             </div>
 
             <div class="info-box">
-                💡 Tip: Write down your code or take a picture to save your progress!
+                💡 Tip: Take a photo of the QR code or write down your manual code to save your progress!
             </div>
         </div>
     </div>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" 
+            onerror="console.warn('QR code library failed to load. Manual codes will still work.')"></script>
 
     <script>
         // Main App Object
@@ -1183,13 +1202,8 @@
 
             // Initialize app
             init() {
-                // Load competitor data if available
-                if (window.competitorsData) {
-                    this.competitors = window.competitorsData;
-                } else {
-                    // Use sample data for testing
-                    this.loadSampleData();
-                }
+                // Load competitor data from our earlier processing
+                this.loadCompetitorData();
 
                 // Load facts
                 this.loadFacts();
@@ -1213,6 +1227,27 @@
 
                 // Start countdown timer
                 this.startCountdown();
+            },
+
+            // Load competitor data
+            loadCompetitorData() {
+                // Check if we have the data from our earlier processing
+                if (window.competitorsData && Object.keys(window.competitorsData).length > 100) {
+                    this.competitors = window.competitorsData;
+                    console.log('Loaded', Object.keys(this.competitors).length, 'competitors');
+                } else {
+                    // If no data, we need to notify that data is missing
+                    console.warn('Competitor data not found, using sample data');
+                    this.loadSampleData();
+                    
+                    // Show a one-time alert
+                    if (!localStorage.getItem('wca2025_data_warning')) {
+                        setTimeout(() => {
+                            alert('Note: Using sample data. For full functionality, competitor data needs to be loaded.');
+                            localStorage.setItem('wca2025_data_warning', 'shown');
+                        }, 2000);
+                    }
+                }
             },
 
             updateFinalsStatus() {
@@ -1476,6 +1511,12 @@
 
             // Navigation
             navigate(screen) {
+                // Clear countdown when leaving home
+                if (this.countdownInterval && screen !== 'home') {
+                    clearInterval(this.countdownInterval);
+                    this.countdownInterval = null;
+                }
+                
                 // Hide all screens
                 document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
                 
@@ -2632,6 +2673,15 @@
                 },
 
                 confirmSelection(competitorId) {
+                    // Check if already selected in a different slot
+                    const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
+                        .find(([slot, id]) => id === competitorId);
+                    
+                    if (existingSlot && existingSlot[0] !== this.currentSlot) {
+                        alert(`You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!`);
+                        return;
+                    }
+                    
                     if (!this.selections[this.currentEvent]) {
                         this.selections[this.currentEvent] = {};
                     }
@@ -2855,6 +2905,7 @@
                 currentQuestions: [],
                 currentQuestionIndex: 0,
                 score: 0,
+                usedQuestionIds: new Set(),
                 
                 init() {
                     // Initialize game system
@@ -2862,6 +2913,7 @@
 
                 selectGame(gameType) {
                     this.currentGame = gameType;
+                    this.usedQuestionIds.clear(); // Reset used questions
                     WCAGuideApp.navigate('gameDifficulty');
                     document.getElementById('gameDifficultyTitle').textContent = 
                         `${this.getGameName(gameType)} - Choose Difficulty`;
@@ -3001,10 +3053,29 @@
                 generateFactQuestion(difficulty) {
                     const factPool = WCAGuideApp.facts.general[difficulty] || WCAGuideApp.facts.general.easy;
                     if (factPool.length === 0) {
-                        // Fallback to easy if no questions in requested difficulty
                         return WCAGuideApp.facts.general.easy[Math.floor(Math.random() * WCAGuideApp.facts.general.easy.length)];
                     }
-                    return factPool[Math.floor(Math.random() * factPool.length)];
+                    
+                    // Try to find an unused question
+                    let attempts = 0;
+                    let question = null;
+                    
+                    while (attempts < factPool.length) {
+                        const index = Math.floor(Math.random() * factPool.length);
+                        question = factPool[index];
+                        
+                        if (!this.usedQuestionIds.has(question.id)) {
+                            this.usedQuestionIds.add(question.id);
+                            return question;
+                        }
+                        attempts++;
+                    }
+                    
+                    // If all questions used, clear and start over
+                    this.usedQuestionIds.clear();
+                    question = factPool[Math.floor(Math.random() * factPool.length)];
+                    this.usedQuestionIds.add(question.id);
+                    return question;
                 },
 
                 generateAchievementQuestion(difficulty) {
@@ -3142,16 +3213,18 @@
                     optionsGrid.innerHTML = '';
                     
                     if (question.type === 'comparison') {
-                        // Special layout for comparison questions
+                        // Special layout for comparison questions - DON'T show times initially
                         const option1 = document.createElement('button');
                         option1.className = 'option-btn';
                         option1.innerHTML = `
                             <img src="${question.option1.photo}" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px;"
                                  onerror="this.src='https://via.placeholder.com/50'">
                             <div>${question.option1.name}</div>
-                            <div style="font-size: 14px; color: #718096;">${question.option1.time}</div>
+                            <div class="time-reveal" style="font-size: 14px; color: #718096; opacity: 0; transition: opacity 0.5s;">
+                                ${question.option1.time}
+                            </div>
                         `;
-                        option1.onclick = () => this.checkAnswer(question.option1.name, question.correctAnswer);
+                        option1.onclick = () => this.checkAnswer(question.option1.name, question.correctAnswer, true);
                         
                         const option2 = document.createElement('button');
                         option2.className = 'option-btn';
@@ -3159,9 +3232,11 @@
                             <img src="${question.option2.photo}" style="width: 50px; height: 50px; border-radius: 50%; margin-bottom: 10px;"
                                  onerror="this.src='https://via.placeholder.com/50'">
                             <div>${question.option2.name}</div>
-                            <div style="font-size: 14px; color: #718096;">${question.option2.time}</div>
+                            <div class="time-reveal" style="font-size: 14px; color: #718096; opacity: 0; transition: opacity 0.5s;">
+                                ${question.option2.time}
+                            </div>
                         `;
-                        option2.onclick = () => this.checkAnswer(question.option2.name, question.correctAnswer);
+                        option2.onclick = () => this.checkAnswer(question.option2.name, question.correctAnswer, true);
                         
                         optionsGrid.appendChild(option1);
                         optionsGrid.appendChild(option2);
@@ -3177,16 +3252,28 @@
                     }
                 },
 
-                checkAnswer(selected, correct) {
+                checkAnswer(selected, correct, isComparison = false) {
                     const buttons = document.querySelectorAll('.option-btn');
                     buttons.forEach(btn => {
                         btn.onclick = null; // Disable clicking
                         
                         const btnText = btn.textContent || btn.innerText;
-                        if (btnText.includes(correct)) {
+                        const nameDiv = btn.querySelector('div');
+                        const isThisButton = nameDiv ? nameDiv.textContent === selected : btnText.includes(selected);
+                        const isCorrectButton = nameDiv ? nameDiv.textContent === correct : btnText.includes(correct);
+                        
+                        if (isCorrectButton) {
                             btn.classList.add('correct');
-                        } else if (btnText.includes(selected) && selected !== correct) {
+                        } else if (isThisButton && selected !== correct) {
                             btn.classList.add('incorrect');
+                        }
+                        
+                        // Reveal times for comparison questions
+                        if (isComparison) {
+                            const timeReveal = btn.querySelector('.time-reveal');
+                            if (timeReveal) {
+                                timeReveal.style.opacity = '1';
+                            }
                         }
                     });
                     
@@ -3202,7 +3289,7 @@
                         } else {
                             this.endGame();
                         }
-                    }, 1500);
+                    }, isComparison ? 2000 : 1500); // Slightly longer pause for comparison to see times
                 },
 
                 endGame() {
@@ -3296,51 +3383,75 @@
 
             // Storage module
             storage: {
+                qrCode: null,
+                currentSaveCode: null,
+                
                 init() {
                     this.generateSaveCode();
                 },
 
                 generateSaveCode() {
-                    // Generate a simple 6-character code based on the data
-                    const data = JSON.stringify(WCAGuideApp.userProgress);
+                    // Create compressed version of save data
+                    const saveData = {
+                        v: 1, // version
+                        p: WCAGuideApp.userProgress.predictions,
+                        r: WCAGuideApp.userProgress.results,
+                        g: WCAGuideApp.userProgress.gameScores
+                    };
+                    
+                    // Convert to base64
+                    const jsonStr = JSON.stringify(saveData);
+                    const compressed = btoa(jsonStr);
+                    
+                    // Generate short manual code (first 8 chars of hash)
                     let hash = 0;
-                    for (let i = 0; i < data.length; i++) {
-                        hash = ((hash << 5) - hash) + data.charCodeAt(i);
+                    for (let i = 0; i < jsonStr.length; i++) {
+                        hash = ((hash << 5) - hash) + jsonStr.charCodeAt(i);
                         hash = hash & hash;
                     }
+                    const shortCode = 'WCA' + Math.abs(hash).toString(36).substring(0, 5).toUpperCase();
                     
-                    const code = 'LIAM' + Math.abs(hash).toString(36).substring(0, 6).toUpperCase();
-                    document.getElementById('saveCode').textContent = code.substring(0, 10);
+                    this.currentSaveCode = shortCode;
+                    document.getElementById('saveCode').textContent = shortCode;
+                    
+                    // Store mapping in localStorage (in real app, this would be server-side)
+                    const allCodes = JSON.parse(localStorage.getItem('wca2025_codes') || '{}');
+                    allCodes[shortCode] = compressed;
+                    localStorage.setItem('wca2025_codes', JSON.stringify(allCodes));
+                    
+                    // Generate QR code if library is loaded
+                    if (typeof QRCode !== 'undefined') {
+                        const qrContainer = document.getElementById('qrcode');
+                        if (qrContainer) {
+                            qrContainer.innerHTML = ''; // Clear existing
+                            this.qrCode = new QRCode(qrContainer, {
+                                text: compressed,
+                                width: 256,
+                                height: 256,
+                                colorDark: '#000000',
+                                colorLight: '#ffffff',
+                                correctLevel: QRCode.CorrectLevel.L
+                            });
+                        }
+                    }
+                },
+
+                refreshSave() {
+                    this.generateSaveCode();
+                    alert('Save code updated! 📱');
                 },
 
                 copyCode() {
-                    const code = document.getElementById('saveCode').textContent;
+                    const code = this.currentSaveCode;
                     
-                    // Try to copy to clipboard
                     if (navigator.clipboard) {
                         navigator.clipboard.writeText(code).then(() => {
-                            alert('Code copied! 📋');
+                            alert('Code copied! 📋\n\n' + code);
                         }).catch(() => {
-                            alert('Code: ' + code);
+                            alert('Your code: ' + code + '\n\nWrite this down!');
                         });
                     } else {
-                        alert('Code: ' + code);
-                    }
-                },
-
-                exportData() {
-                    const data = btoa(JSON.stringify(WCAGuideApp.userProgress));
-                    return data;
-                },
-
-                importData(encoded) {
-                    try {
-                        const data = JSON.parse(atob(encoded));
-                        WCAGuideApp.userProgress = data;
-                        WCAGuideApp.saveProgress();
-                        return true;
-                    } catch (e) {
-                        return false;
+                        alert('Your code: ' + code + '\n\nWrite this down!');
                     }
                 },
 
@@ -3348,17 +3459,47 @@
                     const input = document.getElementById('loadCodeInput').value.trim();
                     
                     if (!input) {
-                        alert('Please enter a code!');
+                        alert('Please enter a code or scan a QR code! 🤔');
                         return;
                     }
                     
-                    // For demo, just show success
-                    alert('Data loaded successfully! ✅');
-                    document.getElementById('loadCodeInput').value = '';
+                    let compressed = null;
                     
-                    // Refresh all screens
-                    this.init();
-                    WCAGuideApp.scores.init();
+                    // Check if it's a short manual code
+                    if (input.length < 10) {
+                        const allCodes = JSON.parse(localStorage.getItem('wca2025_codes') || '{}');
+                        compressed = allCodes[input.toUpperCase()];
+                        
+                        if (!compressed) {
+                            alert('Code not found! Please check and try again. 🔍');
+                            return;
+                        }
+                    } else {
+                        // Assume it's the full base64 data from QR code
+                        compressed = input;
+                    }
+                    
+                    try {
+                        const jsonStr = atob(compressed);
+                        const saveData = JSON.parse(jsonStr);
+                        
+                        // Restore data
+                        if (saveData.p) WCAGuideApp.userProgress.predictions = saveData.p;
+                        if (saveData.r) WCAGuideApp.userProgress.results = saveData.r;
+                        if (saveData.g) WCAGuideApp.userProgress.gameScores = saveData.g;
+                        
+                        WCAGuideApp.saveProgress();
+                        
+                        alert('Data loaded successfully! ✅\n\nYour progress has been restored!');
+                        document.getElementById('loadCodeInput').value = '';
+                        
+                        // Refresh current screen
+                        WCAGuideApp.scores.init();
+                        WCAGuideApp.storage.generateSaveCode();
+                        
+                    } catch (e) {
+                        alert('Invalid code! Please try again. 🤷');
+                    }
                 }
             }
         };
@@ -3366,6 +3507,13 @@
         // Initialize app when page loads
         window.addEventListener('DOMContentLoaded', () => {
             WCAGuideApp.init();
+        });
+
+        // Cleanup when page unloads
+        window.addEventListener('beforeunload', () => {
+            if (WCAGuideApp.countdownInterval) {
+                clearInterval(WCAGuideApp.countdownInterval);
+            }
         });
     </script>
 </body>
