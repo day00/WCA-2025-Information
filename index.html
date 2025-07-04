@@ -1315,26 +1315,24 @@ updateFinalsStatus() {
     const now = new Date();
     
     Object.entries(this.gameConfig.finals).forEach(([eventId, data]) => {
-                Object.entries(this.gameConfig.finals).forEach(([eventId, data]) => {
-                    const eventTime = new Date(data.time);
-                    const timeDiff = now - eventTime;
-                    
-                    // If qualifying should have happened (30 min after start time for most events)
-                    if (timeDiff > 1800000) { // 30 minutes
-                        if (this.gameConfig.finalsStatus[eventId] === 'pending') {
-                            this.gameConfig.finalsStatus[eventId] = 'ready';
-                        }
-                    }
-                    
-                    // If event is complete (2+ hours after start)
-                    if (timeDiff > 7200000) { // 2 hours
-                        if (this.gameConfig.finalsStatus[eventId] !== 'complete') {
-                            this.gameConfig.finalsStatus[eventId] = 'complete';
-                        }
-                    }
-                });
-            },
-
+        const eventTime = new Date(data.time);
+        const timeDiff = now - eventTime;
+        
+        // If qualifying should have happened (30 min after start time for most events)
+        if (timeDiff > 1800000) { // 30 minutes
+            if (this.gameConfig.finalsStatus[eventId] === 'pending') {
+                this.gameConfig.finalsStatus[eventId] = 'ready';
+            }
+        }
+        
+        // If event is complete (2+ hours after start)
+        if (timeDiff > 7200000) { // 2 hours
+            if (this.gameConfig.finalsStatus[eventId] !== 'complete') {
+                this.gameConfig.finalsStatus[eventId] = 'complete';
+            }
+        }
+    });
+},
             // Countdown functionality
             countdownInterval: null,
             currentEventStartTime: null,
