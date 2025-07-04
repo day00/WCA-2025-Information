@@ -1113,31 +1113,45 @@
 // Initialize app
 async init() {
     try {
+        console.log('1. Starting init...');
+        
         // Show loading state
         this.showLoadingState();
+        console.log('2. Loading state shown');
         
         // Load all data from JSON files
         await this.loadAllData();
+        console.log('3. Data loaded');
         
         // Load saved progress
         this.loadProgress();
+        console.log('4. Progress loaded');
         
         // Update finals status based on current time
         this.updateFinalsStatus();
+        console.log('5. Finals status updated');
         
         // Initialize screens AFTER all data is loaded
         this.browse.init();
+        console.log('6. Browse initialized');
         this.predictions.init();
+        console.log('7. Predictions initialized');
         this.results.init();
+        console.log('8. Results initialized');
         this.games.init();
+        console.log('9. Games initialized');
         this.scores.init();
+        console.log('10. Scores initialized');
         this.storage.init();
+        console.log('11. Storage initialized');
         
         // Hide loading state (this restores the home screen HTML)
         this.hideLoadingState();
+        console.log('12. Loading state hidden');
         
         // Start countdown timer AFTER hideLoadingState restores the DOM elements
         this.startCountdown();
+        console.log('13. Countdown started');
         
     } catch (error) {
         console.error('Error initializing app:', error);
