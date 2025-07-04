@@ -3721,6 +3721,8 @@ if (!this.gameConfig.finalsStatus) {
                 clearInterval(WCAGuideApp.countdownInterval);
             }
         });
+        // Make app globally accessible for onclick handlers
+window.WCAGuideApp = WCAGuideApp;
     </script>
 </body>
 </html>
