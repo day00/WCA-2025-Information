@@ -1305,10 +1305,16 @@ if (!this.gameConfig.finalsStatus) {
         this.loadFacts();
     }
 },
-
-            updateFinalsStatus() {
-                const now = new Date();
-                
+updateFinalsStatus() {
+    // Add this safety check
+    if (!this.gameConfig.finals) {
+        console.log('Finals not loaded yet, skipping status update');
+        return;
+    }
+    
+    const now = new Date();
+    
+    Object.entries(this.gameConfig.finals).forEach(([eventId, data]) => {
                 Object.entries(this.gameConfig.finals).forEach(([eventId, data]) => {
                     const eventTime = new Date(data.time);
                     const timeDiff = now - eventTime;
