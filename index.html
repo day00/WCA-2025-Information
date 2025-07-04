@@ -1102,6 +1102,7 @@
             competitors: {},
             facts: {},
             gameConfig: {},
+            eventResults: {},
              currentScreen: 'home',
     previousScreen: null,
     navigationHistory: [],
@@ -2620,7 +2621,9 @@ if (!this.gameConfig.finalsStatus) {
                                 finalistEvents.push(eventName);
                                 
                                 // Check for qualifying results
-                                const results = WCAGuideApp.eventResults[eventId];
+                                // Check for qualifying results
+// Check for qualifying results
+const results = WCAGuideApp.eventResults[eventId];
                                 if (results) {
                                     const compResult = Object.entries(results).find(([name, data]) => 
                                         comp.name.toLowerCase().includes(name.toLowerCase()) || 
