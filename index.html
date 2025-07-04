@@ -1210,66 +1210,31 @@
                 `;
             },
             
-            // Load all data from JSON files
-            async loadAllData() {
-                try {
-                    // Load all JSON files in parallel
-                    const [competitorsData, factsData, gameConfigData] = await Promise.all([
-                        fetch('./data/competitors.json').then(r => r.json()),
-                        fetch('./data/facts.json').then(r => r.json()),
-                        fetch('./data/gameConfig.json').then(r => r.json())
-                    ]);
-                    
-                    // Store the data
-                    this.competitors = competitorsData;
-                    this.facts = factsData;
-                    
-                    // Merge gameConfig with loaded data
-                    this.gameConfig = {
-                        ...this.gameConfig,
-                        ...gameConfigData,
-                        // Keep our countdown timers and event order
-                        eventOrder: ['555bf', '555', 'clock', '333oh', 'pyram', '777', 'minx', '444', '222', 'skewb', '444bf', '666', '333bf', 'sq1', '333'],
-                        finals: {
-                            "555bf": { time: "2025-07-03T08:45:00-07:00", status: "complete" },
-                            "555": { time: "2025-07-04T17:25:00-07:00", status: "ready" },
-                            "clock": { time: "2025-07-04T17:50:00-07:00", status: "ready" },
-                            "333oh": { time: "2025-07-04T18:40:00-07:00", status: "pending" },
-                            "pyram": { time: "2025-07-04T18:15:00-07:00", status: "pending" },
-                            "777": { time: "2025-07-05T18:40:00-07:00", status: "pending" },
-                            "minx": { time: "2025-07-05T17:50:00-07:00", status: "pending" },
-                            "444": { time: "2025-07-05T17:25:00-07:00", status: "pending" },
-                            "222": { time: "2025-07-05T18:15:00-07:00", status: "pending" },
-                            "skewb": { time: "2025-07-06T14:25:00-07:00", status: "pending" },
-                            "444bf": { time: "2025-07-06T08:30:00-07:00", status: "pending" },
-                            "666": { time: "2025-07-06T14:50:00-07:00", status: "pending" },
-                            "333bf": { time: "2025-07-06T15:40:00-07:00", status: "pending" },
-                            "sq1": { time: "2025-07-06T15:15:00-07:00", status: "pending" },
-                            "333": { time: "2025-07-06T16:15:00-07:00", status: "pending" }
-                        },
-                        eventTimings: {
-                            "333": {
-                                saveSeats: 120,
-                                snacks: 90,
-                                seats: 60,
-                                ready: 10,
-                                go: 5
-                            },
-                            "222": { snacks: 45, seats: 30, ready: 10, go: 5 },
-                            "444": { snacks: 45, seats: 30, ready: 10, go: 5 },
-                            "default": { snacks: 45, seats: 25, ready: 10, go: 5 }
-                        }
-                    };
-                    
-                    console.log(`Loaded ${Object.keys(this.competitors).length} competitors`);
-                    console.log(`Loaded ${Object.keys(this.facts).length} fact categories`);
-                    console.log('Game config loaded successfully');
-                    
-                } catch (error) {
-                    console.error('Error loading data:', error);
-                    throw new Error('Failed to load app data. Please check that JSON files are available.');
-                }
-            },
+           async loadAllData() {
+    try {
+        // Load competitors (the only file with real data)
+        const response = await fetch('./data/competitors.json');
+        if (response.ok) {
+            this.competitors = await response.json();
+            console.log(`Loaded ${Object.keys(this.competitors).length} competitors`);
+        } else {
+            console.error('Failed to load competitors');
+            this.loadSampleData();
+        }
+        
+        // Use hardcoded facts instead of empty facts.json
+        this.loadFacts();
+        
+        // gameConfig is already hardcoded in the app
+        console.log('Using hardcoded game configuration');
+        
+    } catch (error) {
+        console.error('Error loading data:', error);
+        // Fallback to sample data
+        this.loadSampleData();
+        this.loadFacts();
+    }
+},
 
             updateFinalsStatus() {
                 const now = new Date();
