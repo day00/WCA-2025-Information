@@ -1102,6 +1102,9 @@
             competitors: {},
             facts: {},
             gameConfig: {},
+             currentScreen: 'home',
+    previousScreen: null,
+    navigationHistory: [],
             userProgress: {
     predictions: {},
     results: {},
@@ -1557,18 +1560,30 @@ if (!this.gameConfig.finalsStatus) {
                 }
             },
 
-    navigate(screen) {
+   navigate(screen) {
     // Clear countdown when leaving home
     if (this.countdownInterval && screen !== 'home') {
         clearInterval(this.countdownInterval);
         this.countdownInterval = null;
     }
     
+    // Track navigation history
+    if (this.currentScreen && this.currentScreen !== screen) {
+        this.navigationHistory.push(this.currentScreen);
+        // Keep only last 10 screens to prevent memory issues
+        if (this.navigationHistory.length > 10) {
+            this.navigationHistory.shift();
+        }
+    }
+    this.currentScreen = screen;
+    
     // Hide all screens
     document.querySelectorAll('.screen').forEach(s => {
         s.classList.remove('active');
-        s.style.display = 'none';  // Add this line
+        s.style.display = 'none';
     });
+    
+    // ... rest of your navigate function
     
     // Show selected screen
     const screenElement = document.getElementById(screen + 'Screen');
@@ -2551,40 +2566,48 @@ if (!this.gameConfig.finalsStatus) {
                 },
 
                 showCompetitorDetail(competitorId) {
-                    WCAGuideApp.navigate('competitorDetail');
-                    const comp = WCAGuideApp.competitors[competitorId];
-                    
-                    const detail = document.getElementById('competitorDetail');
-                    detail.innerHTML = `
-                        <div style="text-align: center;">
-                            <img src="${comp.photoUrl}" style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px;"
-                                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'"
-                            <h1 style="font-size: 28px; color: #2d3748; margin-bottom: 10px;">${comp.name}</h1>
-                            <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull}</div>
-                            
-                            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
-                                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 Competition Stats</h3>
-                                <div style="font-size: 16px; line-height: 1.8;">
-                                    • Competitions: ${comp.competitions}<br>
-                                    • Total Medals: ${comp.medals.total}<br>
-                                    • Gold: ${comp.medals.gold}<br>
-                                    • Silver: ${comp.medals.silver}<br>
-                                    • Bronze: ${comp.medals.bronze}
-                                </div>
-                            </div>
-                            
-                            ${this.renderFinalistInfo(comp, competitorId)}
-                            
-                            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
-                                <h3 style="color: #4a5568; margin-bottom: 15px;">🏆 Best Events</h3>
-                                ${this.renderBestEvents(comp)}
-                            </div>
-                            
-                            <a href="https://www.worldcubeassociation.org/persons/${competitorId}" 
-                               target="_blank" class="action-btn">View WCA Profile</a>
-                        </div>
-                    `;
-                },
+    console.log('Showing details for:', competitorId);
+    const comp = WCAGuideApp.competitors[competitorId];
+    console.log('Competitor data:', comp);
+    
+    WCAGuideApp.navigate('competitorDetail');
+    const detail = document.getElementById('competitorDetail');
+    
+    if (!comp) {
+        detail.innerHTML = '<div style="padding: 50px; text-align: center;">Competitor not found</div>';
+        return;
+    }
+    
+    detail.innerHTML = `
+        <div style="text-align: center;">
+            <img src="${comp.photoUrl}" style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px;"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+            <h1 style="font-size: 28px; color: #2d3748; margin-bottom: 10px;">${comp.name}</h1>
+            <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull}</div>
+            
+            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 Competition Stats</h3>
+                <div style="font-size: 16px; line-height: 1.8;">
+                    • Competitions: ${comp.competitions}<br>
+                    • Total Medals: ${comp.medals.total}<br>
+                    • Gold: ${comp.medals.gold}<br>
+                    • Silver: ${comp.medals.silver}<br>
+                    • Bronze: ${comp.medals.bronze}
+                </div>
+            </div>
+            
+            ${this.renderFinalistInfo(comp, competitorId)}
+            
+            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">🏆 Best Events</h3>
+                ${this.renderBestEvents(comp)}
+            </div>
+            
+            <a href="https://www.worldcubeassociation.org/persons/${competitorId}" 
+               target="_blank" class="action-btn">View WCA Profile</a>
+        </div>
+    `;
+},
 
                 renderFinalistInfo(comp, competitorId) {
                     const finalistEvents = [];
