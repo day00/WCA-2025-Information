@@ -2617,13 +2617,20 @@ updateFinalsStatus() {
 },
 
                 renderFinalistInfo(comp, competitorId) {
-                    const finalistEvents = [];
-                    const eventPerformance = [];
-                    
-                    if (comp.isFinalist) {
-                        Object.entries(comp.isFinalist).forEach(([eventId, isFinalist]) => {
-                            if (isFinalist) {
-                                const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
+    console.log('renderFinalistInfo called');
+    console.log('gameConfig.events exists?', !!WCAGuideApp.gameConfig.events);
+    console.log('WCAGuideApp exists?', !!WCAGuideApp);
+    
+    const finalistEvents = [];
+    const eventPerformance = [];
+    
+    if (comp.isFinalist) {
+        Object.entries(comp.isFinalist).forEach(([eventId, isFinalist]) => {
+            if (isFinalist) {
+                console.log('Checking event:', eventId);
+                console.log('gameConfig.events at this point:', WCAGuideApp.gameConfig.events);
+                const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
+                // ... rest
                                 finalistEvents.push(eventName);
                                 
                                 // Check for qualifying results
