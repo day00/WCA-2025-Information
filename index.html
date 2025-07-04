@@ -1565,7 +1565,7 @@ updateFinalsStatus() {
                 }
             },
 
-   navigate(screen) {
+  navigate(screen) {
     // Clear countdown when leaving home
     if (this.countdownInterval && screen !== 'home') {
         clearInterval(this.countdownInterval);
@@ -1588,19 +1588,18 @@ updateFinalsStatus() {
         s.style.display = 'none';
     });
     
-    // ... rest of your navigate function
-    
     // Show selected screen
     const screenElement = document.getElementById(screen + 'Screen');
     if (screenElement) {
         screenElement.classList.add('active');
-        screenElement.style.display = 'block';  // Add this line
+        screenElement.style.display = 'block';
+        
         // Special handling for certain screens
-    if (screen === 'scores') {
-        // Reload progress from localStorage before showing scores
-        this.loadProgress();
-        this.scores.renderScores();
-    }
+        if (screen === 'scores') {
+            // Reload progress from localStorage before showing scores
+            this.loadProgress();
+            this.scores.renderScores();
+        }
     }
 
     // Update nav bar
@@ -1609,6 +1608,11 @@ updateFinalsStatus() {
     
     if (screen === 'home') {
         navBar.style.display = 'none';
+        
+        // CLEAR NAVIGATION STATE when going home
+        this.browse.mode = null;
+        this.navigationHistory = [];
+        
         // Restart countdown when returning home
         if (!this.countdownInterval) {
             this.startCountdown();
