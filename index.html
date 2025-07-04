@@ -1110,6 +1110,7 @@
             },
             
         // Initialize app
+// Initialize app
 async init() {
     try {
         // Show loading state
@@ -1124,9 +1125,6 @@ async init() {
         // Update finals status based on current time
         this.updateFinalsStatus();
         
-        // Start countdown timer
-        this.startCountdown();
-        
         // Initialize screens AFTER all data is loaded
         this.browse.init();
         this.predictions.init();
@@ -1135,8 +1133,11 @@ async init() {
         this.scores.init();
         this.storage.init();
         
-        // Hide loading state
+        // Hide loading state (this restores the home screen HTML)
         this.hideLoadingState();
+        
+        // Start countdown timer AFTER hideLoadingState restores the DOM elements
+        this.startCountdown();
         
     } catch (error) {
         console.error('Error initializing app:', error);
