@@ -1557,39 +1557,41 @@ if (!this.gameConfig.finalsStatus) {
                 }
             },
 
-            // Navigation
             navigate(screen) {
-                // Clear countdown when leaving home
-                if (this.countdownInterval && screen !== 'home') {
-                    clearInterval(this.countdownInterval);
-                    this.countdownInterval = null;
-                }
-                
-                // Hide all screens
-                document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-                
-                // Show selected screen
-                const screenElement = document.getElementById(screen + 'Screen');
-                if (screenElement) {
-                    screenElement.classList.add('active');
-                }
+    // Clear countdown when leaving home
+    if (this.countdownInterval && screen !== 'home') {
+        clearInterval(this.countdownInterval);
+        this.countdownInterval = null;
+    }
+    
+    // Hide all screens
+    document.querySelectorAll('.screen').forEach(s => {
+        s.classList.remove('active');
+        s.style.display = 'none';  // Add this line
+    });
+    
+    // Show selected screen
+    const screenElement = document.getElementById(screen + 'Screen');
+    if (screenElement) {
+        screenElement.classList.add('active');
+        screenElement.style.display = 'block';  // Add this line
+    }
 
-                // Update nav bar
-                const navBar = document.getElementById('navBar');
-                const navTitle = document.getElementById('navTitle');
-                
-                if (screen === 'home') {
-                    navBar.style.display = 'none';
-                    // Restart countdown when returning home
-                    if (!this.countdownInterval) {
-                        this.startCountdown();
-                    }
-                } else {
-                    navBar.style.display = 'flex';
-                    navTitle.textContent = this.getScreenTitle(screen);
-                }
-            },
-
+    // Update nav bar
+    const navBar = document.getElementById('navBar');
+    const navTitle = document.getElementById('navTitle');
+    
+    if (screen === 'home') {
+        navBar.style.display = 'none';
+        // Restart countdown when returning home
+        if (!this.countdownInterval) {
+            this.startCountdown();
+        }
+    } else {
+        navBar.style.display = 'flex';
+        navTitle.textContent = this.getScreenTitle(screen);
+    }
+},
             getScreenTitle(screen) {
                 const titles = {
                     browse: 'Competitors & Rankings',
