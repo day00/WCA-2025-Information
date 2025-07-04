@@ -1102,7 +1102,12 @@
             competitors: {},
             facts: {},
             gameConfig: {},
-            userProgress: null,
+            userProgress: {
+    predictions: {},
+    results: {},
+    gameScores: {},
+    viewedCompetitors: []
+},
             
         // Initialize app
 // Initialize app
@@ -1615,7 +1620,7 @@ if (!this.gameConfig.finalsStatus) {
             },
 
             // Load/Save Progress
-            loadProgress() {
+         loadProgress() {
     const saved = localStorage.getItem('wca2025_liam');
     if (saved) {
         try {
@@ -1623,21 +1628,7 @@ if (!this.gameConfig.finalsStatus) {
             this.userProgress = data;
         } catch (e) {
             console.error('Error loading progress:', e);
-            this.userProgress = {
-                predictions: {},
-                results: {},
-                gameScores: {},
-                viewedCompetitors: []
-            };
         }
-    } else {
-        // No saved data, use defaults
-        this.userProgress = {
-            predictions: {},
-            results: {},
-            gameScores: {},
-            viewedCompetitors: []
-        };
     }
 },
 
