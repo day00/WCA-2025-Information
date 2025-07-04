@@ -1557,7 +1557,7 @@ if (!this.gameConfig.finalsStatus) {
                 }
             },
 
-            navigate(screen) {
+    navigate(screen) {
     // Clear countdown when leaving home
     if (this.countdownInterval && screen !== 'home') {
         clearInterval(this.countdownInterval);
