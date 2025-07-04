@@ -1227,7 +1227,30 @@
         
         // gameConfig is already hardcoded in the app
         console.log('Using hardcoded game configuration');
+// Add finals schedule
+this.gameConfig.finals = {
+    "555bf": { time: "2025-07-03T08:45:00", status: "complete" },
+    "555": { time: "2025-07-04T17:25:00", status: "ready" },
+    "clock": { time: "2025-07-04T17:50:00", status: "ready" },
+    "333oh": { time: "2025-07-04T18:40:00", status: "pending" },
+    "pyram": { time: "2025-07-04T18:15:00", status: "pending" },
+    "777": { time: "2025-07-05T18:40:00", status: "pending" },
+    "minx": { time: "2025-07-05T17:50:00", status: "pending" },
+    "444": { time: "2025-07-05T17:25:00", status: "pending" },
+    "222": { time: "2025-07-05T18:15:00", status: "pending" },
+    "skewb": { time: "2025-07-06T14:25:00", status: "pending" },
+    "444bf": { time: "2025-07-06T08:30:00", status: "pending" },
+    "666": { time: "2025-07-06T14:50:00", status: "pending" },
+    "333bf": { time: "2025-07-06T15:40:00", status: "pending" },
+    "sq1": { time: "2025-07-06T15:15:00", status: "pending" },
+    "333": { time: "2025-07-06T16:15:00", status: "pending" }
+};
 
+// Add event timings for countdown messages
+this.gameConfig.eventTimings = {
+    default: { snacks: 45, seats: 25 },
+    "333": { snacks: 45, seats: 120 }
+};
         if (!this.gameConfig.events) {
     this.gameConfig.events = {
         "222": { name: "2x2x2", icon: "🎲" },
