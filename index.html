@@ -926,8 +926,12 @@
             </div>
         </div>
 
-        <!-- Event Browser Screen (Phone) -->
-        <div class="screen" id="eventBrowserScreen">
+       <!-- Event Browser Screen (Phone) -->
+<div class="screen" id="eventBrowserScreen">
+    <h2 id="browseModeName" style="text-align: center; margin-bottom: 20px;"></h2>
+    <div class="event-browser-header">
+             <h2 id="browseModeName" style="text-align: center; margin-bottom: 20px;">World's Top 10 by Event!</h2>
+            <h2 id="browseModeName" style="text-align: center; margin-bottom: 20px;">The Top 20 Finalist by Event!</h2>
             <div class="event-browser-header">
                 <button class="arrow-btn" onclick="WCAGuideApp.browse.prevEvent()">←</button>
                 <div class="current-event">
@@ -2344,7 +2348,18 @@ updateFinalsStatus() {
 
                 selectMode(mode) {
                     this.mode = mode;
-                    
+                    selectMode(mode) {
+    this.mode = mode;
+    
+    // Update the mode heading
+    const modeTitle = mode === 'world' ? 'World Top 10' : 'The Top 20 Finalist by Event!';
+    const modeName = document.getElementById('browseModeName');
+    if (modeName) {
+        modeName.textContent = modeTitle;
+    }
+    
+    // ... rest of the function
+                        
                     // Find first available event for finalists mode
                     if (mode === 'finalists') {
                         // Start with first event that has finalists
