@@ -1227,6 +1227,35 @@
         
         // gameConfig is already hardcoded in the app
         console.log('Using hardcoded game configuration');
+
+        if (!this.gameConfig.events) {
+    this.gameConfig.events = {
+        "222": { name: "2x2x2", icon: "🎲" },
+        "333": { name: "3x3x3", icon: "📦" },
+        "444": { name: "4x4x4", icon: "🎯" },
+        "555": { name: "5x5x5", icon: "⭐" },
+        "666": { name: "6x6x6", icon: "🌟" },
+        "777": { name: "7x7x7", icon: "💫" },
+        "333bf": { name: "3x3x3 Blindfolded", icon: "🙈" },
+        "333fm": { name: "3x3x3 Fewest Moves", icon: "🎯" },
+        "333oh": { name: "3x3x3 One-Handed", icon: "✋" },
+        "333mbf": { name: "3x3x3 Multi-Blind", icon: "🙈" },
+        "444bf": { name: "4x4x4 Blindfolded", icon: "🙈" },
+        "555bf": { name: "5x5x5 Blindfolded", icon: "🙈" },
+        "clock": { name: "Clock", icon: "🕐" },
+        "minx": { name: "Megaminx", icon: "🔷" },
+        "pyram": { name: "Pyraminx", icon: "🔺" },
+        "skewb": { name: "Skewb", icon: "💠" },
+        "sq1": { name: "Square-1", icon: "⬜" }
+    };
+}
+if (!this.gameConfig.finalsStatus) {
+    this.gameConfig.finalsStatus = {
+        "555bf": "complete",
+        "555": "ready",
+        "clock": "ready"
+    };
+}
         
     } catch (error) {
         console.error('Error loading data:', error);
