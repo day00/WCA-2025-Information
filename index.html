@@ -2616,9 +2616,10 @@ updateFinalsStatus() {
                         while (nextIndex < this.eventOrder.length) {
                             const eventId = this.eventOrder[nextIndex];
                             const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
-                            if (status === 'ready' || status === 'complete' || nextIndex - this.currentEventIndex > 3) {
-                                this.currentEventIndex = nextIndex;
-                                break;
+                            if (status === 'ready' || status === 'complete') {
+    this.currentEventIndex = nextIndex;
+    break;
+}
                             }
                             nextIndex++;
                         }
