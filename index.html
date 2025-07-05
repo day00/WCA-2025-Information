@@ -2963,42 +2963,40 @@ const results = WCAGuideApp.eventResults[eventId];
                     });
                 },
 
-          confirmSelection(competitorId) {
+         confirmSelection(competitorId) {
     // Check if already selected in a different slot
     const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
         .find(([slot, id]) => id === competitorId);
-
+    
     if (existingSlot && existingSlot[0] !== this.currentSlot) {
-        alert(You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!);
+        alert(`You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!`);
         return;
     }
-
+    
     if (!this.selections[this.currentEvent]) {
         this.selections[this.currentEvent] = {};
     }
-
+    
     this.selections[this.currentEvent][this.currentSlot] = competitorId;
-
+    
     // Go back to predictions screen WITHOUT adding to history
     WCAGuideApp.goBack();
     this.renderPredictionSlots();
 },
-                clearSlot(slot) {
-                    delete this.selections[this.currentEvent][slot];
-                    this.renderPredictionSlots();
-                },
-                clearAll() {
-                    this.selections[this.currentEvent] = {};
-                    this.renderPredictionSlots();
-                },
-                savePredictions() {
-                    WCAGuideApp.userProgress.predictions[this.currentEvent] = this.selections[this.currentEvent];
-                    WCAGuideApp.saveProgress();
-
-                    alert('Predictions saved! Good luck! 🍀');
-                    WCAGuideApp.navigate('predictions');
-                }
-            },
+clearSlot(slot) {
+    delete this.selections[this.currentEvent][slot];
+    this.renderPredictionSlots();
+},
+clearAll() {
+    this.selections[this.currentEvent] = {};
+    this.renderPredictionSlots();
+},
+savePredictions() {
+    WCAGuideApp.userProgress.predictions[this.currentEvent] = this.selections[this.currentEvent];
+    WCAGuideApp.saveProgress();
+    alert('Predictions saved! Good luck! 🍀');
+    WCAGuideApp.navigate('predictions');
+}
             // Results module
             results: {
                 currentEvent: null,
