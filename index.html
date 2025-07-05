@@ -2862,7 +2862,153 @@ const results = WCAGuideApp.eventResults[eventId];
                         </div>
                     `;
                 },
+// Add these functions inside the browse object, after the createCompetitorCard function:
 
+showCompetitorDetail(competitorId) {
+    const comp = WCAGuideApp.competitors[competitorId];
+    if (!comp) return;
+    
+    WCAGuideApp.navigate('competitorDetail');
+    
+    const detailDiv = document.getElementById('competitorDetail');
+    
+    // Build the detail view HTML
+    let detailHTML = `
+        <div style="text-align: center;">
+            <img src="${comp.photoUrl}" 
+                 style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px; border: 5px solid #e2e8f0;"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+            
+            <h2 style="font-size: 32px; margin-bottom: 10px;">${comp.name}</h2>
+            <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull || comp.country}</div>
+            
+            <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 30px;">
+                <div style="text-align: center;">
+                    <div style="font-size: 36px;">🥇</div>
+                    <div style="font-size: 24px; font-weight: bold;">${comp.medals.gold}</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 36px;">🥈</div>
+                    <div style="font-size: 24px; font-weight: bold;">${comp.medals.silver}</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 36px;">🥉</div>
+                    <div style="font-size: 24px; font-weight: bold;">${comp.medals.bronze}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">📊 Competition Stats</h3>
+            <div style="font-size: 16px; line-height: 1.8;">
+                • Competitions: ${comp.competitions}<br>
+                • Total Medals: ${comp.medals.total}<br>
+                • WCA ID: ${competitorId}
+            </div>
+        </div>
+        
+        <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin-bottom: 20px;">
+            <h3 style="margin-bottom: 15px;">🏆 Best Events</h3>
+            <div style="font-size: 16px; line-height: 1.8;">
+                ${this.renderBestEvents(comp)}
+            </div>
+        </div>
+    `;
+    
+    // Add finalist info if applicable
+    const finalistInfo = this.renderFinalistInfo(comp, competitorId);
+    if (finalistInfo) {
+        detailHTML += finalistInfo;
+    }
+    
+    // Add fun facts
+    detailHTML += `
+        <div style="background: #fef5e7; border-radius: 15px; padding: 20px; margin-top: 20px;">
+            <h3 style="color: #f39c12; margin-bottom: 15px;">🌟 Fun Facts</h3>
+            <div style="font-size: 16px; line-height: 1.8;">
+                ${this.generateFunFacts(comp)}
+            </div>
+        </div>
+    `;
+    
+    detailDiv.innerHTML = detailHTML;
+    
+    // Track viewed competitor
+    if (!WCAGuideApp.userProgress.viewedCompetitors.includes(competitorId)) {
+        WCAGuideApp.userProgress.viewedCompetitors.push(competitorId);
+        WCAGuideApp.saveProgress();
+    }
+},
+
+generateFunFacts(comp) {
+    const facts = [];
+    
+    // Medal-based facts
+    if (comp.medals.gold > 100) {
+        facts.push(`🥇 Over ${Math.floor(comp.medals.gold / 100) * 100} gold medals!`);
+    }
+    if (comp.medals.total > 500) {
+        facts.push(`🏅 ${comp.medals.total} total medals - that's a lot!`);
+    }
+    
+    // Competition facts
+    if (comp.competitions > 100) {
+        facts.push(`🌍 Competed in ${comp.competitions} competitions!`);
+    }
+    
+    // Ranking facts
+    const topRankings = Object.entries(comp.worldRankings || {})
+        .filter(([event, ranking]) => ranking.single <= 10)
+        .length;
+    if (topRankings > 0) {
+        facts.push(`🌟 Top 10 in the world in ${topRankings} event${topRankings > 1 ? 's' : ''}!`);
+    }
+    
+    // If no facts generated, add a default
+    if (facts.length === 0) {
+        facts.push(`🎯 An awesome cuber from ${comp.country}!`);
+    }
+    
+    return facts.join('<br>');
+},
+
+prevEvent() {
+    if (this.mode === 'world') {
+        this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
+    } else {
+        // For finalists, find previous event with finalists
+        let attempts = 0;
+        do {
+            this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
+            const eventId = this.eventOrder[this.currentEventIndex];
+            const hasFinalists = Object.values(WCAGuideApp.competitors)
+                .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+            if (hasFinalists) break;
+            attempts++;
+        } while (attempts < this.eventOrder.length);
+    }
+    
+    this.showCurrentEvent();
+},
+
+nextEvent() {
+    if (this.mode === 'world') {
+        this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
+    } else {
+        // For finalists, find next event with finalists
+        let attempts = 0;
+        do {
+            this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
+            const eventId = this.eventOrder[this.currentEventIndex];
+            const hasFinalists = Object.values(WCAGuideApp.competitors)
+                .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+            if (hasFinalists) break;
+            attempts++;
+        } while (attempts < this.eventOrder.length);
+    }
+    
+    this.showCurrentEvent();
+},
                 renderBestEvents(comp) {
                     const topEvents = Object.entries(comp.worldRankings)
                         .sort((a, b) => a[1].single - b[1].single)
