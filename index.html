@@ -2617,130 +2617,85 @@ updateFinalsStatus() {
                     return days[eventDate.getDay()] || 'TBD';
                 },
 
-                showCompetitors(eventId) {
-                    const list = document.getElementById('eventCompetitorList');
-                    list.innerHTML = '';
+               showCompetitors(eventId) {
+    const list = document.getElementById('eventCompetitorList');
+    list.innerHTML = '';
 
-                    if (this.mode === 'world') {
-                        // Show world top 10
-                        const competitors = Object.entries(WCAGuideApp.competitors)
-                            .filter(([id, comp]) => comp.worldRankings[eventId])
-                            .sort((a, b) => a[1].worldRankings[eventId].single - b[1].worldRankings[eventId].single)
-                            .slice(0, 10);
+    if (this.mode === 'world') {
+        // Show world top 10
+        const competitors = Object.entries(WCAGuideApp.competitors)
+            .filter(([id, comp]) => comp.worldRankings[eventId])
+            .sort((a, b) => a[1].worldRankings[eventId].single - b[1].worldRankings[eventId].single)
+            .slice(0, 10);
 
-                        if (competitors.length === 0) {
-                            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">No world ranking data available for this event.</div>';
-                            return;
-                        }
+        if (competitors.length === 0) {
+            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">No world ranking data available for this event.</div>';
+            return;
+        }
 
-                        competitors.forEach(([id, comp], index) => {
-                            const card = this.createCompetitorCard(comp, id, eventId, index + 1);
-                            list.appendChild(card);
-                        });
-                    } else {
-                        // Show 2025 finalists
-                        const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
-                        
+        competitors.forEach(([id, comp], index) => {
+            const card = this.createCompetitorCard(comp, id, eventId, index + 1);
+            list.appendChild(card);
+        });
+    } else {
+        // Show 2025 finalists sorted by seed
+        const finalists = Object.entries(WCAGuideApp.competitors)
+            .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[eventId])
+            .sort((a, b) => {
+                const seedA = a[1].wca2025Qualifying?.[eventId]?.seed || 999;
+                const seedB = b[1].wca2025Qualifying?.[eventId]?.seed || 999;
+                return seedA - seedB;
+            })
+            .slice(0, 20);
 
-                        // Get finalists
-                        const finalists = Object.entries(WCAGuideApp.competitors)
-                            .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[eventId])
-                            .slice(0, 20);
+        if (finalists.length === 0) {
+            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">This Data is Unavailable, Please Select a Different Competition</div>';
+            return;
+        }
 
-                        if (finalists.length === 0) {
-                            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">This Data is Unavailable, Please Select a Different Competition</div>';
-                            return;
-                        }
-
-                        finalists.forEach(([id, comp], index) => {
-                            const card = this.createCompetitorCard(comp, id, eventId, index + 1, true);
-                            list.appendChild(card);
-                        });
-                    }
-                },
-
-                createCompetitorCard(comp, competitorId, eventId, rank, isFinalist = false) {
-                    const card = document.createElement('div');
-                    card.className = 'competitor-card';
-                    
-                    const worldRank = comp.worldRankings[eventId]?.single || 'N/A';
-                    const displayRank = isFinalist ? `Seed #${rank}` : `#${worldRank} World`;
-                    
-                    card.innerHTML = `
-                        <img src="${comp.photoThumbUrl}" class="competitor-photo" 
-                             onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'"">
-                        <div class="competitor-info">
-                            <div class="competitor-name">${comp.name}</div>
-                            <div class="competitor-country">🌍 ${comp.country}</div>
-                            <div class="competitor-medals">
-                                <span class="medal">🥇 ${comp.medals.gold}</span>
-                                <span class="medal">🥈 ${comp.medals.silver}</span>
-                                <span class="medal">🥉 ${comp.medals.bronze}</span>
-                            </div>
-                            <div style="font-size: 14px; color: #718096; margin-top: 5px;">
-                                ${displayRank}
-                            </div>
-                        </div>
-                    `;
-                    
-                   card.onclick = () => this.showCompetitorDetail(competitorId);
-return card;
+        finalists.forEach(([id, comp]) => {
+            const card = this.createCompetitorCard(comp, id, eventId, null, true);
+            list.appendChild(card);
+        });
+    }
 },
-
-prevEvent() {
-    this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
-    this.showCurrentEvent();
-},  // ← Need this comma!
-
-nextEvent() {
-    this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
-    this.showCurrentEvent();
-},  // ← And this comma!
-
-showCompetitorDetail(competitorId) {
-    console.log('Showing details for:', competitorId);
-    const comp = WCAGuideApp.competitors[competitorId];
-    console.log('Competitor data:', comp);
+                createCompetitorCard(comp, competitorId, eventId, rank, isFinalist = false) {
+    const card = document.createElement('div');
+    card.className = 'competitor-card';
     
-    WCAGuideApp.navigate('competitorDetail');
-    const detail = document.getElementById('competitorDetail');
+    const worldRank = comp.worldRankings[eventId]?.single || 'N/A';
+    const competitionSeed = comp.wca2025Qualifying?.[eventId]?.seed;
     
-    if (!comp) {
-        detail.innerHTML = '<div style="padding: 50px; text-align: center;">Competitor not found</div>';
-        return;
+    let displayRank;
+    if (isFinalist && competitionSeed) {
+        displayRank = `
+            <div style="font-weight: bold; color: #e53e3e;">🏁 Seed #${competitionSeed}</div>
+            <div style="font-size: 12px; color: #4a5568;">🌍 World #${worldRank}</div>
+        `;
+    } else {
+        displayRank = `<div style="font-weight: bold; color: #4a5568;">🌍 World #${worldRank}</div>`;
     }
     
-    detail.innerHTML = `
-        <div style="text-align: center;">
-            <img src="${comp.photoUrl}" style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px;"
-                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-            <h1 style="font-size: 28px; color: #2d3748; margin-bottom: 10px;">${comp.name}</h1>
-            <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull}</div>
-            
-            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
-                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 Competition Stats</h3>
-                <div style="font-size: 16px; line-height: 1.8;">
-                    • Competitions: ${comp.competitions}<br>
-                    • Total Medals: ${comp.medals.total}<br>
-                    • Gold: ${comp.medals.gold}<br>
-                    • Silver: ${comp.medals.silver}<br>
-                    • Bronze: ${comp.medals.bronze}
-                </div>
+    card.innerHTML = `
+        <img src="${comp.photoThumbUrl}" class="competitor-photo" 
+             onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'"">
+        <div class="competitor-info">
+            <div class="competitor-name">${comp.name}</div>
+            <div class="competitor-country">🌍 ${comp.country}</div>
+            <div class="competitor-medals">
+                <span class="medal">🥇 ${comp.medals.gold}</span>
+                <span class="medal">🥈 ${comp.medals.silver}</span>
+                <span class="medal">🥉 ${comp.medals.bronze}</span>
             </div>
-            
-            ${this.renderFinalistInfo(comp, competitorId)}
-            
-            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
-                <h3 style="color: #4a5568; margin-bottom: 15px;">🏆 Best Events</h3>
-                ${this.renderBestEvents(comp)}
+            <div style="font-size: 14px; color: #718096; margin-top: 5px;">
+                ${displayRank}
             </div>
-            
-            <a href="https://www.worldcubeassociation.org/persons/${competitorId}" 
-               target="_blank" class="action-btn">View WCA Profile</a>
         </div>
     `;
+    
+    card.onclick = () => this.showCompetitorDetail(competitorId);
+    return card;
 },
-
                 renderFinalistInfo(comp, competitorId) {
     console.log('renderFinalistInfo called');
     console.log('gameConfig.events exists?', !!WCAGuideApp.gameConfig.events);
@@ -2968,7 +2923,7 @@ const results = WCAGuideApp.eventResults[eventId];
                     });
                 },
 
-                selectCompetitor(slot) {
+               selectCompetitor(slot) {
     this.currentSlot = slot;
     WCAGuideApp.navigate('competitorSelect');
     document.getElementById('competitorSelectTitle').textContent = `Pick your ${slot} place prediction`;
@@ -2976,9 +2931,14 @@ const results = WCAGuideApp.eventResults[eventId];
     const grid = document.getElementById('competitorSelectGrid');
     grid.innerHTML = '';
 
-    // Get ONLY finalists for this event
+    // Get ONLY finalists for this event, sorted by seed
     const finalists = Object.entries(WCAGuideApp.competitors)
         .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[this.currentEvent] === true)
+        .sort((a, b) => {
+            const seedA = a[1].wca2025Qualifying?.[this.currentEvent]?.seed || 999;
+            const seedB = b[1].wca2025Qualifying?.[this.currentEvent]?.seed || 999;
+            return seedA - seedB;
+        })
         .slice(0, 20);
 
     if (finalists.length === 0) {
@@ -3004,8 +2964,9 @@ const results = WCAGuideApp.eventResults[eventId];
             card.classList.add('selected');
         }
 
-        // Get world ranking for this event
+        // Get rankings
         const worldRank = comp.worldRankings[this.currentEvent]?.single || 'N/A';
+        const competitionSeed = comp.wca2025Qualifying?.[this.currentEvent]?.seed || 'N/A';
         const hasTime = comp.worldRankings[this.currentEvent]?.singleTime;
         const bestTime = hasTime ? WCAGuideApp.browse.formatTime(comp.worldRankings[this.currentEvent].singleTime) : 'N/A';
 
@@ -3018,15 +2979,21 @@ const results = WCAGuideApp.eventResults[eventId];
             cursor: ${alreadySelected ? 'default' : 'pointer'};
             transition: all 0.2s;
             opacity: ${alreadySelected ? '0.6' : '1'};
+            position: relative;
         `;
 
         card.innerHTML = `
+            <button style="position: absolute; top: 5px; right: 5px; background: #5a67d8; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 14px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;" 
+                    onclick="event.stopPropagation(); WCAGuideApp.browse.showCompetitorDetail('${id}')">
+                ℹ️
+            </button>
             <img src="${comp.photoThumbUrl}" 
                  style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 8px;"
                  onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
             <div class="name" style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">${comp.name}</div>
             <div style="font-size: 12px; color: #718096; margin-bottom: 3px;">🌍 ${comp.country}</div>
-            <div style="font-size: 12px; color: #4a5568; font-weight: bold;">WR #${worldRank}</div>
+            <div style="font-size: 12px; color: #e53e3e; font-weight: bold;">🏁 Seed #${competitionSeed}</div>
+            <div style="font-size: 11px; color: #4a5568;">🌍 World #${worldRank}</div>
             <div style="font-size: 11px; color: #718096;">${bestTime}</div>
             <div style="font-size: 11px; color: #718096; margin-top: 5px;">
                 🥇${comp.medals.gold} 🥈${comp.medals.silver} 🥉${comp.medals.bronze}
@@ -3051,8 +3018,6 @@ const results = WCAGuideApp.eventResults[eventId];
         grid.appendChild(card);
     });
 },
-
-
                 confirmSelection(competitorId) {
                     // Check if already selected in a different slot
                     const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
