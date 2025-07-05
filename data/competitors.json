@@ -18191,8 +18191,17 @@
       "pyram"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 10,
+        "average": 1.79,
+        "best": 1.19,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "One of the youngest top speedcubers in the world (born 2014)",
       "Has broken multiple youth world records",
@@ -19244,8 +19253,17 @@
       "333"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 2,
+        "average": 9.25,
+        "best": 8.79,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "One of the top female speedcubers globally",
       "Consistently makes finals at major competitions",
@@ -19317,8 +19335,17 @@
       "555"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 6,
+        "average": 9.83,
+        "best": 8.18,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "One of Philippines' top cubers",
       "Strong One-Handed solver",
@@ -19446,8 +19473,17 @@
       "444bf"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 7,
+        "average": 9.83,
+        "best": 8.79,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017GOLU01": {
@@ -19567,8 +19603,17 @@
       "333oh"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 9,
+        "average": 10.14,
+        "best": 8.56,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016HONG03": {
@@ -19674,8 +19719,17 @@
       "333"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 10,
+        "average": 10.2,
+        "best": 9.52,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2008SUNZ01": {
@@ -19755,8 +19809,17 @@
       "444"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 12,
+        "average": 10.27,
+        "best": 8.47,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016CORV01": {
@@ -19856,8 +19919,17 @@
       "444"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 14,
+        "average": 10.52,
+        "best": 9.21,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016PARK02": {
@@ -19959,8 +20031,17 @@
       "minx"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 15,
+        "average": 10.56,
+        "best": 8.45,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017LAMB06": {
@@ -20074,8 +20155,17 @@
       "333"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 16,
+        "average": 10.62,
+        "best": 9.96,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2012TYCK01": {
@@ -20181,8 +20271,17 @@
       "333"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 17,
+        "average": 10.64,
+        "best": 10.23,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "Young rising star in US cubing",
       "Multiple national age-group records"
@@ -20251,8 +20350,17 @@
       "minx"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 18,
+        "average": 10.75,
+        "best": 7.99,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "Set One-Handed PR at WCA 2025"
     ]
@@ -20362,8 +20470,17 @@
       "333bf"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 20,
+        "average": 10.89,
+        "best": 8.73,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016TRAG01": {
@@ -20479,8 +20596,17 @@
       "444"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 1,
+        "average": 1.52,
+        "best": 1.25,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "Pyraminx specialist",
       "Pyraminx finalist seed #1 at WCA 2025"
@@ -20583,8 +20709,17 @@
       "clock"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 4,
+        "average": 1.66,
+        "best": 1.16,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018CREE01": {
@@ -20706,8 +20841,17 @@
       "skewb"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 5,
+        "average": 1.72,
+        "best": 1.29,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018WILS10": {
@@ -20811,8 +20955,17 @@
       "skewb"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 8,
+        "average": 1.76,
+        "best": 1.08,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2019MEAD03": {
@@ -20920,8 +21073,17 @@
       "skewb"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 9,
+        "average": 1.77,
+        "best": 1.63,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022NAGA02": {
@@ -21027,8 +21189,17 @@
       "skewb"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 11,
+        "average": 1.79,
+        "best": 1.46,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017BENN03": {
@@ -21076,8 +21247,17 @@
       "222"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 12,
+        "average": 1.81,
+        "best": 1.55,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022HRDL01": {
@@ -21173,8 +21353,17 @@
       "222"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 13,
+        "average": 1.83,
+        "best": 1.63,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017PETE04": {
@@ -21296,8 +21485,17 @@
       "222"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 14,
+        "average": 1.83,
+        "best": 1.74,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018HIBS01": {
@@ -21383,8 +21581,17 @@
       "333"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 15,
+        "average": 1.86,
+        "best": 1.16,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "From Poland's strong cubing community",
       "Multi-event competitor"
@@ -21489,8 +21696,17 @@
       "444"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 19,
+        "average": 1.91,
+        "best": 1.65,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2015KAME02": {
@@ -21598,8 +21814,17 @@
       "222"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 20,
+        "average": 1.91,
+        "best": 1.8,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   }
 }
