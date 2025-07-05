@@ -2850,7 +2850,195 @@ const results = WCAGuideApp.eventResults[eventId];
                     return minutes > 0 ? `${minutes}:${seconds.padStart(5, '0')}` : `${seconds}s`;
                 }
             },
+},  // This closes the browse module
 
+            // Predictions module
+            predictions: {
+                currentEvent: null,
+                currentSlot: null,
+                selections: {},
+
+                init() {
+                    this.renderEventList();
+                },
+
+                renderEventList() {
+                    const list = document.getElementById('predictionEventList');
+                    list.innerHTML = '';
+
+                    Object.entries(WCAGuideApp.gameConfig.events).forEach(([eventId, event]) => {
+                        // Check if we have any finalists for this event
+                        const hasFinalists = Object.values(WCAGuideApp.competitors)
+                            .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+                        
+                        const card = document.createElement('div');
+                        card.style.cssText = `
+                            background: #f7fafc;
+                            border: 2px solid #e2e8f0;
+                            border-radius: 15px;
+                            padding: 20px;
+                            margin-bottom: 15px;
+                            cursor: ${hasFinalists ? 'pointer' : 'default'};
+                            opacity: ${hasFinalists ? '1' : '0.6'};
+                        `;
+
+                        let statusText = '';
+                        let statusColor = '#718096';
+
+                        if (hasFinalists) {
+                            statusText = 'Make Predictions →';
+                            statusColor = '#5a67d8';
+                            card.onclick = () => this.startPredictions(eventId);
+                        } else {
+                            statusText = 'No finalists yet';
+                            statusColor = '#718096';
+                        }
+
+                        card.innerHTML = `
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 24px; margin-right: 10px;">${event.icon}</span>
+                                    <span style="font-size: 18px; font-weight: bold;">${event.name}</span>
+                                </div>
+                                <div style="color: ${statusColor}; font-weight: bold;">${statusText}</div>
+                            </div>
+                        `;
+
+                        list.appendChild(card);
+                    });
+                },
+
+                startPredictions(eventId) {
+                    this.currentEvent = eventId;
+                    this.selections[eventId] = WCAGuideApp.userProgress.predictions[eventId] || {};
+                    
+                    WCAGuideApp.navigate('makePredictions');
+                    document.getElementById('makePredictionsTitle').textContent = 
+                        `My ${WCAGuideApp.gameConfig.events[eventId].name} Predictions`;
+                    
+                    this.renderPredictionSlots();
+                },
+
+                renderPredictionSlots() {
+                    const container = document.getElementById('predictionSlots');
+                    container.innerHTML = '';
+
+                    const ranks = ['1st', '2nd', '3rd', '4th', '5th'];
+                    const emojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+
+                    ranks.forEach((rank, index) => {
+                        const slot = document.createElement('div');
+                        slot.className = 'prediction-slot';
+                        
+                        const selection = this.selections[this.currentEvent]?.[rank];
+                        if (selection) {
+                            slot.classList.add('filled');
+                            const comp = WCAGuideApp.competitors[selection];
+                            slot.innerHTML = `
+                                <div class="rank">${emojis[index]}</div>
+                                <div class="selected-name">${comp?.name || 'Unknown'}</div>
+                                <button class="clear-btn" onclick="WCAGuideApp.predictions.clearSlot('${rank}')">×</button>
+                            `;
+                        } else {
+                            slot.innerHTML = `
+                                <div class="rank">${emojis[index]}</div>
+                                <div class="placeholder">${index < 3 ? 'Tap to pick' : '+ Add (optional)'}</div>
+                            `;
+                        }
+                        
+                        slot.onclick = (e) => {
+                            if (!e.target.classList.contains('clear-btn')) {
+                                this.selectCompetitor(rank);
+                            }
+                        };
+                        
+                        container.appendChild(slot);
+                    });
+                },
+
+                selectCompetitor(slot) {
+                    this.currentSlot = slot;
+                    WCAGuideApp.navigate('competitorSelect');
+                    document.getElementById('competitorSelectTitle').textContent = `Pick your ${slot} place prediction`;
+                    
+                    const grid = document.getElementById('competitorSelectGrid');
+                    grid.innerHTML = '';
+
+                    // Get ONLY finalists for this event
+                    const finalists = Object.entries(WCAGuideApp.competitors)
+                        .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[this.currentEvent] === true)
+                        .slice(0, 20);
+
+                    if (finalists.length === 0) {
+                        grid.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">Loading finalists...</div>';
+                        return;
+                    }
+
+                    finalists.forEach(([id, comp]) => {
+                        const card = document.createElement('div');
+                        card.className = 'competitor-select-card';
+                        
+                        // Check if already selected
+                        const alreadySelected = Object.values(this.selections[this.currentEvent] || {}).includes(id);
+                        if (alreadySelected) {
+                            card.classList.add('selected');
+                        }
+
+                        card.innerHTML = `
+                            <img src="${comp.photoThumbUrl}" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+                            <div class="name">${comp.name}</div>
+                        `;
+
+                        if (!alreadySelected) {
+                            card.onclick = () => this.confirmSelection(id);
+                        }
+
+                        grid.appendChild(card);
+                    });
+                },
+
+                confirmSelection(competitorId) {
+                    // Check if already selected in a different slot
+                    const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
+                        .find(([slot, id]) => id === competitorId);
+                    
+                    if (existingSlot && existingSlot[0] !== this.currentSlot) {
+                        alert(`You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!`);
+                        return;
+                    }
+                    
+                    if (!this.selections[this.currentEvent]) {
+                        this.selections[this.currentEvent] = {};
+                    }
+                    
+                    this.selections[this.currentEvent][this.currentSlot] = competitorId;
+                    
+                    // Go back to predictions screen WITHOUT adding to history
+                    WCAGuideApp.goBack();
+                    this.renderPredictionSlots();
+                },
+
+                clearSlot(slot) {
+                    delete this.selections[this.currentEvent][slot];
+                    this.renderPredictionSlots();
+                },
+
+                clearAll() {
+                    this.selections[this.currentEvent] = {};
+                    this.renderPredictionSlots();
+                },
+
+                savePredictions() {
+                    WCAGuideApp.userProgress.predictions[this.currentEvent] = this.selections[this.currentEvent];
+                    WCAGuideApp.saveProgress();
+                    
+                    alert('Predictions saved! Good luck! 🍀');
+                    WCAGuideApp.navigate('predictions');
+                }
+            },
+
+            // Results module
+            results: {
            // Results module
 results: {
     init() {
