@@ -1333,7 +1333,7 @@ updateFinalsStatus() {
         }
     });
 },
-            goBack() {
+           goBack() {
     if (this.navigationHistory.length > 0) {
         // Get the previous screen from history
         const previousScreen = this.navigationHistory.pop();
@@ -1360,6 +1360,18 @@ updateFinalsStatus() {
         // Special handling for certain screens
         if (previousScreen === 'eventBrowser' && window.innerWidth >= 768) {
             this.browse.renderEventTabs();
+        }
+        
+        // CLEAR BROWSE MODE IF GOING HOME
+        if (previousScreen === 'home') {
+            this.browse.mode = null;
+            this.navigationHistory = [];
+            document.getElementById('navBar').style.display = 'none';
+            
+            // Restart countdown when returning home
+            if (!this.countdownInterval) {
+                this.startCountdown();
+            }
         }
     } else {
         // If no history, go home
