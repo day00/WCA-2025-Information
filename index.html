@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2963,7 +2964,7 @@ const results = WCAGuideApp.eventResults[eventId];
                     });
                 },
 
-            confirmSelection(competitorId) {
+                confirmSelection(competitorId) {
     // Check if already selected in a different slot
     const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
         .find(([slot, id]) => id === competitorId);
@@ -2979,44 +2980,30 @@ const results = WCAGuideApp.eventResults[eventId];
     
     this.selections[this.currentEvent][this.currentSlot] = competitorId;
     
-    // AUTO-SAVE immediately
-    WCAGuideApp.userProgress.predictions[this.currentEvent] = {...this.selections[this.currentEvent]};
-    WCAGuideApp.saveProgress();
-    
     // Go back to predictions screen WITHOUT adding to history
     WCAGuideApp.goBack();
     this.renderPredictionSlots();
 },
 
-clearSlot(slot) {
-    delete this.selections[this.currentEvent][slot];
-    
-    // AUTO-SAVE the removal
-    WCAGuideApp.userProgress.predictions[this.currentEvent] = {...this.selections[this.currentEvent]};
-    WCAGuideApp.saveProgress();
-    
-    this.renderPredictionSlots();
-},
+                clearSlot(slot) {
+                    delete this.selections[this.currentEvent][slot];
+                    this.renderPredictionSlots();
+                },
 
-clearAll() {
-    if (confirm('Clear all predictions for this event?')) {
-        this.selections[this.currentEvent] = {};
-        
-        // Actually clear the saved predictions too
-        WCAGuideApp.userProgress.predictions[this.currentEvent] = {};
-        WCAGuideApp.saveProgress();
-        
-        this.renderPredictionSlots();
-    }
-},
+                clearAll() {
+                    this.selections[this.currentEvent] = {};
+                    this.renderPredictionSlots();
+                },
 
-savePredictions() {
-    // Everything is already auto-saved, but we can still show confirmation
-    alert('All your predictions are saved! Good luck! 🍀');
-    
-    // Use goBack to return to event list without adding to history
-    WCAGuideApp.goBack();
-}
+                savePredictions() {
+                    WCAGuideApp.userProgress.predictions[this.currentEvent] = this.selections[this.currentEvent];
+                    WCAGuideApp.saveProgress();
+                    
+                    alert('Predictions saved! Good luck! 🍀');
+                    WCAGuideApp.navigate('predictions');
+                }
+            },
+
             // Results module
             results: {
                 currentEvent: null,
