@@ -2613,19 +2613,18 @@ updateFinalsStatus() {
                     if (this.mode === 'finalists') {
                         // Find next event with finalists or upcoming
                         let nextIndex = this.currentEventIndex + 1;
-                        while (nextIndex < this.eventOrder.length) {
-                            const eventId = this.eventOrder[nextIndex];
-                            const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
-                            if (status === 'ready' || status === 'complete') {
-    this.currentEventIndex = nextIndex;
-    break;
+                       while (nextIndex < this.eventOrder.length) {
+    const eventId = this.eventOrder[nextIndex];
+    const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
+    if (status === 'ready' || status === 'complete') {
+        this.currentEventIndex = nextIndex;
+        break;
+    }
+    nextIndex++;  // This goes INSIDE the while loop
 }
-                            }
-                            nextIndex++;
-                        }
-                        if (nextIndex >= this.eventOrder.length) {
-                            this.currentEventIndex = 0;
-                        }
+if (nextIndex >= this.eventOrder.length) {
+    this.currentEventIndex = 0;
+}
                     } else {
                         this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
                     }
