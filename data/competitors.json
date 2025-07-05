@@ -1235,8 +1235,17 @@
       "222"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 11,
+        "average": 10.23,
+        "best": 8.12,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2014NORD02": {
@@ -3008,8 +3017,17 @@
       "333oh"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 13,
+        "average": 10.41,
+        "best": 9.45,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017KWAN05": {
@@ -3350,8 +3368,17 @@
       "333fm"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 19,
+        "average": 10.85,
+        "best": 9.74,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018THOM29": {
@@ -3931,13 +3958,20 @@
     ],
     "difficulty": "hard",
     "isFinalist": {
-      "clock": true
+      "clock": true,
+      "pyram": true
     },
     "wca2025Qualifying": {
       "clock": {
         "seed": 15,
         "average": 3.57,
         "best": 2.71,
+        "achievement": ""
+      },
+      "pyram": {
+        "seed": 7,
+        "average": 1.74,
+        "best": 1.17,
         "achievement": ""
       }
     },
@@ -4927,7 +4961,8 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "555": true
+      "555": true,
+      "333oh": true
     },
     "wca2025Qualifying": {
       "555": {
@@ -4935,6 +4970,12 @@
         "average": 45.61,
         "best": 44.39,
         "achievement": "PR"
+      },
+      "333oh": {
+        "seed": 4,
+        "average": 9.4,
+        "best": 8.17,
+        "achievement": ""
       }
     },
     "funFacts": [
@@ -6320,8 +6361,17 @@
       "333oh"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 17,
+        "average": 1.9,
+        "best": 1.44,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016RACH01": {
@@ -9056,8 +9106,17 @@
       "333oh"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 3,
+        "average": 9.4,
+        "best": 7.82,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022WOLF02": {
@@ -9449,8 +9508,17 @@
       "222"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 16,
+        "average": 1.88,
+        "best": 1.4,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022MEDE02": {
@@ -11742,8 +11810,24 @@
       "333"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true,
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 8,
+        "average": 10.07,
+        "best": 8.87,
+        "achievement": ""
+      },
+      "pyram": {
+        "seed": 6,
+        "average": 1.73,
+        "best": 1.36,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "Known for unique solving style and finger tricks",
       "US National Champion",
@@ -12390,13 +12474,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "555": true
+      "555": true,
+      "333oh": true
     },
     "wca2025Qualifying": {
       "555": {
         "seed": 2,
         "average": 36.48,
         "best": 33.05,
+        "achievement": ""
+      },
+      "333oh": {
+        "seed": 5,
+        "average": 9.47,
+        "best": 8.8,
         "achievement": ""
       }
     },
@@ -12630,8 +12721,17 @@
       "222"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 3,
+        "average": 1.6,
+        "best": 1.25,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2021TRIP01": {
@@ -13186,8 +13286,17 @@
       "333"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333oh": true
+    },
+    "wca2025Qualifying": {
+      "333oh": {
+        "seed": 1,
+        "average": 8.14,
+        "best": 6.96,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022CAMP02": {
@@ -14706,7 +14815,7 @@
       },
       "333mbf": {
         "single": 11,
-        "singleTime": null
+        "singleTime": 0
       },
       "444bf": {
         "single": 43,
@@ -15384,8 +15493,17 @@
       "222"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 2,
+        "average": 1.52,
+        "best": 1.32,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2010WEYE02": {
@@ -15985,8 +16103,17 @@
       "skewb"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "pyram": true
+    },
+    "wca2025Qualifying": {
+      "pyram": {
+        "seed": 18,
+        "average": 1.9,
+        "best": 1.65,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2021PRAS02": {
@@ -17120,7 +17247,7 @@
       },
       "333mbf": {
         "single": 3339,
-        "singleTime": null
+        "singleTime": 0
       },
       "clock": {
         "single": 3833,
@@ -18002,7 +18129,7 @@
     "funFacts": []
   },
   "2019WANY36": {
-    "name": "Yiheng Wang",
+    "name": "Yiheng Wang (王艺衡)",
     "country": "China",
     "photoUrl": "https://avatars.worldcubeassociation.org/4ctp88lrlknoxr00lju7971knejc",
     "photoThumbUrl": "https://avatars.worldcubeassociation.org/88no0yj0h5iia1zopdfst4iblypc",
@@ -18059,16 +18186,17 @@
       }
     },
     "topEvents": [
+      "333",
       "222",
-      "333"
+      "pyram"
     ],
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
     "funFacts": [
-      "One of the youngest to break multiple world records",
-      "Chinese speedcubing prodigy",
-      "Rising star in the cubing community"
+      "One of the youngest top speedcubers in the world (born 2014)",
+      "Has broken multiple youth world records",
+      "Known for incredibly fast improvement curve"
     ]
   },
   "2012LIUY03": {
@@ -19003,6 +19131,2473 @@
       "333"
     ],
     "difficulty": "easy",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2014SEBA01": {
+    "name": "Juliette Sébastien",
+    "country": "France",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2014SEBA01/1724084588.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2014SEBA01/1724084588_thumb.jpg",
+    "gender": "f",
+    "competitions": 182,
+    "medals": {
+      "gold": 658,
+      "silver": 407,
+      "bronze": 271,
+      "total": 1336
+    },
+    "worldRankings": {
+      "222": {
+        "single": 286,
+        "singleTime": 78,
+        "average": 164,
+        "averageTime": 149
+      },
+      "333": {
+        "single": 79,
+        "singleTime": 444,
+        "average": 61,
+        "averageTime": 581
+      },
+      "444": {
+        "single": 137,
+        "singleTime": 2271,
+        "average": 292,
+        "averageTime": 2828
+      },
+      "555": {
+        "single": 600,
+        "singleTime": 5126,
+        "average": 490,
+        "averageTime": 5604
+      },
+      "666": {
+        "single": 1033,
+        "singleTime": 11289,
+        "average": 1274,
+        "averageTime": 12660
+      },
+      "777": {
+        "single": 3339,
+        "singleTime": 23704,
+        "average": 3222,
+        "averageTime": 24905
+      },
+      "333bf": {
+        "single": 1652,
+        "singleTime": 7127,
+        "average": 1053,
+        "averageTime": 8600
+      },
+      "333fm": {
+        "single": 388,
+        "singleTime": 24,
+        "average": 248,
+        "averageTime": 2700
+      },
+      "333oh": {
+        "single": 28,
+        "singleTime": 692,
+        "average": 19,
+        "averageTime": 907
+      },
+      "333mbf": {
+        "single": 2824,
+        "singleTime": 970137901
+      },
+      "clock": {
+        "single": 11749,
+        "singleTime": 1450,
+        "average": 10663,
+        "averageTime": 1663
+      },
+      "minx": {
+        "single": 53,
+        "singleTime": 3035,
+        "average": 61,
+        "averageTime": 3511
+      },
+      "pyram": {
+        "single": 3596,
+        "singleTime": 291,
+        "average": 6482,
+        "averageTime": 591
+      },
+      "skewb": {
+        "single": 839,
+        "singleTime": 206,
+        "average": 1298,
+        "averageTime": 421
+      },
+      "sq1": {
+        "single": 2627,
+        "singleTime": 1315,
+        "average": 3781,
+        "averageTime": 2126
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "minx",
+      "333"
+    ],
+    "difficulty": "easy",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "One of the top female speedcubers globally",
+      "Consistently makes finals at major competitions",
+      "Strong at One-Handed solving"
+    ]
+  },
+  "2023CUAR03": {
+    "name": "Neo Cuares",
+    "country": "Philippines",
+    "photoUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "photoThumbUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "gender": "m",
+    "competitions": 7,
+    "medals": {
+      "gold": 20,
+      "silver": 18,
+      "bronze": 8,
+      "total": 46
+    },
+    "worldRankings": {
+      "333": {
+        "single": 122,
+        "singleTime": 465,
+        "average": 47,
+        "averageTime": 570
+      },
+      "444": {
+        "single": 296,
+        "singleTime": 2406,
+        "average": 168,
+        "averageTime": 2703
+      },
+      "555": {
+        "single": 194,
+        "singleTime": 4571,
+        "average": 120,
+        "averageTime": 4907
+      },
+      "666": {
+        "single": 415,
+        "singleTime": 9801,
+        "average": 356,
+        "averageTime": 10374
+      },
+      "777": {
+        "single": 246,
+        "singleTime": 14314,
+        "average": 165,
+        "averageTime": 14560
+      },
+      "333bf": {
+        "single": 2538,
+        "singleTime": 9479
+      },
+      "333fm": {
+        "single": 1002,
+        "singleTime": 28
+      },
+      "333oh": {
+        "single": 126,
+        "singleTime": 819,
+        "average": 17,
+        "averageTime": 893
+      }
+    },
+    "topEvents": [
+      "333",
+      "333oh",
+      "555"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "One of Philippines' top cubers",
+      "Strong One-Handed solver",
+      "3x3 OH finalist seed #6 at WCA 2025"
+    ]
+  },
+  "2017TUNG13": {
+    "name": "Anto Kam (甘浩東)",
+    "country": "Hong Kong",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017TUNG13/1640815193.JPG",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017TUNG13/1640815193_thumb.JPG",
+    "gender": "m",
+    "competitions": 111,
+    "medals": {
+      "gold": 144,
+      "silver": 86,
+      "bronze": 32,
+      "total": 262
+    },
+    "worldRankings": {
+      "222": {
+        "single": 1866,
+        "singleTime": 127,
+        "average": 2513,
+        "averageTime": 272
+      },
+      "333": {
+        "single": 2251,
+        "singleTime": 669,
+        "average": 582,
+        "averageTime": 725
+      },
+      "444": {
+        "single": 2105,
+        "singleTime": 3077,
+        "average": 2891,
+        "averageTime": 3763
+      },
+      "555": {
+        "single": 2692,
+        "singleTime": 6535,
+        "average": 2422,
+        "averageTime": 7155
+      },
+      "666": {
+        "single": 2930,
+        "singleTime": 14170,
+        "average": 2795,
+        "averageTime": 15037
+      },
+      "777": {
+        "single": 4327,
+        "singleTime": 25966,
+        "average": 4352,
+        "averageTime": 27793
+      },
+      "333bf": {
+        "single": 23,
+        "singleTime": 1552,
+        "average": 40,
+        "averageTime": 1949
+      },
+      "333fm": {
+        "single": 1241,
+        "singleTime": 29,
+        "average": 1651,
+        "averageTime": 3667
+      },
+      "333oh": {
+        "single": 11,
+        "singleTime": 645,
+        "average": 28,
+        "averageTime": 928
+      },
+      "333mbf": {
+        "single": 464,
+        "singleTime": 870333102
+      },
+      "444bf": {
+        "single": 150,
+        "singleTime": 18444,
+        "average": 132,
+        "averageTime": 32106
+      },
+      "555bf": {
+        "single": 365,
+        "singleTime": 86400,
+        "average": 145,
+        "averageTime": 118600
+      },
+      "clock": {
+        "single": 10140,
+        "singleTime": 1299,
+        "average": 11089,
+        "averageTime": 1718
+      },
+      "minx": {
+        "single": 587,
+        "singleTime": 4234,
+        "average": 631,
+        "averageTime": 4881
+      },
+      "pyram": {
+        "single": 21260,
+        "singleTime": 585,
+        "average": 14190,
+        "averageTime": 779
+      },
+      "skewb": {
+        "single": 3519,
+        "singleTime": 317,
+        "average": 4149,
+        "averageTime": 564
+      },
+      "sq1": {
+        "single": 8299,
+        "singleTime": 2447,
+        "average": 7768,
+        "averageTime": 3177
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "333bf",
+      "444bf"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2017GOLU01": {
+    "name": "Theo Goluboff",
+    "country": "Argentina",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017GOLU01/1723681534.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017GOLU01/1723681534_thumb.jpg",
+    "gender": "m",
+    "competitions": 69,
+    "medals": {
+      "gold": 384,
+      "silver": 306,
+      "bronze": 207,
+      "total": 897
+    },
+    "worldRankings": {
+      "222": {
+        "single": 122,
+        "singleTime": 67,
+        "average": 154,
+        "averageTime": 148
+      },
+      "333": {
+        "single": 85,
+        "singleTime": 449,
+        "average": 72,
+        "averageTime": 595
+      },
+      "444": {
+        "single": 13,
+        "singleTime": 1884,
+        "average": 52,
+        "averageTime": 2482
+      },
+      "555": {
+        "single": 112,
+        "singleTime": 4332,
+        "average": 53,
+        "averageTime": 4612
+      },
+      "666": {
+        "single": 45,
+        "singleTime": 7837,
+        "average": 48,
+        "averageTime": 8587
+      },
+      "777": {
+        "single": 74,
+        "singleTime": 12577,
+        "average": 62,
+        "averageTime": 13152
+      },
+      "333bf": {
+        "single": 77,
+        "singleTime": 1840,
+        "average": 112,
+        "averageTime": 2464
+      },
+      "333fm": {
+        "single": 492,
+        "singleTime": 25,
+        "average": 674,
+        "averageTime": 3133
+      },
+      "333oh": {
+        "single": 21,
+        "singleTime": 680,
+        "average": 52,
+        "averageTime": 984
+      },
+      "333mbf": {
+        "single": 389,
+        "singleTime": 860319403
+      },
+      "444bf": {
+        "single": 135,
+        "singleTime": 17558
+      },
+      "555bf": {
+        "single": 171,
+        "singleTime": 54565
+      },
+      "clock": {
+        "single": 268,
+        "singleTime": 340,
+        "average": 284,
+        "averageTime": 446
+      },
+      "minx": {
+        "single": 83,
+        "singleTime": 3159,
+        "average": 64,
+        "averageTime": 3517
+      },
+      "pyram": {
+        "single": 19,
+        "singleTime": 97,
+        "average": 272,
+        "averageTime": 240
+      },
+      "skewb": {
+        "single": 164,
+        "singleTime": 141,
+        "average": 417,
+        "averageTime": 330
+      },
+      "sq1": {
+        "single": 243,
+        "singleTime": 660,
+        "average": 361,
+        "averageTime": 979
+      }
+    },
+    "topEvents": [
+      "444",
+      "pyram",
+      "333oh"
+    ],
+    "difficulty": "easy",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2016HONG03": {
+    "name": "Yoochan Hong (홍유찬)",
+    "country": "Korea",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2016HONG03/1692719518.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2016HONG03/1692719518_thumb.jpg",
+    "gender": "m",
+    "competitions": 39,
+    "medals": {
+      "gold": 23,
+      "silver": 25,
+      "bronze": 33,
+      "total": 81
+    },
+    "worldRankings": {
+      "222": {
+        "single": 507,
+        "singleTime": 89,
+        "average": 1952,
+        "averageTime": 256
+      },
+      "333": {
+        "single": 85,
+        "singleTime": 449,
+        "average": 288,
+        "averageTime": 677
+      },
+      "444": {
+        "single": 68,
+        "singleTime": 2158,
+        "average": 142,
+        "averageTime": 2659
+      },
+      "555": {
+        "single": 905,
+        "singleTime": 5424,
+        "average": 921,
+        "averageTime": 6085
+      },
+      "666": {
+        "single": 1897,
+        "singleTime": 12738,
+        "average": 1927,
+        "averageTime": 13732
+      },
+      "777": {
+        "single": 3208,
+        "singleTime": 23362,
+        "average": 3843,
+        "averageTime": 26492
+      },
+      "333bf": {
+        "single": 8775,
+        "singleTime": 31330
+      },
+      "333fm": {
+        "single": 3948,
+        "singleTime": 37,
+        "average": 2376,
+        "averageTime": 3967
+      },
+      "333oh": {
+        "single": 60,
+        "singleTime": 752,
+        "average": 46,
+        "averageTime": 974
+      },
+      "clock": {
+        "single": 477,
+        "singleTime": 385,
+        "average": 412,
+        "averageTime": 480
+      },
+      "minx": {
+        "single": 1054,
+        "singleTime": 4728,
+        "average": 1315,
+        "averageTime": 5581
+      },
+      "pyram": {
+        "single": 441,
+        "singleTime": 154,
+        "average": 168,
+        "averageTime": 215
+      },
+      "skewb": {
+        "single": 182,
+        "singleTime": 144,
+        "average": 138,
+        "averageTime": 267
+      },
+      "sq1": {
+        "single": 537,
+        "singleTime": 773,
+        "average": 690,
+        "averageTime": 1146
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "444",
+      "333"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2008SUNZ01": {
+    "name": "Zhouheng Sun (孙舟横)",
+    "country": "China",
+    "photoUrl": "https://avatars.worldcubeassociation.org/laqqf6jah2ufgg2f0y4imub62f0d",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/gy1a51tdmai4yc3zgf1n7t9g8zby",
+    "gender": "m",
+    "competitions": 60,
+    "medals": {
+      "gold": 98,
+      "silver": 81,
+      "bronze": 53,
+      "total": 232
+    },
+    "worldRankings": {
+      "222": {
+        "single": 1622,
+        "singleTime": 122,
+        "average": 2276,
+        "averageTime": 266
+      },
+      "333": {
+        "single": 409,
+        "singleTime": 534,
+        "average": 319,
+        "averageTime": 682
+      },
+      "444": {
+        "single": 617,
+        "singleTime": 2613,
+        "average": 751,
+        "averageTime": 3126
+      },
+      "555": {
+        "single": 2469,
+        "singleTime": 6429,
+        "average": 2173,
+        "averageTime": 6990
+      },
+      "333bf": {
+        "single": 896,
+        "singleTime": 4763
+      },
+      "333fm": {
+        "single": 1514,
+        "singleTime": 30
+      },
+      "333oh": {
+        "single": 28,
+        "singleTime": 692,
+        "average": 21,
+        "averageTime": 914
+      },
+      "minx": {
+        "single": 1533,
+        "singleTime": 5123,
+        "average": 2773,
+        "averageTime": 6781
+      },
+      "pyram": {
+        "single": 39673,
+        "singleTime": 783,
+        "average": 39785,
+        "averageTime": 1159
+      },
+      "sq1": {
+        "single": 8383,
+        "singleTime": 2461,
+        "average": 9557,
+        "averageTime": 3661
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "333",
+      "444"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2016CORV01": {
+    "name": "Alejandro Daniel Salceda Corvera",
+    "country": "Mexico",
+    "photoUrl": "https://avatars.worldcubeassociation.org/z6f959x9log5yg37estedponx55e",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/0yyl7ng9qbqv6smxxgcucf6u900y",
+    "gender": "m",
+    "competitions": 77,
+    "medals": {
+      "gold": 167,
+      "silver": 114,
+      "bronze": 100,
+      "total": 381
+    },
+    "worldRankings": {
+      "222": {
+        "single": 299,
+        "singleTime": 79,
+        "average": 571,
+        "averageTime": 186
+      },
+      "333": {
+        "single": 389,
+        "singleTime": 532,
+        "average": 247,
+        "averageTime": 667
+      },
+      "444": {
+        "single": 307,
+        "singleTime": 2417,
+        "average": 611,
+        "averageTime": 3059
+      },
+      "555": {
+        "single": 638,
+        "singleTime": 5161,
+        "average": 664,
+        "averageTime": 5817
+      },
+      "666": {
+        "single": 692,
+        "singleTime": 10612,
+        "average": 653,
+        "averageTime": 11308
+      },
+      "777": {
+        "single": 479,
+        "singleTime": 15692,
+        "average": 557,
+        "averageTime": 17050
+      },
+      "333fm": {
+        "single": 2121,
+        "singleTime": 32,
+        "average": 1651,
+        "averageTime": 3667
+      },
+      "333oh": {
+        "single": 57,
+        "singleTime": 749,
+        "average": 49,
+        "averageTime": 980
+      },
+      "clock": {
+        "single": 3112,
+        "singleTime": 737,
+        "average": 3061,
+        "averageTime": 891
+      },
+      "minx": {
+        "single": 1815,
+        "singleTime": 5333,
+        "average": 2360,
+        "averageTime": 6455
+      },
+      "pyram": {
+        "single": 7215,
+        "singleTime": 377,
+        "average": 7458,
+        "averageTime": 620
+      },
+      "skewb": {
+        "single": 4289,
+        "singleTime": 339,
+        "average": 5701,
+        "averageTime": 621
+      },
+      "sq1": {
+        "single": 15580,
+        "singleTime": 4399
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "222",
+      "444"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2016PARK02": {
+    "name": "Eli Parker",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/3fpulmyir7q6whwemez8gp9y7ppz",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/fj3vflcqc32mt22w7zkhsd9uap9v",
+    "gender": "m",
+    "competitions": 71,
+    "medals": {
+      "gold": 110,
+      "silver": 68,
+      "bronze": 69,
+      "total": 247
+    },
+    "worldRankings": {
+      "222": {
+        "single": 702,
+        "singleTime": 97,
+        "average": 1125,
+        "averageTime": 223
+      },
+      "333": {
+        "single": 398,
+        "singleTime": 533,
+        "average": 216,
+        "averageTime": 659
+      },
+      "444": {
+        "single": 1217,
+        "singleTime": 2843,
+        "average": 898,
+        "averageTime": 3189
+      },
+      "555": {
+        "single": 1518,
+        "singleTime": 5902,
+        "average": 1650,
+        "averageTime": 6666
+      },
+      "666": {
+        "single": 1030,
+        "singleTime": 11284,
+        "average": 1167,
+        "averageTime": 12423
+      },
+      "777": {
+        "single": 1241,
+        "singleTime": 18535,
+        "average": 1496,
+        "averageTime": 20456
+      },
+      "333fm": {
+        "single": 2446,
+        "singleTime": 33,
+        "average": 1890,
+        "averageTime": 3767
+      },
+      "333oh": {
+        "single": 56,
+        "singleTime": 740,
+        "average": 27,
+        "averageTime": 925
+      },
+      "clock": {
+        "single": 1544,
+        "singleTime": 568,
+        "average": 1394,
+        "averageTime": 681
+      },
+      "minx": {
+        "single": 414,
+        "singleTime": 3995,
+        "average": 331,
+        "averageTime": 4392
+      },
+      "pyram": {
+        "single": 1693,
+        "singleTime": 226,
+        "average": 1422,
+        "averageTime": 361
+      },
+      "skewb": {
+        "single": 1155,
+        "singleTime": 226,
+        "average": 878,
+        "averageTime": 386
+      },
+      "sq1": {
+        "single": 676,
+        "singleTime": 820,
+        "average": 674,
+        "averageTime": 1136
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "333",
+      "minx"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2017LAMB06": {
+    "name": "Andreas Lambropoulos",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/w8v9ozb6lnqykycyycca08fdf36e",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/h0ufsevs572y4qv6mfmvoxpnu5th",
+    "gender": "m",
+    "competitions": 69,
+    "medals": {
+      "gold": 35,
+      "silver": 41,
+      "bronze": 41,
+      "total": 117
+    },
+    "worldRankings": {
+      "222": {
+        "single": 1144,
+        "singleTime": 111,
+        "average": 600,
+        "averageTime": 188
+      },
+      "333": {
+        "single": 557,
+        "singleTime": 557,
+        "average": 410,
+        "averageTime": 698
+      },
+      "444": {
+        "single": 2666,
+        "singleTime": 3202,
+        "average": 2915,
+        "averageTime": 3768
+      },
+      "555": {
+        "single": 7165,
+        "singleTime": 8274,
+        "average": 7451,
+        "averageTime": 9291
+      },
+      "666": {
+        "single": 8885,
+        "singleTime": 22429,
+        "average": 8358,
+        "averageTime": 23920
+      },
+      "777": {
+        "single": 8537,
+        "singleTime": 37630
+      },
+      "333bf": {
+        "single": 2537,
+        "singleTime": 9478,
+        "average": 2206,
+        "averageTime": 16389
+      },
+      "333fm": {
+        "single": 1241,
+        "singleTime": 29,
+        "average": 897,
+        "averageTime": 3267
+      },
+      "333oh": {
+        "single": 50,
+        "singleTime": 732,
+        "average": 85,
+        "averageTime": 1035
+      },
+      "333mbf": {
+        "single": 3776,
+        "singleTime": 990289703
+      },
+      "444bf": {
+        "single": 1745,
+        "singleTime": 130100
+      },
+      "clock": {
+        "single": 275,
+        "singleTime": 342,
+        "average": 353,
+        "averageTime": 463
+      },
+      "minx": {
+        "single": 11251,
+        "singleTime": 10571,
+        "average": 12183,
+        "averageTime": 12829
+      },
+      "pyram": {
+        "single": 3172,
+        "singleTime": 279,
+        "average": 3777,
+        "averageTime": 491
+      },
+      "skewb": {
+        "single": 1727,
+        "singleTime": 253,
+        "average": 914,
+        "averageTime": 389
+      },
+      "sq1": {
+        "single": 2524,
+        "singleTime": 1294,
+        "average": 2320,
+        "averageTime": 1712
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "clock",
+      "333"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2012TYCK01": {
+    "name": "Luke Tycksen",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2012TYCK01/1721678871.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2012TYCK01/1721678871_thumb.jpg",
+    "gender": "m",
+    "competitions": 61,
+    "medals": {
+      "gold": 238,
+      "silver": 161,
+      "bronze": 100,
+      "total": 499
+    },
+    "worldRankings": {
+      "222": {
+        "single": 2684,
+        "singleTime": 142,
+        "average": 1620,
+        "averageTime": 245
+      },
+      "333": {
+        "single": 129,
+        "singleTime": 468,
+        "average": 169,
+        "averageTime": 647
+      },
+      "444": {
+        "single": 188,
+        "singleTime": 2318,
+        "average": 131,
+        "averageTime": 2647
+      },
+      "555": {
+        "single": 63,
+        "singleTime": 4135,
+        "average": 99,
+        "averageTime": 4822
+      },
+      "666": {
+        "single": 69,
+        "singleTime": 8102,
+        "average": 84,
+        "averageTime": 8862
+      },
+      "777": {
+        "single": 131,
+        "singleTime": 13288,
+        "average": 153,
+        "averageTime": 14439
+      },
+      "333bf": {
+        "single": 5093,
+        "singleTime": 16592
+      },
+      "333fm": {
+        "single": 3176,
+        "singleTime": 35,
+        "average": 1651,
+        "averageTime": 3667
+      },
+      "333oh": {
+        "single": 157,
+        "singleTime": 841,
+        "average": 53,
+        "averageTime": 987
+      },
+      "clock": {
+        "single": 3829,
+        "singleTime": 799,
+        "average": 3024,
+        "averageTime": 887
+      },
+      "minx": {
+        "single": 329,
+        "singleTime": 3867,
+        "average": 409,
+        "averageTime": 4547
+      },
+      "pyram": {
+        "single": 3142,
+        "singleTime": 278,
+        "average": 5693,
+        "averageTime": 565
+      },
+      "skewb": {
+        "single": 1655,
+        "singleTime": 250,
+        "average": 1102,
+        "averageTime": 404
+      },
+      "sq1": {
+        "single": 828,
+        "singleTime": 870,
+        "average": 721,
+        "averageTime": 1163
+      }
+    },
+    "topEvents": [
+      "555",
+      "666",
+      "333"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "Young rising star in US cubing",
+      "Multiple national age-group records"
+    ]
+  },
+  "2017BRIG03": {
+    "name": "Joseph Briggs",
+    "country": "United Kingdom",
+    "photoUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "photoThumbUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "gender": "m",
+    "competitions": 46,
+    "medals": {
+      "gold": 24,
+      "silver": 26,
+      "bronze": 19,
+      "total": 69
+    },
+    "worldRankings": {
+      "222": {
+        "single": 2544,
+        "singleTime": 140,
+        "average": 4841,
+        "averageTime": 318
+      },
+      "333": {
+        "single": 1178,
+        "singleTime": 612,
+        "average": 1703,
+        "averageTime": 817
+      },
+      "444": {
+        "single": 5405,
+        "singleTime": 3641,
+        "average": 6793,
+        "averageTime": 4407
+      },
+      "555": {
+        "single": 4917,
+        "singleTime": 7466,
+        "average": 5994,
+        "averageTime": 8738
+      },
+      "333oh": {
+        "single": 142,
+        "singleTime": 830,
+        "average": 105,
+        "averageTime": 1057
+      },
+      "minx": {
+        "single": 2119,
+        "singleTime": 5562,
+        "average": 2297,
+        "averageTime": 6412
+      },
+      "pyram": {
+        "single": 101012,
+        "singleTime": 1681,
+        "average": 104437,
+        "averageTime": 2755
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "333",
+      "minx"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "Set One-Handed PR at WCA 2025"
+    ]
+  },
+  "2013MEND03": {
+    "name": "Louis de Mendonça",
+    "country": "United Kingdom",
+    "photoUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "photoThumbUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "gender": "m",
+    "competitions": 48,
+    "medals": {
+      "gold": 18,
+      "silver": 24,
+      "bronze": 15,
+      "total": 57
+    },
+    "worldRankings": {
+      "222": {
+        "single": 4669,
+        "singleTime": 170,
+        "average": 2207,
+        "averageTime": 264
+      },
+      "333": {
+        "single": 2285,
+        "singleTime": 671,
+        "average": 1915,
+        "averageTime": 829
+      },
+      "444": {
+        "single": 2420,
+        "singleTime": 3151,
+        "average": 2435,
+        "averageTime": 3661
+      },
+      "555": {
+        "single": 5827,
+        "singleTime": 7808,
+        "average": 5161,
+        "averageTime": 8413
+      },
+      "666": {
+        "single": 9945,
+        "singleTime": 24427,
+        "average": 9619,
+        "averageTime": 28517
+      },
+      "333bf": {
+        "single": 1064,
+        "singleTime": 5250,
+        "average": 1124,
+        "averageTime": 9019
+      },
+      "333fm": {
+        "single": 1241,
+        "singleTime": 29
+      },
+      "333oh": {
+        "single": 44,
+        "singleTime": 715,
+        "average": 54,
+        "averageTime": 989
+      },
+      "333mbf": {
+        "single": 1699,
+        "singleTime": 950249901
+      },
+      "444bf": {
+        "single": 608,
+        "singleTime": 39315
+      },
+      "clock": {
+        "single": 2415,
+        "singleTime": 664,
+        "average": 1938,
+        "averageTime": 758
+      },
+      "minx": {
+        "single": 11429,
+        "singleTime": 10679,
+        "average": 10061,
+        "averageTime": 11199
+      },
+      "pyram": {
+        "single": 20350,
+        "singleTime": 574,
+        "average": 27094,
+        "averageTime": 987
+      },
+      "skewb": {
+        "single": 9372,
+        "singleTime": 457,
+        "average": 7862,
+        "averageTime": 694
+      },
+      "sq1": {
+        "single": 13672,
+        "singleTime": 3716,
+        "average": 12360,
+        "averageTime": 4579
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "444bf",
+      "333bf"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2016TRAG01": {
+    "name": "Parker Trager",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/2q7kib3829ewz6i5fghhaiduc69w",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/qa0591k0wzqnpofgtniqy571fwf8",
+    "gender": "m",
+    "competitions": 93,
+    "medals": {
+      "gold": 93,
+      "silver": 86,
+      "bronze": 77,
+      "total": 256
+    },
+    "worldRankings": {
+      "222": {
+        "single": 86,
+        "singleTime": 64,
+        "average": 531,
+        "averageTime": 183
+      },
+      "333": {
+        "single": 221,
+        "singleTime": 495,
+        "average": 159,
+        "averageTime": 642
+      },
+      "444": {
+        "single": 78,
+        "singleTime": 2187,
+        "average": 326,
+        "averageTime": 2864
+      },
+      "555": {
+        "single": 413,
+        "singleTime": 4919,
+        "average": 299,
+        "averageTime": 5336
+      },
+      "666": {
+        "single": 277,
+        "singleTime": 9345,
+        "average": 473,
+        "averageTime": 10780
+      },
+      "777": {
+        "single": 625,
+        "singleTime": 16317,
+        "average": 663,
+        "averageTime": 17561
+      },
+      "333bf": {
+        "single": 1275,
+        "singleTime": 5940,
+        "average": 814,
+        "averageTime": 7138
+      },
+      "333fm": {
+        "single": 1002,
+        "singleTime": 28,
+        "average": 791,
+        "averageTime": 3200
+      },
+      "333oh": {
+        "single": 11,
+        "singleTime": 645,
+        "average": 148,
+        "averageTime": 1100
+      },
+      "333mbf": {
+        "single": 801,
+        "singleTime": 910269201
+      },
+      "444bf": {
+        "single": 628,
+        "singleTime": 40401
+      },
+      "clock": {
+        "single": 511,
+        "singleTime": 393,
+        "average": 369,
+        "averageTime": 468
+      },
+      "minx": {
+        "single": 424,
+        "singleTime": 4010,
+        "average": 607,
+        "averageTime": 4851
+      },
+      "pyram": {
+        "single": 13,
+        "singleTime": 93,
+        "average": 11,
+        "averageTime": 156
+      },
+      "skewb": {
+        "single": 129,
+        "singleTime": 135,
+        "average": 86,
+        "averageTime": 246
+      },
+      "sq1": {
+        "single": 141,
+        "singleTime": 590,
+        "average": 292,
+        "averageTime": 934
+      }
+    },
+    "topEvents": [
+      "333oh",
+      "pyram",
+      "444"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "Pyraminx specialist",
+      "Pyraminx finalist seed #1 at WCA 2025"
+    ]
+  },
+  "2022SILV37": {
+    "name": "David F. Andron-Silva",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022SILV37/1724442445.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022SILV37/1724442445_thumb.jpeg",
+    "gender": "m",
+    "competitions": 41,
+    "medals": {
+      "gold": 21,
+      "silver": 10,
+      "bronze": 9,
+      "total": 40
+    },
+    "worldRankings": {
+      "222": {
+        "single": 936,
+        "singleTime": 105,
+        "average": 482,
+        "averageTime": 179
+      },
+      "333": {
+        "single": 1033,
+        "singleTime": 601,
+        "average": 959,
+        "averageTime": 764
+      },
+      "444": {
+        "single": 8831,
+        "singleTime": 4061,
+        "average": 9413,
+        "averageTime": 4751
+      },
+      "555": {
+        "single": 10187,
+        "singleTime": 9277,
+        "average": 8590,
+        "averageTime": 9713
+      },
+      "666": {
+        "single": 8633,
+        "singleTime": 21996,
+        "average": 7716,
+        "averageTime": 22466
+      },
+      "777": {
+        "single": 8715,
+        "singleTime": 38241
+      },
+      "333fm": {
+        "single": 3536,
+        "singleTime": 36,
+        "average": 2044,
+        "averageTime": 3833
+      },
+      "333oh": {
+        "single": 472,
+        "singleTime": 970,
+        "average": 1628,
+        "averageTime": 1509
+      },
+      "clock": {
+        "single": 483,
+        "singleTime": 386,
+        "average": 320,
+        "averageTime": 453
+      },
+      "minx": {
+        "single": 4720,
+        "singleTime": 7141,
+        "average": 5788,
+        "averageTime": 8698
+      },
+      "pyram": {
+        "single": 109,
+        "singleTime": 118,
+        "average": 99,
+        "averageTime": 197
+      },
+      "skewb": {
+        "single": 1522,
+        "singleTime": 244,
+        "average": 1142,
+        "averageTime": 407
+      },
+      "sq1": {
+        "single": 1115,
+        "singleTime": 953,
+        "average": 1113,
+        "averageTime": 1311
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "333oh",
+      "clock"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2018CREE01": {
+    "name": "Kerry Creech",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018CREE01/1693438223.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018CREE01/1693438223_thumb.jpeg",
+    "gender": "m",
+    "competitions": 61,
+    "medals": {
+      "gold": 99,
+      "silver": 102,
+      "bronze": 85,
+      "total": 286
+    },
+    "worldRankings": {
+      "222": {
+        "single": 361,
+        "singleTime": 83,
+        "average": 54,
+        "averageTime": 128
+      },
+      "333": {
+        "single": 285,
+        "singleTime": 511,
+        "average": 353,
+        "averageTime": 688
+      },
+      "444": {
+        "single": 461,
+        "singleTime": 2531,
+        "average": 466,
+        "averageTime": 2962
+      },
+      "555": {
+        "single": 323,
+        "singleTime": 4799,
+        "average": 438,
+        "averageTime": 5526
+      },
+      "666": {
+        "single": 396,
+        "singleTime": 9740,
+        "average": 393,
+        "averageTime": 10516
+      },
+      "777": {
+        "single": 323,
+        "singleTime": 14921,
+        "average": 403,
+        "averageTime": 16314
+      },
+      "333bf": {
+        "single": 467,
+        "singleTime": 3271,
+        "average": 411,
+        "averageTime": 4519
+      },
+      "333fm": {
+        "single": 121,
+        "singleTime": 21,
+        "average": 82,
+        "averageTime": 2300
+      },
+      "333oh": {
+        "single": 930,
+        "singleTime": 1079,
+        "average": 712,
+        "averageTime": 1327
+      },
+      "333mbf": {
+        "single": 1296,
+        "singleTime": 940130300
+      },
+      "444bf": {
+        "single": 919,
+        "singleTime": 52684,
+        "average": 382,
+        "averageTime": 86600
+      },
+      "555bf": {
+        "single": 862,
+        "singleTime": 191500
+      },
+      "clock": {
+        "single": 302,
+        "singleTime": 349,
+        "average": 207,
+        "averageTime": 420
+      },
+      "minx": {
+        "single": 1109,
+        "singleTime": 4775,
+        "average": 1052,
+        "averageTime": 5353
+      },
+      "pyram": {
+        "single": 87,
+        "singleTime": 115,
+        "average": 20,
+        "averageTime": 167
+      },
+      "skewb": {
+        "single": 204,
+        "singleTime": 146,
+        "average": 510,
+        "averageTime": 344
+      },
+      "sq1": {
+        "single": 400,
+        "singleTime": 722,
+        "average": 220,
+        "averageTime": 889
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "333fm",
+      "skewb"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2018WILS10": {
+    "name": "Keon Wilson",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018WILS10/1721840566.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018WILS10/1721840566_thumb.jpg",
+    "gender": "m",
+    "competitions": 61,
+    "medals": {
+      "gold": 39,
+      "silver": 26,
+      "bronze": 22,
+      "total": 87
+    },
+    "worldRankings": {
+      "222": {
+        "single": 1144,
+        "singleTime": 111,
+        "average": 2100,
+        "averageTime": 261
+      },
+      "333": {
+        "single": 2380,
+        "singleTime": 675,
+        "average": 1863,
+        "averageTime": 826
+      },
+      "444": {
+        "single": 2544,
+        "singleTime": 3177,
+        "average": 1590,
+        "averageTime": 3429
+      },
+      "555": {
+        "single": 998,
+        "singleTime": 5506,
+        "average": 1111,
+        "averageTime": 6255
+      },
+      "666": {
+        "single": 932,
+        "singleTime": 11099,
+        "average": 901,
+        "averageTime": 11831
+      },
+      "777": {
+        "single": 1393,
+        "singleTime": 18949,
+        "average": 1778,
+        "averageTime": 21270
+      },
+      "333bf": {
+        "single": 7155,
+        "singleTime": 23484
+      },
+      "333fm": {
+        "single": 1241,
+        "singleTime": 29
+      },
+      "333oh": {
+        "single": 420,
+        "singleTime": 952,
+        "average": 854,
+        "averageTime": 1360
+      },
+      "clock": {
+        "single": 944,
+        "singleTime": 478,
+        "average": 884,
+        "averageTime": 592
+      },
+      "minx": {
+        "single": 3538,
+        "singleTime": 6491,
+        "average": 2875,
+        "averageTime": 6853
+      },
+      "pyram": {
+        "single": 55,
+        "singleTime": 109,
+        "average": 45,
+        "averageTime": 179
+      },
+      "skewb": {
+        "single": 545,
+        "singleTime": 184,
+        "average": 757,
+        "averageTime": 372
+      },
+      "sq1": {
+        "single": 2378,
+        "singleTime": 1263,
+        "average": 1695,
+        "averageTime": 1519
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "333oh",
+      "skewb"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2019MEAD03": {
+    "name": "Kyle Meade",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2019MEAD03/1696211346.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2019MEAD03/1696211346_thumb.jpeg",
+    "gender": "m",
+    "competitions": 60,
+    "medals": {
+      "gold": 65,
+      "silver": 57,
+      "bronze": 42,
+      "total": 164
+    },
+    "worldRankings": {
+      "222": {
+        "single": 774,
+        "singleTime": 100,
+        "average": 367,
+        "averageTime": 169
+      },
+      "333": {
+        "single": 1178,
+        "singleTime": 612,
+        "average": 2169,
+        "averageTime": 843
+      },
+      "444": {
+        "single": 783,
+        "singleTime": 2690,
+        "average": 695,
+        "averageTime": 3099
+      },
+      "555": {
+        "single": 539,
+        "singleTime": 5062,
+        "average": 352,
+        "averageTime": 5409
+      },
+      "666": {
+        "single": 484,
+        "singleTime": 10008,
+        "average": 479,
+        "averageTime": 10815
+      },
+      "777": {
+        "single": 288,
+        "singleTime": 14622,
+        "average": 414,
+        "averageTime": 16363
+      },
+      "333bf": {
+        "single": 3217,
+        "singleTime": 11302,
+        "average": 2543,
+        "averageTime": 19349
+      },
+      "333fm": {
+        "single": 6703,
+        "singleTime": 44,
+        "average": 3711,
+        "averageTime": 4567
+      },
+      "333oh": {
+        "single": 2374,
+        "singleTime": 1270,
+        "average": 2218,
+        "averageTime": 1586
+      },
+      "clock": {
+        "single": 135,
+        "singleTime": 297,
+        "average": 118,
+        "averageTime": 381
+      },
+      "minx": {
+        "single": 345,
+        "singleTime": 3885,
+        "average": 316,
+        "averageTime": 4356
+      },
+      "pyram": {
+        "single": 25,
+        "singleTime": 99,
+        "average": 15,
+        "averageTime": 160
+      },
+      "skewb": {
+        "single": 182,
+        "singleTime": 144,
+        "average": 187,
+        "averageTime": 284
+      },
+      "sq1": {
+        "single": 434,
+        "singleTime": 734,
+        "average": 314,
+        "averageTime": 951
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "clock",
+      "skewb"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2022NAGA02": {
+    "name": "Yuki Nagai",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022NAGA02/1728141629.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022NAGA02/1728141629_thumb.jpg",
+    "gender": "m",
+    "competitions": 59,
+    "medals": {
+      "gold": 8,
+      "silver": 22,
+      "bronze": 18,
+      "total": 48
+    },
+    "worldRankings": {
+      "222": {
+        "single": 3550,
+        "singleTime": 155,
+        "average": 1540,
+        "averageTime": 242
+      },
+      "333": {
+        "single": 5356,
+        "singleTime": 775,
+        "average": 4700,
+        "averageTime": 941
+      },
+      "444": {
+        "single": 9067,
+        "singleTime": 4088,
+        "average": 7403,
+        "averageTime": 4488
+      },
+      "555": {
+        "single": 5654,
+        "singleTime": 7740,
+        "average": 6799,
+        "averageTime": 9056
+      },
+      "666": {
+        "single": 7865,
+        "singleTime": 20745,
+        "average": 7629,
+        "averageTime": 22304
+      },
+      "777": {
+        "single": 8743,
+        "singleTime": 38353,
+        "average": 7243,
+        "averageTime": 38792
+      },
+      "333bf": {
+        "single": 3069,
+        "singleTime": 10914
+      },
+      "333fm": {
+        "single": 1798,
+        "singleTime": 31,
+        "average": 2044,
+        "averageTime": 3833
+      },
+      "333oh": {
+        "single": 3866,
+        "singleTime": 1409,
+        "average": 4257,
+        "averageTime": 1806
+      },
+      "clock": {
+        "single": 159,
+        "singleTime": 308,
+        "average": 128,
+        "averageTime": 386
+      },
+      "minx": {
+        "single": 2655,
+        "singleTime": 5919,
+        "average": 2889,
+        "averageTime": 6861
+      },
+      "pyram": {
+        "single": 134,
+        "singleTime": 124,
+        "average": 124,
+        "averageTime": 205
+      },
+      "skewb": {
+        "single": 182,
+        "singleTime": 144,
+        "average": 670,
+        "averageTime": 363
+      },
+      "sq1": {
+        "single": 1368,
+        "singleTime": 1023,
+        "average": 1059,
+        "averageTime": 1293
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "clock",
+      "skewb"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2017BENN03": {
+    "name": "Jacob Bennett",
+    "country": "USA",
+    "photoUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "photoThumbUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "gender": "m",
+    "competitions": 1,
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 0,
+      "total": 0
+    },
+    "worldRankings": {
+      "222": {
+        "single": 136024,
+        "singleTime": 1097,
+        "average": 111940,
+        "averageTime": 1135
+      },
+      "333": {
+        "single": 164376,
+        "singleTime": 3157,
+        "average": 158296,
+        "averageTime": 3667
+      },
+      "pyram": {
+        "single": 82290,
+        "singleTime": 1270,
+        "average": 75462,
+        "averageTime": 1673
+      },
+      "skewb": {
+        "single": 50823,
+        "singleTime": 1491,
+        "average": 52339,
+        "averageTime": 2315
+      }
+    },
+    "topEvents": [
+      "skewb",
+      "pyram",
+      "222"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2022HRDL01": {
+    "name": "Mazar Hrdlicka",
+    "country": "Canada",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022HRDL01/1711313785.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2022HRDL01/1711313785_thumb.jpeg",
+    "gender": "m",
+    "competitions": 11,
+    "medals": {
+      "gold": 1,
+      "silver": 5,
+      "bronze": 5,
+      "total": 11
+    },
+    "worldRankings": {
+      "222": {
+        "single": 627,
+        "singleTime": 94,
+        "average": 1679,
+        "averageTime": 247
+      },
+      "333": {
+        "single": 2630,
+        "singleTime": 686,
+        "average": 4494,
+        "averageTime": 935
+      },
+      "444": {
+        "single": 5262,
+        "singleTime": 3623,
+        "average": 5853,
+        "averageTime": 4275
+      },
+      "555": {
+        "single": 6967,
+        "singleTime": 8212,
+        "average": 5965,
+        "averageTime": 8727
+      },
+      "666": {
+        "single": 8197,
+        "singleTime": 21310
+      },
+      "777": {
+        "single": 6842,
+        "singleTime": 32304
+      },
+      "333bf": {
+        "single": 5598,
+        "singleTime": 18147
+      },
+      "333oh": {
+        "single": 2214,
+        "singleTime": 1253,
+        "average": 3903,
+        "averageTime": 1775
+      },
+      "clock": {
+        "single": 374,
+        "singleTime": 365,
+        "average": 1136,
+        "averageTime": 638
+      },
+      "minx": {
+        "single": 12861,
+        "singleTime": 11514,
+        "average": 11431,
+        "averageTime": 12165
+      },
+      "pyram": {
+        "single": 501,
+        "singleTime": 159,
+        "average": 582,
+        "averageTime": 283
+      },
+      "skewb": {
+        "single": 9328,
+        "singleTime": 456,
+        "average": 5554,
+        "averageTime": 616
+      },
+      "sq1": {
+        "single": 1531,
+        "singleTime": 1063,
+        "average": 1711,
+        "averageTime": 1525
+      }
+    },
+    "topEvents": [
+      "clock",
+      "pyram",
+      "222"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2017PETE04": {
+    "name": "Tripp Peters",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017PETE04/1701749267.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017PETE04/1701749267_thumb.jpg",
+    "gender": "m",
+    "competitions": 101,
+    "medals": {
+      "gold": 56,
+      "silver": 38,
+      "bronze": 29,
+      "total": 123
+    },
+    "worldRankings": {
+      "222": {
+        "single": 299,
+        "singleTime": 79,
+        "average": 4020,
+        "averageTime": 305
+      },
+      "333": {
+        "single": 6130,
+        "singleTime": 794,
+        "average": 6354,
+        "averageTime": 988
+      },
+      "444": {
+        "single": 4547,
+        "singleTime": 3522,
+        "average": 4219,
+        "averageTime": 4014
+      },
+      "555": {
+        "single": 2934,
+        "singleTime": 6657,
+        "average": 3229,
+        "averageTime": 7556
+      },
+      "666": {
+        "single": 2534,
+        "singleTime": 13633,
+        "average": 2625,
+        "averageTime": 14794
+      },
+      "777": {
+        "single": 2308,
+        "singleTime": 21327,
+        "average": 2214,
+        "averageTime": 22415
+      },
+      "333bf": {
+        "single": 1862,
+        "singleTime": 7678,
+        "average": 1387,
+        "averageTime": 10460
+      },
+      "333fm": {
+        "single": 121,
+        "singleTime": 21,
+        "average": 1236,
+        "averageTime": 3467
+      },
+      "333oh": {
+        "single": 8725,
+        "singleTime": 1753,
+        "average": 7045,
+        "averageTime": 2046
+      },
+      "333mbf": {
+        "single": 1003,
+        "singleTime": 920309200
+      },
+      "444bf": {
+        "single": 1158,
+        "singleTime": 66100,
+        "average": 417,
+        "averageTime": 126200
+      },
+      "555bf": {
+        "single": 827,
+        "singleTime": 177000
+      },
+      "clock": {
+        "single": 4219,
+        "singleTime": 831,
+        "average": 3126,
+        "averageTime": 899
+      },
+      "minx": {
+        "single": 3063,
+        "singleTime": 6198,
+        "average": 3452,
+        "averageTime": 7267
+      },
+      "pyram": {
+        "single": 114,
+        "singleTime": 119,
+        "average": 18,
+        "averageTime": 165
+      },
+      "skewb": {
+        "single": 2448,
+        "singleTime": 282,
+        "average": 2666,
+        "averageTime": 501
+      },
+      "sq1": {
+        "single": 331,
+        "singleTime": 692,
+        "average": 2107,
+        "averageTime": 1653
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "333fm",
+      "222"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2018HIBS01": {
+    "name": "Jakub Hibszer",
+    "country": "Poland",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018HIBS01/1724526932.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018HIBS01/1724526932_thumb.jpeg",
+    "gender": "m",
+    "competitions": 80,
+    "medals": {
+      "gold": 92,
+      "silver": 55,
+      "bronze": 29,
+      "total": 176
+    },
+    "worldRankings": {
+      "222": {
+        "single": 347,
+        "singleTime": 82,
+        "average": 1291,
+        "averageTime": 232
+      },
+      "333": {
+        "single": 1861,
+        "singleTime": 650,
+        "average": 1145,
+        "averageTime": 779
+      },
+      "444": {
+        "single": 3869,
+        "singleTime": 3413,
+        "average": 4001,
+        "averageTime": 3979
+      },
+      "555": {
+        "single": 4344,
+        "singleTime": 7256,
+        "average": 3401,
+        "averageTime": 7638
+      },
+      "666": {
+        "single": 4634,
+        "singleTime": 16428,
+        "average": 4053,
+        "averageTime": 16846
+      },
+      "777": {
+        "single": 3452,
+        "singleTime": 23936,
+        "average": 3256,
+        "averageTime": 24993
+      },
+      "333fm": {
+        "single": 4348,
+        "singleTime": 38
+      },
+      "333oh": {
+        "single": 4734,
+        "singleTime": 1481,
+        "average": 6296,
+        "averageTime": 1984
+      },
+      "clock": {
+        "single": 2090,
+        "singleTime": 630,
+        "average": 1714,
+        "averageTime": 727
+      },
+      "minx": {
+        "single": 12487,
+        "singleTime": 11299
+      },
+      "pyram": {
+        "single": 12,
+        "singleTime": 92,
+        "average": 26,
+        "averageTime": 171
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "222",
+      "333"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": [
+      "From Poland's strong cubing community",
+      "Multi-event competitor"
+    ]
+  },
+  "2016LIJI05": {
+    "name": "Jiazhou Li (李佳洲)",
+    "country": "China",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2016LIJI05/1716716140.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2016LIJI05/1716716140_thumb.jpg",
+    "gender": "m",
+    "competitions": 40,
+    "medals": {
+      "gold": 106,
+      "silver": 82,
+      "bronze": 50,
+      "total": 238
+    },
+    "worldRankings": {
+      "222": {
+        "single": 60,
+        "singleTime": 61,
+        "average": 20,
+        "averageTime": 117
+      },
+      "333": {
+        "single": 81,
+        "singleTime": 445,
+        "average": 113,
+        "averageTime": 618
+      },
+      "444": {
+        "single": 60,
+        "singleTime": 2142,
+        "average": 54,
+        "averageTime": 2492
+      },
+      "555": {
+        "single": 315,
+        "singleTime": 4788,
+        "average": 141,
+        "averageTime": 4981
+      },
+      "666": {
+        "single": 387,
+        "singleTime": 9721,
+        "average": 289,
+        "averageTime": 10155
+      },
+      "777": {
+        "single": 672,
+        "singleTime": 16551,
+        "average": 837,
+        "averageTime": 18218
+      },
+      "333bf": {
+        "single": 342,
+        "singleTime": 2758,
+        "average": 242,
+        "averageTime": 3195
+      },
+      "333oh": {
+        "single": 119,
+        "singleTime": 813,
+        "average": 64,
+        "averageTime": 1011
+      },
+      "clock": {
+        "single": 2874,
+        "singleTime": 714,
+        "average": 2022,
+        "averageTime": 769
+      },
+      "minx": {
+        "single": 406,
+        "singleTime": 3989,
+        "average": 460,
+        "averageTime": 4641
+      },
+      "pyram": {
+        "single": 187,
+        "singleTime": 131,
+        "average": 26,
+        "averageTime": 171
+      },
+      "skewb": {
+        "single": 911,
+        "singleTime": 211,
+        "average": 1043,
+        "averageTime": 399
+      },
+      "sq1": {
+        "single": 29,
+        "singleTime": 457,
+        "average": 29,
+        "averageTime": 663
+      }
+    },
+    "topEvents": [
+      "sq1",
+      "222",
+      "444"
+    ],
+    "difficulty": "medium",
+    "isFinalist": {},
+    "wca2025Qualifying": {},
+    "funFacts": []
+  },
+  "2015KAME02": {
+    "name": "Marcus Kamen",
+    "country": "USA",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2015KAME02/1692313659.PNG",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2015KAME02/1692313659_thumb.PNG",
+    "gender": "m",
+    "competitions": 110,
+    "medals": {
+      "gold": 116,
+      "silver": 72,
+      "bronze": 57,
+      "total": 245
+    },
+    "worldRankings": {
+      "222": {
+        "single": 1193,
+        "singleTime": 112,
+        "average": 964,
+        "averageTime": 214
+      },
+      "333": {
+        "single": 969,
+        "singleTime": 596,
+        "average": 1198,
+        "averageTime": 784
+      },
+      "444": {
+        "single": 3156,
+        "singleTime": 3298,
+        "average": 4413,
+        "averageTime": 4050
+      },
+      "555": {
+        "single": 6294,
+        "singleTime": 7977,
+        "average": 6429,
+        "averageTime": 8906
+      },
+      "666": {
+        "single": 5812,
+        "singleTime": 17957,
+        "average": 5815,
+        "averageTime": 19347
+      },
+      "777": {
+        "single": 7172,
+        "singleTime": 33209,
+        "average": 7340,
+        "averageTime": 39533
+      },
+      "333bf": {
+        "single": 4177,
+        "singleTime": 13972,
+        "average": 2238,
+        "averageTime": 16561
+      },
+      "333fm": {
+        "single": 1241,
+        "singleTime": 29,
+        "average": 791,
+        "averageTime": 3200
+      },
+      "333oh": {
+        "single": 2000,
+        "singleTime": 1228,
+        "average": 1403,
+        "averageTime": 1475
+      },
+      "clock": {
+        "single": 3726,
+        "singleTime": 790,
+        "average": 3196,
+        "averageTime": 906
+      },
+      "minx": {
+        "single": 4632,
+        "singleTime": 7101,
+        "average": 4472,
+        "averageTime": 7905
+      },
+      "pyram": {
+        "single": 114,
+        "singleTime": 119,
+        "average": 63,
+        "averageTime": 186
+      },
+      "skewb": {
+        "single": 1239,
+        "singleTime": 230,
+        "average": 1323,
+        "averageTime": 423
+      },
+      "sq1": {
+        "single": 6517,
+        "singleTime": 2093,
+        "average": 5540,
+        "averageTime": 2592
+      }
+    },
+    "topEvents": [
+      "pyram",
+      "333",
+      "222"
+    ],
+    "difficulty": "medium",
     "isFinalist": {},
     "wca2025Qualifying": {},
     "funFacts": []
