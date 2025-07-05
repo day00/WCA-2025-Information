@@ -2520,27 +2520,6 @@ updateFinalsStatus() {
                         // Show 2025 finalists
                         const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
                         
-                        if (status !== 'ready' && status !== 'complete') {
-                            const finalTime = WCAGuideApp.gameConfig.finals[eventId]?.time;
-                            const finalDate = new Date(finalTime);
-                            const timeStr = finalDate.toLocaleString('en-US', { 
-                                weekday: 'long', 
-                                hour: 'numeric', 
-                                minute: '2-digit' 
-                            });
-                            
-                            list.innerHTML = `
-                                <div style="text-align: center; padding: 50px;">
-                                    <div style="font-size: 24px; color: #718096; margin-bottom: 20px;">
-                                        Finalists will be determined after Round 2
-                                    </div>
-                                    <div style="font-size: 18px; color: #a0aec0;">
-                                        Check back after ${timeStr}
-                                    </div>
-                                </div>
-                            `;
-                            return;
-                        }
 
                         // Get finalists
                         const finalists = Object.entries(WCAGuideApp.competitors)
