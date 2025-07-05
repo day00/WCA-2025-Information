@@ -2775,30 +2775,18 @@ const results = WCAGuideApp.eventResults[eventId];
                         let statusText = '';
                         let statusColor = '#718096';
                         
-                        if (status === 'complete') {
-                            statusText = 'Finals Complete! ✅';
-                            statusColor = '#48bb78';
-                        } else if (status === 'ready') {
-                            statusText = 'Make Predictions →';
-                            statusColor = '#5a67d8';
-                            card.onclick = () => this.startPredictions(eventId);
-                        } else {
-                            // Calculate when finalists will be ready
-                            const finalTime = WCAGuideApp.gameConfig.finals[eventId]?.time;
-                            if (finalTime) {
-                                const finalDate = new Date(finalTime);
-                                const dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][finalDate.getDay()];
-                                // Assume finalists ready ~30 min after round 2 (roughly 5-6 hours before finals)
-                                const finalistsReadyTime = new Date(finalDate.getTime() - 5 * 60 * 60 * 1000);
-                                const timeStr = finalistsReadyTime.toLocaleString('en-US', { 
-                                    hour: 'numeric', 
-                                    minute: '2-digit' 
-                                });
-                                statusText = `Finalists TBD (${dayName} ~${timeStr})`;
-                            } else {
-                                statusText = 'Finals not ready yet ⏳';
-                            }
-                        }
+                       // Check if we have any finalists for this event
+const hasFinalists = Object.values(WCAGuideApp.competitors)
+    .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+
+if (hasFinalists) {
+    statusText = 'Make Predictions →';
+    statusColor = '#5a67d8';
+    card.onclick = () => this.startPredictions(eventId);
+} else {
+    statusText = 'No finalists yet';
+    statusColor = '#718096';
+}
 
                         card.innerHTML = `
                             <div style="display: flex; align-items: center; justify-content: space-between;">
