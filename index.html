@@ -2587,49 +2587,15 @@ updateFinalsStatus() {
                     return card;
                 },
 
-                prevEvent() {
-                    if (this.mode === 'finalists') {
-                        // Find previous event with finalists
-                        let prevIndex = this.currentEventIndex - 1;
-                        while (prevIndex >= 0) {
-                            const eventId = this.eventOrder[prevIndex];
-                            const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
-                            if (status === 'ready' || status === 'complete' || this.currentEventIndex - prevIndex > 3) {
-                                this.currentEventIndex = prevIndex;
-                                break;
-                            }
-                            prevIndex--;
-                        }
-                        if (prevIndex < 0) {
-                            this.currentEventIndex = this.eventOrder.length - 1;
-                        }
-                    } else {
-                        this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
-                    }
-                    this.showCurrentEvent();
-                },
+               prevEvent() {
+    this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
+    this.showCurrentEvent();
+},
 
-                nextEvent() {
-                    if (this.mode === 'finalists') {
-                        // Find next event with finalists or upcoming
-                        let nextIndex = this.currentEventIndex + 1;
-                       while (nextIndex < this.eventOrder.length) {
-    const eventId = this.eventOrder[nextIndex];
-    const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
-    if (status === 'ready' || status === 'complete') {
-        this.currentEventIndex = nextIndex;
-        break;
-    }
-    nextIndex++;  // This goes INSIDE the while loop
+nextEvent() {
+    this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
+    this.showCurrentEvent();
 }
-if (nextIndex >= this.eventOrder.length) {
-    this.currentEventIndex = 0;
-}
-                    } else {
-                        this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
-                    }
-                    this.showCurrentEvent();
-                },
 
                 showCompetitorDetail(competitorId) {
     console.log('Showing details for:', competitorId);
