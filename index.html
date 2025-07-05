@@ -850,7 +850,7 @@
 
         <!-- Navigation Bar -->
         <div class="nav-bar" id="navBar" style="display: none;">
-            <button class="back-btn" onclick="WCAGuideApp.navigate('home')">
+            <button class="back-btn" onclick="WCAGuideApp.goBack()">
                 ← Back
             </button>
             <div class="nav-title" id="navTitle">Home</div>
@@ -1332,6 +1332,39 @@ updateFinalsStatus() {
             }
         }
     });
+},
+            goBack() {
+    if (this.navigationHistory.length > 0) {
+        // Get the previous screen from history
+        const previousScreen = this.navigationHistory.pop();
+        
+        // Navigate without adding to history (to avoid loops)
+        this.currentScreen = previousScreen;
+        
+        // Hide all screens
+        document.querySelectorAll('.screen').forEach(s => {
+            s.classList.remove('active');
+            s.style.display = 'none';
+        });
+        
+        // Show previous screen
+        const screenElement = document.getElementById(previousScreen + 'Screen');
+        if (screenElement) {
+            screenElement.classList.add('active');
+            screenElement.style.display = 'block';
+        }
+        
+        // Update nav title
+        document.getElementById('navTitle').textContent = this.getScreenTitle(previousScreen);
+        
+        // Special handling for certain screens
+        if (previousScreen === 'eventBrowser' && window.innerWidth >= 768) {
+            this.browse.renderEventTabs();
+        }
+    } else {
+        // If no history, go home
+        this.navigate('home');
+    }
 },
             // Countdown functionality
             countdownInterval: null,
