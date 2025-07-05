@@ -1265,114 +1265,7 @@ this.gameConfig.finals = {
     "sq1": { time: "2025-07-06T15:15:00", status: "pending" },
     "333": { time: "2025-07-06T16:15:00", status: "pending" }
 };
-// Add actual results - update these as results come in
-this.gameConfig.actualResults = {
-    "555": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "clock": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "pyram": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "333oh": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "777": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "minx": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "444": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "222": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "skewb": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "444bf": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "666": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "333bf": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "sq1": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "333": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    },
-    "555bf": {
-        "1st": null,
-        "2nd": null,
-        "3rd": null,
-        "4th": null,
-        "5th": null
-    }
-};
+
 // Add event timings for countdown messages
 this.gameConfig.eventTimings = {
     default: { snacks: 45, seats: 25 },
@@ -2850,7 +2743,6 @@ const results = WCAGuideApp.eventResults[eventId];
                     return minutes > 0 ? `${minutes}:${seconds.padStart(5, '0')}` : `${seconds}s`;
                 }
             },
-},  // This closes the browse module
 
             // Predictions module
             predictions: {
@@ -2867,9 +2759,7 @@ const results = WCAGuideApp.eventResults[eventId];
                     list.innerHTML = '';
 
                     Object.entries(WCAGuideApp.gameConfig.events).forEach(([eventId, event]) => {
-                        // Check if we have any finalists for this event
-                        const hasFinalists = Object.values(WCAGuideApp.competitors)
-                            .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+                        const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
                         
                         const card = document.createElement('div');
                         card.style.cssText = `
@@ -2878,21 +2768,25 @@ const results = WCAGuideApp.eventResults[eventId];
                             border-radius: 15px;
                             padding: 20px;
                             margin-bottom: 15px;
-                            cursor: ${hasFinalists ? 'pointer' : 'default'};
-                            opacity: ${hasFinalists ? '1' : '0.6'};
+                            cursor: ${status === 'ready' ? 'pointer' : 'default'};
+                            opacity: ${status === 'ready' ? '1' : '0.6'};
                         `;
 
                         let statusText = '';
                         let statusColor = '#718096';
+                        
+                       // Check if we have any finalists for this event
+const hasFinalists = Object.values(WCAGuideApp.competitors)
+    .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
 
-                        if (hasFinalists) {
-                            statusText = 'Make Predictions →';
-                            statusColor = '#5a67d8';
-                            card.onclick = () => this.startPredictions(eventId);
-                        } else {
-                            statusText = 'No finalists yet';
-                            statusColor = '#718096';
-                        }
+if (hasFinalists) {
+    statusText = 'Make Predictions →';
+    statusColor = '#5a67d8';
+    card.onclick = () => this.startPredictions(eventId);
+} else {
+    statusText = 'No finalists yet';
+    statusColor = '#718096';
+}
 
                         card.innerHTML = `
                             <div style="display: flex; align-items: center; justify-content: space-between;">
@@ -2964,6 +2858,13 @@ const results = WCAGuideApp.eventResults[eventId];
                     const grid = document.getElementById('competitorSelectGrid');
                     grid.innerHTML = '';
 
+                    // Check if finalists are available
+                    const status = WCAGuideApp.gameConfig.finalsStatus[this.currentEvent];
+                    if (status !== 'ready' && status !== 'complete') {
+                        grid.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">Finalists not yet determined.</div>';
+                        return;
+                    }
+
                     // Get ONLY finalists for this event
                     const finalists = Object.entries(WCAGuideApp.competitors)
                         .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[this.currentEvent] === true)
@@ -2985,7 +2886,7 @@ const results = WCAGuideApp.eventResults[eventId];
                         }
 
                         card.innerHTML = `
-                            <img src="${comp.photoThumbUrl}" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+                            <img src="${comp.photoThumbUrl}" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'"">
                             <div class="name">${comp.name}</div>
                         `;
 
@@ -2998,25 +2899,25 @@ const results = WCAGuideApp.eventResults[eventId];
                 },
 
                 confirmSelection(competitorId) {
-                    // Check if already selected in a different slot
-                    const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
-                        .find(([slot, id]) => id === competitorId);
-                    
-                    if (existingSlot && existingSlot[0] !== this.currentSlot) {
-                        alert(`You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!`);
-                        return;
-                    }
-                    
-                    if (!this.selections[this.currentEvent]) {
-                        this.selections[this.currentEvent] = {};
-                    }
-                    
-                    this.selections[this.currentEvent][this.currentSlot] = competitorId;
-                    
-                    // Go back to predictions screen WITHOUT adding to history
-                    WCAGuideApp.goBack();
-                    this.renderPredictionSlots();
-                },
+    // Check if already selected in a different slot
+    const existingSlot = Object.entries(this.selections[this.currentEvent] || {})
+        .find(([slot, id]) => id === competitorId);
+    
+    if (existingSlot && existingSlot[0] !== this.currentSlot) {
+        alert(`You already picked ${WCAGuideApp.competitors[competitorId].name} for ${existingSlot[0]} place!`);
+        return;
+    }
+    
+    if (!this.selections[this.currentEvent]) {
+        this.selections[this.currentEvent] = {};
+    }
+    
+    this.selections[this.currentEvent][this.currentSlot] = competitorId;
+    
+    // Go back to predictions screen WITHOUT adding to history
+    WCAGuideApp.goBack();
+    this.renderPredictionSlots();
+},
 
                 clearSlot(slot) {
                     delete this.selections[this.currentEvent][slot];
@@ -3039,168 +2940,190 @@ const results = WCAGuideApp.eventResults[eventId];
 
             // Results module
             results: {
-           // Results module
-results: {
-    init() {
-        this.renderEventList();
-    },
+                currentEvent: null,
+                actualResults: {},
 
-    renderEventList() {
-        const list = document.getElementById('resultsEventList');
-        list.innerHTML = '';
+                init() {
+                    this.renderEventList();
+                },
 
-        Object.entries(WCAGuideApp.gameConfig.events).forEach(([eventId, event]) => {
-            // Check if we have any results for this event
-            const hasResults = WCAGuideApp.gameConfig.actualResults?.[eventId] && 
-                             Object.values(WCAGuideApp.gameConfig.actualResults[eventId]).some(id => id !== null);
-            const hasPredictions = WCAGuideApp.userProgress.predictions[eventId] && 
-                                 Object.keys(WCAGuideApp.userProgress.predictions[eventId]).length > 0;
-            
-            if (!hasResults) return; // Skip if no results yet
+                renderEventList() {
+                    const list = document.getElementById('resultsEventList');
+                    list.innerHTML = '';
 
-            const card = document.createElement('div');
-            card.style.cssText = `
-                background: #f7fafc;
-                border: 2px solid #e2e8f0;
-                border-radius: 15px;
-                padding: 20px;
-                margin-bottom: 15px;
-                cursor: pointer;
-            `;
+                    Object.entries(WCAGuideApp.userProgress.predictions).forEach(([eventId, predictions]) => {
+                        if (Object.keys(predictions).length === 0) return;
 
-            card.innerHTML = `
-                <div style="display: flex; align-items: center; justify-content: space-between;">
-                    <div>
-                        <span style="font-size: 24px; margin-right: 10px;">${event.icon}</span>
-                        <span style="font-size: 18px; font-weight: bold;">${event.name}</span>
-                        <div style="font-size: 14px; color: #718096; margin-top: 5px;">
-                            ${hasPredictions ? 'See how you did!' : 'View results'}
-                        </div>
-                    </div>
-                    <button class="action-btn" style="padding: 10px 20px;">
-                        View →
-                    </button>
-                </div>
-            `;
+                        const event = WCAGuideApp.gameConfig.events[eventId];
+                        const card = document.createElement('div');
+                        card.style.cssText = `
+                            background: #f7fafc;
+                            border: 2px solid #e2e8f0;
+                            border-radius: 15px;
+                            padding: 20px;
+                            margin-bottom: 15px;
+                            cursor: pointer;
+                        `;
 
-            card.onclick = () => this.showResults(eventId);
-            list.appendChild(card);
-        });
+                        const pickCount = Object.keys(predictions).length;
+                        const hasResults = WCAGuideApp.userProgress.results[eventId];
 
-        if (list.innerHTML === '') {
-            list.innerHTML = '<div style="text-align: center; color: #718096; padding: 50px;">No results posted yet!</div>';
-        }
-    },
-
-    showResults(eventId) {
-        WCAGuideApp.navigate('enterResults');
-        document.getElementById('enterResultsTitle').textContent = 
-            `${WCAGuideApp.gameConfig.events[eventId].name} Results`;
-        
-        const content = document.getElementById('enterResultsContent');
-        content.innerHTML = '';
-
-        const predictions = WCAGuideApp.userProgress.predictions[eventId] || {};
-        const actualResults = WCAGuideApp.gameConfig.actualResults[eventId];
-
-        // First section: Show how predictions did (if any)
-        if (Object.keys(predictions).length > 0) {
-            const predSection = document.createElement('div');
-            predSection.innerHTML = '<h3 style="margin-bottom: 15px;">Your Predictions:</h3>';
-            
-            Object.entries(predictions).forEach(([predictedRank, competitorId]) => {
-                const comp = WCAGuideApp.competitors[competitorId];
-                if (!comp) return; // Skip if competitor not found
-                
-                // Find actual position
-                let actualPosition = null;
-                Object.entries(actualResults).forEach(([rank, actualId]) => {
-                    if (actualId === competitorId) {
-                        actualPosition = rank;
-                    }
-                });
-
-                const resultCard = document.createElement('div');
-                resultCard.style.cssText = `
-                    background: #f7fafc;
-                    border: 2px solid ${actualPosition ? '#48bb78' : '#e2e8f0'};
-                    border-radius: 15px;
-                    padding: 15px;
-                    margin-bottom: 10px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                `;
-
-                resultCard.innerHTML = `
-                    <div style="display: flex; align-items: center;">
-                        <img src="${comp.photoThumbUrl}" 
-                             style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;"
-                             onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-                        <div>
-                            <div style="font-weight: bold;">${comp.name}</div>
-                            <div style="font-size: 14px; color: #718096;">
-                                Predicted: ${predictedRank}
+                        card.innerHTML = `
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <span style="font-size: 24px; margin-right: 10px;">${event.icon}</span>
+                                    <span style="font-size: 18px; font-weight: bold;">${event.name}</span>
+                                    <div style="font-size: 14px; color: #718096; margin-top: 5px;">
+                                        ${pickCount} pick${pickCount > 1 ? 's' : ''} ${hasResults ? '✓' : ''}
+                                    </div>
+                                </div>
+                                <button class="action-btn" style="padding: 10px 20px;">
+                                    ${hasResults ? 'Update' : 'Enter'} Results
+                                </button>
                             </div>
-                        </div>
-                    </div>
-                    <div style="text-align: right;">
-                        ${actualPosition ? 
-                            `<div style="color: #48bb78; font-weight: bold;">✓ ${actualPosition}</div>` : 
-                            '<div style="color: #e53e3e;">Not in top 5</div>'
+                        `;
+
+                        card.onclick = () => this.enterResults(eventId);
+                        list.appendChild(card);
+                    });
+
+                    if (list.innerHTML === '') {
+                        list.innerHTML = '<div style="text-align: center; color: #718096; padding: 50px;">No predictions yet! Make some predictions first.</div>';
+                    }
+                },
+
+                enterResults(eventId) {
+                    // Check if event has started
+                    const eventTime = new Date(WCAGuideApp.gameConfig.finals[eventId]?.time);
+                    const now = new Date();
+                    
+                    if (now < eventTime) {
+                        const timeStr = eventTime.toLocaleString('en-US', { 
+                            weekday: 'long', 
+                            hour: 'numeric', 
+                            minute: '2-digit' 
+                        });
+                        alert(`Results can be entered after the event starts at ${timeStr}`);
+                        return;
+                    }
+                    
+                    this.currentEvent = eventId;
+                    this.actualResults = WCAGuideApp.userProgress.results[eventId] || {};
+                    
+                    WCAGuideApp.navigate('enterResults');
+                    document.getElementById('enterResultsTitle').textContent = 
+                        `How did your ${WCAGuideApp.gameConfig.events[eventId].name} picks do?`;
+                    
+                    this.renderResultsForm();
+                },
+
+                renderResultsForm() {
+                    const content = document.getElementById('enterResultsContent');
+                    content.innerHTML = '';
+
+                    const predictions = WCAGuideApp.userProgress.predictions[this.currentEvent];
+                    const positions = ['1st', '2nd', '3rd', '4th', '5th', 'Didn\'t make top 5'];
+
+                    Object.entries(predictions).forEach(([predictedRank, competitorId]) => {
+                        const comp = WCAGuideApp.competitors[competitorId];
+                        
+                        const section = document.createElement('div');
+                        section.style.cssText = `
+                            background: #f7fafc;
+                            border-radius: 15px;
+                            padding: 20px;
+                            margin-bottom: 20px;
+                        `;
+
+                        section.innerHTML = `
+                            <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">
+                                Your ${predictedRank} pick: ${comp.name}
+                            </div>
+                            <div style="font-size: 16px; margin-bottom: 10px;">
+                                Where did ${comp.name.split(' ')[0]} finish?
+                            </div>
+                            <select class="input-field" data-competitor="${competitorId}" 
+                                    style="width: 100%; font-size: 16px;">
+                                <option value="">Select position...</option>
+                                ${positions.map(pos => `
+                                    <option value="${pos}" ${this.actualResults[competitorId] === pos ? 'selected' : ''}>
+                                        ${pos} ${pos.includes('1st') ? '🥇' : pos.includes('2nd') ? '🥈' : pos.includes('3rd') ? '🥉' : ''}
+                                    </option>
+                                `).join('')}
+                            </select>
+                        `;
+
+                        content.appendChild(section);
+                    });
+
+                    const buttonContainer = document.createElement('div');
+                    buttonContainer.style.textAlign = 'center';
+                    buttonContainer.innerHTML = `
+                        <button class="action-btn success" onclick="WCAGuideApp.results.saveResults()">
+                            See My Score!
+                        </button>
+                    `;
+                    content.appendChild(buttonContainer);
+                },
+
+                saveResults() {
+                    // Collect results
+                    const selects = document.querySelectorAll('#enterResultsContent select');
+                    this.actualResults = {};
+                    
+                    selects.forEach(select => {
+                        const competitorId = select.dataset.competitor;
+                        const position = select.value;
+                        if (position) {
+                            this.actualResults[competitorId] = position;
                         }
-                    </div>
-                `;
+                    });
 
-                predSection.appendChild(resultCard);
-            });
-            
-            content.appendChild(predSection);
-            
-            // Divider
-            content.innerHTML += '<hr style="margin: 30px 0; border-color: #e2e8f0;">';
-        }
+                    // Save to progress
+                    WCAGuideApp.userProgress.results[this.currentEvent] = this.actualResults;
+                    WCAGuideApp.saveProgress();
 
-        // Second section: Actual results
-        const resultsSection = document.createElement('div');
-        resultsSection.innerHTML = '<h3 style="margin-bottom: 15px;">Actual Results:</h3>';
+                    // Calculate score
+                    const score = this.calculateScore();
+                    
+                    // Show results
+                    alert(`Your score: ${score.points} points!\n${score.message}`);
+                    WCAGuideApp.navigate('results');
+                },
 
-        const medals = { '1st': '🥇', '2nd': '🥈', '3rd': '🥉', '4th': '4️⃣', '5th': '5️⃣' };
-        
-        Object.entries(actualResults).forEach(([rank, competitorId]) => {
-            if (!competitorId) return; // Skip null entries
-            
-            const comp = WCAGuideApp.competitors[competitorId];
-            if (!comp) return; // Skip if competitor not found
-            
-            const winnerCard = document.createElement('div');
-            winnerCard.style.cssText = `
-                background: linear-gradient(135deg, #f9d976 0%, #f39f86 100%);
-                border: 2px solid #f39f86;
-                border-radius: 15px;
-                padding: 15px;
-                margin-bottom: 10px;
-                display: flex;
-                align-items: center;
-            `;
+                calculateScore() {
+                    const predictions = WCAGuideApp.userProgress.predictions[this.currentEvent];
+                    const results = this.actualResults;
+                    
+                    let points = 0;
+                    let correct = 0;
 
-            winnerCard.innerHTML = `
-                <div style="font-size: 30px; margin-right: 15px;">${medals[rank]}</div>
-                <img src="${comp.photoThumbUrl}" 
-                     style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;"
-                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-                <div style="flex: 1;">
-                    <div style="font-weight: bold; font-size: 18px;">${comp.name}</div>
-                    <div style="font-size: 14px;">🌍 ${comp.country}</div>
-                </div>
-            `;
+                    Object.entries(predictions).forEach(([predictedRank, competitorId]) => {
+                        const actualRank = results[competitorId];
+                        
+                        if (actualRank === predictedRank) {
+                            points += 3; // Exact match
+                            correct++;
+                        } else if (actualRank && actualRank.includes('top 5')) {
+                            points += 1; // Made top 5
+                        }
+                    });
 
-            resultsSection.appendChild(winnerCard);
-        });
+                    let message = '';
+                    if (correct === Object.keys(predictions).length) {
+                        message = '🎯 Perfect predictions! Amazing!';
+                    } else if (correct >= 3) {
+                        message = '🌟 Great job! You really know your cubers!';
+                    } else if (correct >= 1) {
+                        message = '👍 Good effort! Keep learning!';
+                    } else {
+                        message = '💪 Nice try! Predictions are tricky!';
+                    }
 
-        content.appendChild(resultsSection);
-    }
-},
+                    return { points, correct, total: Object.keys(predictions).length, message };
+                }
+            },
+
             // Games module
             games: {
                 currentGame: null,
