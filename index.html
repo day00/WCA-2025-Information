@@ -2969,45 +2969,89 @@ const results = WCAGuideApp.eventResults[eventId];
                 },
 
                 selectCompetitor(slot) {
-                    this.currentSlot = slot;
-                    WCAGuideApp.navigate('competitorSelect');
-                    document.getElementById('competitorSelectTitle').textContent = `Pick your ${slot} place prediction`;
-                    
-                    const grid = document.getElementById('competitorSelectGrid');
-                    grid.innerHTML = '';
+    this.currentSlot = slot;
+    WCAGuideApp.navigate('competitorSelect');
+    document.getElementById('competitorSelectTitle').textContent = `Pick your ${slot} place prediction`;
+    
+    const grid = document.getElementById('competitorSelectGrid');
+    grid.innerHTML = '';
 
-                    // Get ONLY finalists for this event
-                    const finalists = Object.entries(WCAGuideApp.competitors)
-                        .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[this.currentEvent] === true)
-                        .slice(0, 20);
+    // Get ONLY finalists for this event
+    const finalists = Object.entries(WCAGuideApp.competitors)
+        .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[this.currentEvent] === true)
+        .slice(0, 20);
 
-                    if (finalists.length === 0) {
-                        grid.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">Loading finalists...</div>';
-                        return;
-                    }
+    if (finalists.length === 0) {
+        grid.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">Loading finalists...</div>';
+        return;
+    }
 
-                    finalists.forEach(([id, comp]) => {
-                        const card = document.createElement('div');
-                        card.className = 'competitor-select-card';
-                        
-                        // Check if already selected
-                        const alreadySelected = Object.values(this.selections[this.currentEvent] || {}).includes(id);
-                        if (alreadySelected) {
-                            card.classList.add('selected');
-                        }
+    // Change grid to show more details
+    grid.style.cssText = `
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin: 20px 0;
+    `;
 
-                        card.innerHTML = `
-                            <img src="${comp.photoThumbUrl}" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-                            <div class="name">${comp.name}</div>
-                        `;
+    finalists.forEach(([id, comp]) => {
+        const card = document.createElement('div');
+        card.className = 'competitor-select-card';
+        
+        // Check if already selected
+        const alreadySelected = Object.values(this.selections[this.currentEvent] || {}).includes(id);
+        if (alreadySelected) {
+            card.classList.add('selected');
+        }
 
-                        if (!alreadySelected) {
-                            card.onclick = () => this.confirmSelection(id);
-                        }
+        // Get world ranking for this event
+        const worldRank = comp.worldRankings[this.currentEvent]?.single || 'N/A';
+        const hasTime = comp.worldRankings[this.currentEvent]?.singleTime;
+        const bestTime = hasTime ? WCAGuideApp.browse.formatTime(comp.worldRankings[this.currentEvent].singleTime) : 'N/A';
 
-                        grid.appendChild(card);
-                    });
-                },
+        card.style.cssText = `
+            background: ${alreadySelected ? '#e2e8f0' : '#f7fafc'};
+            border: 2px solid ${alreadySelected ? '#a0aec0' : '#e2e8f0'};
+            border-radius: 15px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: ${alreadySelected ? 'default' : 'pointer'};
+            transition: all 0.2s;
+            opacity: ${alreadySelected ? '0.6' : '1'};
+        `;
+
+        card.innerHTML = `
+            <img src="${comp.photoThumbUrl}" 
+                 style="width: 60px; height: 60px; border-radius: 50%; margin-bottom: 8px;"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+            <div class="name" style="font-weight: bold; font-size: 14px; margin-bottom: 5px;">${comp.name}</div>
+            <div style="font-size: 12px; color: #718096; margin-bottom: 3px;">🌍 ${comp.country}</div>
+            <div style="font-size: 12px; color: #4a5568; font-weight: bold;">WR #${worldRank}</div>
+            <div style="font-size: 11px; color: #718096;">${bestTime}</div>
+            <div style="font-size: 11px; color: #718096; margin-top: 5px;">
+                🥇${comp.medals.gold} 🥈${comp.medals.silver} 🥉${comp.medals.bronze}
+            </div>
+            ${alreadySelected ? '<div style="font-size: 11px; color: #e53e3e; margin-top: 5px; font-weight: bold;">Already picked!</div>' : ''}
+        `;
+
+        if (!alreadySelected) {
+            card.onmouseover = () => {
+                if (!alreadySelected) {
+                    card.style.transform = 'scale(1.05)';
+                    card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+                }
+            };
+            card.onmouseout = () => {
+                card.style.transform = 'scale(1)';
+                card.style.boxShadow = 'none';
+            };
+            card.onclick = () => this.confirmSelection(id);
+        }
+
+        grid.appendChild(card);
+    });
+},
+
 
                 confirmSelection(competitorId) {
                     // Check if already selected in a different slot
