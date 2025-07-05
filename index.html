@@ -940,7 +940,11 @@
     </div>
     <div class="competitor-list" id="eventCompetitorList"></div>
 </div>
-
+<!-- Finalist Event Selection Screen (Mobile) -->
+<div class="screen" id="finalistEventSelectScreen">
+    <h2 style="text-align: center; margin-bottom: 20px;">Choose an Event</h2>
+    <div id="finalistEventList"></div>
+</div>
         <!-- Competitor Detail Screen -->
         <div class="screen" id="competitorDetailScreen">
             <div id="competitorDetail"></div>
@@ -1806,6 +1810,7 @@ updateFinalsStatus() {
                     gamePlay: 'Playing Game',
                     gameResults: 'Game Over!',
                     scores: 'Your Scores',
+                    finalistEventSelect: '2025 WCA Finalists',
                     save: 'Save & Load'
                 };
                 return titles[screen] || 'WCA 2025';
@@ -2510,35 +2515,93 @@ updateFinalsStatus() {
                 },
 
                 
-                    selectMode(mode) {
+                   selectMode(mode) {
     this.mode = mode;
     
-                    // Find first available event for finalists mode
-                    if (mode === 'finalists') {
-                        // Start with first event that has finalists
-                        this.currentEventIndex = 0;
-                        while (this.currentEventIndex < this.eventOrder.length) {
-                            const eventId = this.eventOrder[this.currentEventIndex];
-                            if (WCAGuideApp.gameConfig.finalsStatus[eventId] === 'ready' || 
-                                WCAGuideApp.gameConfig.finalsStatus[eventId] === 'complete') {
-                                break;
-                            }
-                            this.currentEventIndex++;
-                        }
-                    } else {
-                        this.currentEventIndex = 0;
-                    }
-                    
-                    WCAGuideApp.navigate('eventBrowser');
-                    
-                    // Add tablet event tabs if screen is wide enough
-                    if (window.innerWidth >= 768) {
-                        this.renderEventTabs();
-                    }
-                    
-                    this.showCurrentEvent();
-                },
+    // On mobile, show event selection screen for finalists
+    if (mode === 'finalists' && window.innerWidth < 768) {
+        WCAGuideApp.navigate('finalistEventSelect');
+        this.renderFinalistEventList();
+        return; // Exit early for mobile
+    }
+    
+    // Desktop/tablet behavior (unchanged)
+    if (mode === 'finalists') {
+        // Start with first event that has finalists
+        this.currentEventIndex = 0;
+        while (this.currentEventIndex < this.eventOrder.length) {
+            const eventId = this.eventOrder[this.currentEventIndex];
+            const hasFinalists = Object.values(WCAGuideApp.competitors)
+                .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+            if (hasFinalists) break;
+            this.currentEventIndex++;
+        }
+    } else {
+        this.currentEventIndex = 0;
+    }
+    
+    WCAGuideApp.navigate('eventBrowser');
+    
+    // Add tablet event tabs if screen is wide enough
+    if (window.innerWidth >= 768) {
+        this.renderEventTabs();
+    }
+    
+    this.showCurrentEvent();
+},
+                renderFinalistEventList() {
+    const list = document.getElementById('finalistEventList');
+    list.innerHTML = '';
 
+    Object.entries(WCAGuideApp.gameConfig.events).forEach(([eventId, event]) => {
+        // Check if this event has any finalists
+        const hasFinalists = Object.values(WCAGuideApp.competitors)
+            .some(comp => comp.isFinalist && comp.isFinalist[eventId]);
+        
+        if (!hasFinalists) return; // Skip events without finalists
+        
+        const card = document.createElement('div');
+        card.style.cssText = `
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        `;
+
+        card.innerHTML = `
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div>
+                    <span style="font-size: 24px; margin-right: 10px;">${event.icon}</span>
+                    <span style="font-size: 18px; font-weight: bold;">${event.name}</span>
+                </div>
+            </div>
+            <div style="color: #5a67d8; font-weight: bold; margin-top: 10px; text-align: center;">
+                Click here to see the finalists! →
+            </div>
+        `;
+
+        card.onclick = () => {
+            this.currentEventIndex = this.eventOrder.indexOf(eventId);
+            WCAGuideApp.navigate('eventBrowser');
+            this.showCurrentEvent();
+        };
+
+        // Add hover effect
+        card.onmouseover = () => {
+            card.style.transform = 'translateY(-2px)';
+            card.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+        };
+        card.onmouseout = () => {
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'none';
+        };
+
+        list.appendChild(card);
+    });
+},
                 renderEventTabs() {
                     const header = document.querySelector('.event-browser-header');
                     if (!header) return;
