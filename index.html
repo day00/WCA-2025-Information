@@ -2583,21 +2583,21 @@ updateFinalsStatus() {
                         </div>
                     `;
                     
-                    card.onclick = () => this.showCompetitorDetail(competitorId);
-                    return card;
-                },
+                   card.onclick = () => this.showCompetitorDetail(competitorId);
+return card;
+},
 
-               prevEvent() {
+prevEvent() {
     this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
     this.showCurrentEvent();
-},
+},  // ← Need this comma!
 
 nextEvent() {
     this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
     this.showCurrentEvent();
-}
+},  // ← And this comma!
 
-                showCompetitorDetail(competitorId) {
+showCompetitorDetail(competitorId) {
     console.log('Showing details for:', competitorId);
     const comp = WCAGuideApp.competitors[competitorId];
     console.log('Competitor data:', comp);
