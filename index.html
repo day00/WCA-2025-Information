@@ -2351,7 +2351,390 @@ updateFinalsStatus() {
                     }
                 };
             },
+// Browse module
+            browse: {
+                mode: null, // 'world' or 'finalists'
+                currentEventIndex: 0,
+                eventOrder: ['555bf', '555', 'clock', '333oh', 'pyram', '777', 'minx', '444', '222', 'skewb', '444bf', '666', '333bf', 'sq1', '333'],
+                
+                init() {
+                    // Initialize browse system
+                },
 
+                handleBrowseClick() {
+                    if (this.mode) {
+                        // Already selected a mode, go directly to event browser
+                        WCAGuideApp.navigate('eventBrowser');
+                        if (window.innerWidth >= 768) {
+                            this.renderEventTabs();
+                        }
+                        this.showCurrentEvent();
+                    } else {
+                        // Show mode selection
+                        WCAGuideApp.navigate('browse');
+                    }
+                },
+
+                checkForExistingMode() {
+                    // If already had a mode selected, go directly to event browser
+                    if (this.mode) {
+                        WCAGuideApp.navigate('eventBrowser');
+                        if (window.innerWidth >= 768) {
+                            this.renderEventTabs();
+                        }
+                        this.showCurrentEvent();
+                        return true;
+                    }
+                    return false;
+                },
+
+                
+                    selectMode(mode) {
+    this.mode = mode;
+    
+                    // Find first available event for finalists mode
+                    if (mode === 'finalists') {
+                        // Start with first event that has finalists
+                        this.currentEventIndex = 0;
+                        while (this.currentEventIndex < this.eventOrder.length) {
+                            const eventId = this.eventOrder[this.currentEventIndex];
+                            if (WCAGuideApp.gameConfig.finalsStatus[eventId] === 'ready' || 
+                                WCAGuideApp.gameConfig.finalsStatus[eventId] === 'complete') {
+                                break;
+                            }
+                            this.currentEventIndex++;
+                        }
+                    } else {
+                        this.currentEventIndex = 0;
+                    }
+                    
+                    WCAGuideApp.navigate('eventBrowser');
+                    
+                    // Add tablet event tabs if screen is wide enough
+                    if (window.innerWidth >= 768) {
+                        this.renderEventTabs();
+                    }
+                    
+                    this.showCurrentEvent();
+                },
+
+                renderEventTabs() {
+                    const header = document.querySelector('.event-browser-header');
+                    if (!header) return;
+                    
+                    // Create tabs container if it doesn't exist
+                    let tabsContainer = document.querySelector('.event-tabs');
+                    if (!tabsContainer) {
+                        tabsContainer = document.createElement('div');
+                        tabsContainer.className = 'event-tabs';
+                        header.parentNode.insertBefore(tabsContainer, header.nextSibling);
+                    }
+                    
+                    tabsContainer.innerHTML = '';
+                    
+                    this.eventOrder.forEach((eventId, index) => {
+                        const event = WCAGuideApp.gameConfig.events[eventId];
+                        const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
+                        
+                        const tab = document.createElement('div');
+                        tab.className = 'event-tab';
+                        
+                        if (index === this.currentEventIndex) {
+                            tab.classList.add('active');
+                        }
+                        
+                        if (this.mode === 'finalists' && status !== 'ready' && status !== 'complete') {
+                            tab.classList.add('disabled');
+                        }
+                        
+                        tab.innerHTML = `
+                            <div>${event.icon}</div>
+                            <div style="font-size: 12px;">${event.name}</div>
+                        `;
+                        
+                        if (!tab.classList.contains('disabled')) {
+                            tab.onclick = () => {
+                                this.currentEventIndex = index;
+                                this.showCurrentEvent();
+                                this.renderEventTabs();
+                            };
+                        }
+                        
+                        tabsContainer.appendChild(tab);
+                    });
+                },
+
+                showCurrentEvent() {
+    const eventId = this.eventOrder[this.currentEventIndex];
+    const event = WCAGuideApp.gameConfig.events[eventId];
+    
+    // Update header
+    document.getElementById('currentEventName').textContent = 
+        `${event.icon} ${event.name}`;
+    
+    // Get event time
+    const eventTime = this.getEventDay(eventId);
+    document.getElementById('currentEventTime').textContent = eventTime;
+    
+    // Update nav title based on mode
+    const navTitle = document.getElementById('navTitle');
+    if (navTitle) {
+        if (this.mode === 'world') {
+            navTitle.textContent = 'World Top 10';
+        } else if (this.mode === 'finalists') {
+            navTitle.textContent = '2025 WCA Finalists';
+        }
+    }
+    
+    // Show competitors
+    this.showCompetitors(eventId);
+},
+
+                getEventDay(eventId) {
+                    const eventDate = new Date(WCAGuideApp.gameConfig.finals[eventId]?.time);
+                    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    return days[eventDate.getDay()] || 'TBD';
+                },
+
+                showCompetitors(eventId) {
+                    const list = document.getElementById('eventCompetitorList');
+                    list.innerHTML = '';
+
+                    if (this.mode === 'world') {
+                        // Show world top 10
+                        const competitors = Object.entries(WCAGuideApp.competitors)
+                            .filter(([id, comp]) => comp.worldRankings[eventId])
+                            .sort((a, b) => a[1].worldRankings[eventId].single - b[1].worldRankings[eventId].single)
+                            .slice(0, 10);
+
+                        if (competitors.length === 0) {
+                            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">No world ranking data available for this event.</div>';
+                            return;
+                        }
+
+                        competitors.forEach(([id, comp], index) => {
+                            const card = this.createCompetitorCard(comp, id, eventId, index + 1);
+                            list.appendChild(card);
+                        });
+                    } else {
+                        // Show 2025 finalists
+                        const status = WCAGuideApp.gameConfig.finalsStatus[eventId];
+                        
+
+                        // Get finalists
+                        const finalists = Object.entries(WCAGuideApp.competitors)
+                            .filter(([id, comp]) => comp.isFinalist && comp.isFinalist[eventId])
+                            .slice(0, 20);
+
+                        if (finalists.length === 0) {
+                            list.innerHTML = '<div style="text-align: center; padding: 50px; color: #718096;">This Data is Unavailable, Please Select a Different Competition</div>';
+                            return;
+                        }
+
+                        finalists.forEach(([id, comp], index) => {
+                            const card = this.createCompetitorCard(comp, id, eventId, index + 1, true);
+                            list.appendChild(card);
+                        });
+                    }
+                },
+
+                createCompetitorCard(comp, competitorId, eventId, rank, isFinalist = false) {
+                    const card = document.createElement('div');
+                    card.className = 'competitor-card';
+                    
+                    const worldRank = comp.worldRankings[eventId]?.single || 'N/A';
+                    const displayRank = isFinalist ? `Seed #${rank}` : `#${worldRank} World`;
+                    
+                    card.innerHTML = `
+                        <img src="${comp.photoThumbUrl}" class="competitor-photo" 
+                             onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'"">
+                        <div class="competitor-info">
+                            <div class="competitor-name">${comp.name}</div>
+                            <div class="competitor-country">🌍 ${comp.country}</div>
+                            <div class="competitor-medals">
+                                <span class="medal">🥇 ${comp.medals.gold}</span>
+                                <span class="medal">🥈 ${comp.medals.silver}</span>
+                                <span class="medal">🥉 ${comp.medals.bronze}</span>
+                            </div>
+                            <div style="font-size: 14px; color: #718096; margin-top: 5px;">
+                                ${displayRank}
+                            </div>
+                        </div>
+                    `;
+                    
+                   card.onclick = () => this.showCompetitorDetail(competitorId);
+return card;
+},
+
+prevEvent() {
+    this.currentEventIndex = (this.currentEventIndex - 1 + this.eventOrder.length) % this.eventOrder.length;
+    this.showCurrentEvent();
+},  // ← Need this comma!
+
+nextEvent() {
+    this.currentEventIndex = (this.currentEventIndex + 1) % this.eventOrder.length;
+    this.showCurrentEvent();
+},  // ← And this comma!
+
+showCompetitorDetail(competitorId) {
+    console.log('Showing details for:', competitorId);
+    const comp = WCAGuideApp.competitors[competitorId];
+    console.log('Competitor data:', comp);
+    
+    WCAGuideApp.navigate('competitorDetail');
+    const detail = document.getElementById('competitorDetail');
+    
+    if (!comp) {
+        detail.innerHTML = '<div style="padding: 50px; text-align: center;">Competitor not found</div>';
+        return;
+    }
+    
+    detail.innerHTML = `
+        <div style="text-align: center;">
+            <img src="${comp.photoUrl}" style="width: 200px; height: 200px; border-radius: 20px; object-fit: cover; margin-bottom: 20px;"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect width=%22200%22 height=%22200%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+            <h1 style="font-size: 28px; color: #2d3748; margin-bottom: 10px;">${comp.name}</h1>
+            <div style="font-size: 20px; color: #718096; margin-bottom: 20px;">🌍 ${comp.countryFull}</div>
+            
+            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">📊 Competition Stats</h3>
+                <div style="font-size: 16px; line-height: 1.8;">
+                    • Competitions: ${comp.competitions}<br>
+                    • Total Medals: ${comp.medals.total}<br>
+                    • Gold: ${comp.medals.gold}<br>
+                    • Silver: ${comp.medals.silver}<br>
+                    • Bronze: ${comp.medals.bronze}
+                </div>
+            </div>
+            
+            ${this.renderFinalistInfo(comp, competitorId)}
+            
+            <div style="background: #f7fafc; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
+                <h3 style="color: #4a5568; margin-bottom: 15px;">🏆 Best Events</h3>
+                ${this.renderBestEvents(comp)}
+            </div>
+            
+            <a href="https://www.worldcubeassociation.org/persons/${competitorId}" 
+               target="_blank" class="action-btn">View WCA Profile</a>
+        </div>
+    `;
+},
+
+                renderFinalistInfo(comp, competitorId) {
+    console.log('renderFinalistInfo called');
+    console.log('gameConfig.events exists?', !!WCAGuideApp.gameConfig.events);
+    console.log('WCAGuideApp exists?', !!WCAGuideApp);
+    
+    const finalistEvents = [];
+    const eventPerformance = [];
+    
+    if (comp.isFinalist) {
+        Object.entries(comp.isFinalist).forEach(([eventId, isFinalist]) => {
+            if (isFinalist) {
+                console.log('Checking event:', eventId);
+                console.log('gameConfig.events at this point:', WCAGuideApp.gameConfig.events);
+                const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
+                // ... rest
+                                finalistEvents.push(eventName);
+                                
+                                // Check for qualifying results
+                                // Check for qualifying results
+// Check for qualifying results
+const results = WCAGuideApp.eventResults[eventId];
+                                if (results) {
+                                    const compResult = Object.entries(results).find(([name, data]) => 
+                                        comp.name.toLowerCase().includes(name.toLowerCase()) || 
+                                        name.toLowerCase().includes(comp.name.toLowerCase())
+                                    );
+                                    
+                                    if (compResult) {
+                                        const [, data] = compResult;
+                                        eventPerformance.push({
+                                            event: eventName,
+                                            seed: data.seed,
+                                            average: data.average,
+                                            best: data.best,
+                                            achievement: data.achievement
+                                        });
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    if (finalistEvents.length === 0) return '';
+
+                    let performanceHtml = '';
+                    if (eventPerformance.length > 0) {
+                        performanceHtml = eventPerformance.map(perf => {
+                            let achievementBadge = '';
+                            if (perf.achievement === 'NR') {
+                                achievementBadge = ' <span style="background: #f6e05e; color: #744210; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold;">National Record!</span>';
+                            } else if (perf.achievement === 'PR') {
+                                achievementBadge = ' <span style="background: #9ae6b4; color: #22543d; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold;">Personal Record!</span>';
+                            }
+                            
+                            return `
+                                <div style="margin-bottom: 15px; padding: 10px; background: white; border-radius: 10px;">
+                                    <strong>${perf.event}</strong>${achievementBadge}<br>
+                                    Seed: #${perf.seed} | Average: ${perf.average}s | Best: ${perf.best}s
+                                </div>
+                            `;
+                        }).join('');
+                    }
+
+                    // Add fun facts
+                    const funFacts = [];
+                    if (finalistEvents.length >= 2) {
+                        funFacts.push(`🌟 Made finals in ${finalistEvents.length} events!`);
+                    }
+                    
+                    // Check for NR/PR achievements
+                    const achievements = eventPerformance.filter(p => p.achievement);
+                    if (achievements.length > 0) {
+                        const nrCount = achievements.filter(a => a.achievement === 'NR').length;
+                        const prCount = achievements.filter(a => a.achievement === 'PR').length;
+                        if (nrCount > 0) {
+                            funFacts.push(`🏆 Set ${nrCount} National Record${nrCount > 1 ? 's' : ''} in qualifying!`);
+                        }
+                        if (prCount > 0) {
+                            funFacts.push(`⭐ Achieved ${prCount} Personal Best${prCount > 1 ? 's' : ''} in qualifying!`);
+                        }
+                    }
+
+                    return `
+                        <div style="background: #e6fffa; border: 2px solid #4fd1c5; border-radius: 15px; padding: 20px; margin: 20px 0; text-align: left;">
+                            <h3 style="color: #234e52; margin-bottom: 15px;">🎯 WCA 2025 Finals</h3>
+                            <div style="font-size: 16px; line-height: 1.8;">
+                                ${finalistEvents.length > 1 ? 
+                                    `Making finals in ${finalistEvents.length} events!<br>` : 
+                                    'Qualified for finals in:'}<br>
+                                ${finalistEvents.map(event => `• ${event}`).join('<br>')}
+                            </div>
+                            ${performanceHtml ? `
+                                <h4 style="color: #234e52; margin-top: 20px; margin-bottom: 10px;">📊 Qualifying Performance</h4>
+                                ${performanceHtml}
+                            ` : ''}
+                            ${funFacts.length > 0 ? `
+                                <div style="margin-top: 20px; padding: 15px; background: #fef5e7; border-radius: 10px;">
+                                    ${funFacts.join('<br>')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `;
+                },
+
+                renderBestEvents(comp) {
+                    const topEvents = Object.entries(comp.worldRankings)
+                        .sort((a, b) => a[1].single - b[1].single)
+                        .slice(0, 3);
+
+                    return topEvents.map(([eventId, ranking]) => {
+                        const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
+                        const time = this.formatTime(ranking.singleTime);
+                        return `• ${eventName}: ${time} (#${ranking.single} World)<br>`;
+                    }).join('');
+                },
      formatTime(centiseconds) {
                     const minutes = Math.floor(centiseconds / 6000);
                     const seconds = ((centiseconds % 6000) / 100).toFixed(2);
