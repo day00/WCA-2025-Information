@@ -1681,123 +1681,175 @@ updateFinalsStatus() {
                 }
             },
 
-            updateMainEventDisplay(event, now) {
-                const timeDiff = event.time - now;
-                const minutes = Math.floor(timeDiff / 60000);
-                const hours = Math.floor(minutes / 60);
-                const days = Math.floor(hours / 24);
+           updateMainEventDisplay(event, now) {
+    const timeDiff = event.time - now;
+    const minutes = Math.floor(timeDiff / 60000);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
 
-                const timeEl = document.getElementById('mainEventTime');
-                const messageEl = document.getElementById('mainEventMessage');
+    const timeEl = document.getElementById('mainEventTime');
+    const messageEl = document.getElementById('mainEventMessage');
+    const titleEl = document.querySelector('#mainEventBox h3');
 
-                // If it's happening now
-                if (timeDiff < 0 && timeDiff > -600000) {
-                    timeEl.textContent = '🏆 HAPPENING NOW! 🏆';
-                    messageEl.textContent = 'The moment we\'ve been waiting for!';
-                    messageEl.style.animation = 'pulse 1s infinite';
-                    return;
-                }
+    // Calculate days since the championship
+    const daysSinceEvent = Math.floor((now - event.time) / (1000 * 60 * 60 * 24));
 
-                // Format time
-                let timeText = 'Sunday at 4:15 PM';
-                if (days <= 1) {
-                    if (hours > 0) {
-                        timeText = `In ${hours}h ${minutes % 60}m`;
-                    } else if (minutes > 0) {
-                        timeText = `In ${minutes}m`;
-                    } else {
-                        timeText = `In ${Math.floor(timeDiff / 1000)}s`;
-                    }
-                }
-
-                timeEl.textContent = timeText;
-
-                // Special 3x3x3 messages
-                if (minutes <= 5) {
-                    messageEl.textContent = '🚀 THE MAIN EVENT! Let\'s GO!';
-                    messageEl.style.animation = 'pulse 1s infinite';
-                } else if (minutes <= 10) {
-                    messageEl.textContent = '📱 Phones ready for the big moment!';
-                } else if (minutes <= 15) {
-                    messageEl.textContent = '🎯 Find your saved seat & get ready!';
-                } else if (minutes <= 30) {
-                    messageEl.textContent = '⚠️ Arena filling up! Get your seat NOW!';
-                } else if (minutes <= 45) {
-                    messageEl.textContent = '🪑 Get seats for 3x3x3! Prime spots going fast!';
-                } else if (minutes <= 60) {
-                    messageEl.textContent = '🏆 3x3x3 FINALS IN 1 HOUR! Plan your day!';
-                } else if (minutes <= 120) {
-                    messageEl.textContent = '🏃 Send Dad to save seats NOW!';
-                } else if (now.getDay() === 0) { // Sunday
-                    // Check if it's before 1:50 PM (when special messaging stops)
-                    const stopMessagingTime = new Date(event.time);
-                    stopMessagingTime.setHours(13, 50); // 1:50 PM
-                    
-                    if (now < stopMessagingTime) {
-                        messageEl.textContent = 'It\'s going to be CROWDED!';
-                    } else {
-                        messageEl.textContent = '';
-                    }
-                } else {
-                    messageEl.textContent = days > 0 ? `${days} day${days > 1 ? 's' : ''} to go!` : '';
-                }
-            },
-
-  navigate(screen) {
-    // Clear countdown when leaving home
-    if (this.countdownInterval && screen !== 'home') {
-        clearInterval(this.countdownInterval);
-        this.countdownInterval = null;
+    // If it's been more than 3 days, show memory/practice mode
+    if (daysSinceEvent > 3) {
+        titleEl.textContent = '🏆 WCA 2025 Memories 🏆';
+        timeEl.textContent = `${daysSinceEvent} days since the championship`;
+        
+        // Rotating memory messages
+        const memoryMessages = [
+            '🎯 Keep practicing those algorithms!',
+            '📸 Look through your championship photos!',
+            '🧩 Time to beat your personal records!',
+            '🌟 You witnessed cubing history!',
+            '🎮 Play the games to stay sharp!',
+            '📚 Study the champions\' techniques!',
+            '🏃 Getting ready for the next comp?',
+            '✨ What an amazing experience!'
+        ];
+        const messageIndex = Math.floor(now.getTime() / 60000) % memoryMessages.length; // Change every minute
+        messageEl.textContent = memoryMessages[messageIndex];
+        
+        // Nice memory gradient
+        document.getElementById('mainEventBox').style.background = 
+            'linear-gradient(135deg, #fa709a 0%, #fee140 100%)';
+        return;
     }
+
+    // Check if 3x3x3 finals are over by 15 minutes
+    if (timeDiff < -900000) { // 15 minutes after 3x3x3 start
+        // Show flight countdown
+        const flightTime = new Date(event.time);
+        flightTime.setHours(21, 0, 0, 0); // 9:00 PM same day
+        const flightDiff = flightTime - now;
+        
+        if (flightDiff > 0) {
+            // Update the box content for flight
+            titleEl.textContent = '✈️ Flight Home ✈️';
+            
+            const flightMinutes = Math.floor(flightDiff / 60000);
+            const flightHours = Math.floor(flightMinutes / 60);
+            
+            if (flightHours > 0) {
+                timeEl.textContent = `Departure in ${flightHours}h ${flightMinutes % 60}m`;
+            } else if (flightMinutes > 0) {
+                timeEl.textContent = `Departure in ${flightMinutes}m`;
+            } else {
+                const flightSeconds = Math.floor(flightDiff / 1000);
+                timeEl.textContent = `Departure in ${flightSeconds}s`;
+            }
+            
+            // Rotating messages every 30 seconds
+            const messages = [
+                '🧳 What an amazing WCA Championship! Time to pack up!',
+                '🏆 Did you get all your autographs? Check your bag!',
+                '📸 Hope you took lots of photos with the champions!',
+                '🎯 Practice those algorithms on the plane ride home!',
+                '✈️ Next stop: Home! Keep cubing!',
+                '🎪 What was your favorite event? Think about it!',
+                '🤝 Did you make new cubing friends? Stay in touch!',
+                '🌟 Remember: You saw history being made today!'
+            ];
+            const messageIndex = Math.floor(now.getTime() / 30000) % messages.length;
+            messageEl.textContent = messages[messageIndex];
+            
+            document.getElementById('mainEventBox').style.background = 
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        } else if (daysSinceEvent === 0) {
+            // Same day, after flight time
+            titleEl.textContent = '🏠 Welcome Home! 🏠';
+            timeEl.textContent = 'What a day!';
+            messageEl.textContent = '😴 Rest up - you\'ve had an amazing adventure!';
+            
+            document.getElementById('mainEventBox').style.background = 
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        } else if (daysSinceEvent <= 3) {
+            // Next few days - recovery/reflection mode
+            const dayMessages = {
+                1: {
+                    title: '📅 The Day After',
+                    time: 'Back to regular life!',
+                    message: '🎒 Did you show your friends your WCA souvenirs?'
+                },
+                2: {
+                    title: '📸 Share Your Story',
+                    time: '2 days since WCA 2025',
+                    message: '📱 Time to post those championship photos!'
+                },
+                3: {
+                    title: '🧩 Keep Cubing!',
+                    time: '3 days since WCA 2025',
+                    message: '🎯 Practice what you learned from the champions!'
+                }
+            };
+            
+            const dayMsg = dayMessages[daysSinceEvent];
+            titleEl.textContent = dayMsg.title;
+            timeEl.textContent = dayMsg.time;
+            messageEl.textContent = dayMsg.message;
+            
+            document.getElementById('mainEventBox').style.background = 
+                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)';
+        }
+        return;
+    }
+
+    // If we're in the 15 minutes after finals, show "Just finished!"
+    if (timeDiff < 0 && timeDiff > -900000) {
+        titleEl.textContent = '🎉 3x3x3 Finals Complete! 🎉';
+        timeEl.textContent = 'What an amazing final!';
+        messageEl.textContent = '🏆 Congratulations to all competitors!';
+        messageEl.style.animation = '';
+        return;
+    }
+
+    // Original 3x3x3 countdown code for BEFORE the event
+    titleEl.textContent = '🏆 3x3x3 Finals';
     
-    // Track navigation history
-    if (this.currentScreen && this.currentScreen !== screen) {
-        this.navigationHistory.push(this.currentScreen);
-        // Keep only last 10 screens to prevent memory issues
-        if (this.navigationHistory.length > 10) {
-            this.navigationHistory.shift();
+    // Format time
+    let timeText = 'Sunday at 4:15 PM';
+    if (days <= 1) {
+        if (hours > 0) {
+            timeText = `In ${hours}h ${minutes % 60}m`;
+        } else if (minutes > 0) {
+            timeText = `In ${minutes}m`;
+        } else {
+            timeText = `In ${Math.floor(timeDiff / 1000)}s`;
         }
     }
-    this.currentScreen = screen;
-    
-    // Hide all screens
-    document.querySelectorAll('.screen').forEach(s => {
-        s.classList.remove('active');
-        s.style.display = 'none';
-    });
-    
-    // Show selected screen
-    const screenElement = document.getElementById(screen + 'Screen');
-    if (screenElement) {
-        screenElement.classList.add('active');
-        screenElement.style.display = 'block';
-        
-        // Special handling for certain screens
-        if (screen === 'scores') {
-            // Reload progress from localStorage before showing scores
-            this.loadProgress();
-            this.scores.renderScores();
-        }
-    }
 
-    // Update nav bar
-    const navBar = document.getElementById('navBar');
-    const navTitle = document.getElementById('navTitle');
-    
-    if (screen === 'home') {
-        navBar.style.display = 'none';
+    timeEl.textContent = timeText;
+
+    // Special 3x3x3 messages (only show BEFORE the event)
+    if (minutes <= 5) {
+        messageEl.textContent = '🚀 THE MAIN EVENT! Let\'s GO!';
+        messageEl.style.animation = 'pulse 1s infinite';
+    } else if (minutes <= 10) {
+        messageEl.textContent = '📱 Phones ready for the big moment!';
+    } else if (minutes <= 15) {
+        messageEl.textContent = '🎯 Find your saved seat & get ready!';
+    } else if (minutes <= 30) {
+        messageEl.textContent = '⚠️ Arena filling up! Get your seat NOW!';
+    } else if (minutes <= 45) {
+        messageEl.textContent = '🪑 Get seats for 3x3x3! Prime spots going fast!';
+    } else if (minutes <= 60) {
+        messageEl.textContent = '🏆 3x3x3 FINALS IN 1 HOUR! Plan your day!';
+    } else if (minutes <= 120) {
+        messageEl.textContent = '🏃 Send Dad to save seats NOW!';
+    } else if (now.getDay() === 0) { // Sunday
+        const stopMessagingTime = new Date(event.time);
+        stopMessagingTime.setHours(13, 50);
         
-        // CLEAR NAVIGATION STATE when going home
-        this.browse.mode = null;
-        this.navigationHistory = [];
-        
-        // Restart countdown when returning home
-        if (!this.countdownInterval) {
-            this.startCountdown();
+        if (now < stopMessagingTime) {
+            messageEl.textContent = 'It\'s going to be CROWDED!';
+        } else {
+            messageEl.textContent = '';
         }
     } else {
-        navBar.style.display = 'flex';
-        navTitle.textContent = this.getScreenTitle(screen);
+        messageEl.textContent = days > 0 ? `${days} day${days > 1 ? 's' : ''} to go!` : '';
     }
 },
             getScreenTitle(screen) {
