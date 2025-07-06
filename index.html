@@ -3404,7 +3404,14 @@ nextEvent() {
                     const resultsSection = document.createElement('div');
                     resultsSection.innerHTML = '<h3 style="margin-bottom: 15px;">Actual Results:</h3>';
 
-                    const medals = { '1st': '🥇', '2nd': '🥈', '3rd': '🥉', '4th': '4️⃣', '5th': '5️⃣' };
+                    const getMedal = (rank) => {
+    if (rank.startsWith('1st')) return '🥇';
+    if (rank.startsWith('2nd')) return '🥈';
+    if (rank.startsWith('3rd')) return '🥉';
+    if (rank.startsWith('4th')) return '4️⃣';
+    if (rank.startsWith('5th')) return '5️⃣';
+    return '🏆';
+};
                     
                     Object.entries(actualResults).forEach(([rank, competitorId]) => {
                         if (!competitorId) return; // Skip null entries
