@@ -19077,38 +19077,38 @@
     },
     "funFacts": []
   },
-  "2024KHAN29": {
+ "2018KHAN28": {
     "name": "Zayn Khanani",
     "country": "United States",
-    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2024KHAN29/1721498943.jpg",
-    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2024KHAN29/1721498943_thumb.jpg",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018KHAN28/1710128612.jpeg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018KHAN28/1710128612_thumb.jpg",
     "gender": "m",
-    "competitions": 2,
+    "competitions": 16,
     "medals": {
-      "gold": 0,
-      "silver": 0,
-      "bronze": 0,
-      "total": 0
+      "gold": 162,
+      "silver": 87,
+      "bronze": 71,
+      "total": 320
     },
     "worldRankings": {
       "222": {
-        "single": 107357,
-        "singleTime": 753,
-        "average": 105517,
-        "averageTime": 1053
+        "single": 1,
+        "singleTime": 50,
+        "average": 3,
+        "averageTime": 92
       },
       "333": {
-        "single": 100026,
-        "singleTime": 2004,
-        "average": 78172,
-        "averageTime": 2073
+        "single": 34,
+        "singleTime": 471,
+        "average": 253,
+        "averageTime": 669
       }
     },
     "topEvents": [
-      "333",
-      "222"
+      "222",
+      "333"
     ],
-    "difficulty": "hard",
+    "difficulty": "easy",
     "isFinalist": {
       "222": true
     },
