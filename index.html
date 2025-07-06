@@ -3332,124 +3332,143 @@ nextEvent() {
                     }
                 },
 
-                showResults(eventId) {
-                    WCAGuideApp.navigate('enterResults');
-                    document.getElementById('enterResultsTitle').textContent = 
-                        `${WCAGuideApp.gameConfig.events[eventId].name} Results`;
-                    
-                    const content = document.getElementById('enterResultsContent');
-                    content.innerHTML = '';
+               showResults(eventId) {
+    WCAGuideApp.navigate('enterResults');
+    document.getElementById('enterResultsTitle').textContent = 
+        `${WCAGuideApp.gameConfig.events[eventId].name} Results`;
+    
+    const content = document.getElementById('enterResultsContent');
+    content.innerHTML = '';
 
-                    const predictions = WCAGuideApp.userProgress.predictions[eventId] || {};
-                    const actualResults = WCAGuideApp.gameConfig.actualResults[eventId];
+    const predictions = WCAGuideApp.userProgress.predictions[eventId] || {};
+    const actualResults = WCAGuideApp.gameConfig.actualResults[eventId];
 
-                    // First section: Show how predictions did (if any)
-                    if (Object.keys(predictions).length > 0) {
-                        const predSection = document.createElement('div');
-                        predSection.innerHTML = '<h3 style="margin-bottom: 15px;">Your Predictions:</h3>';
-                        
-                        Object.entries(predictions).forEach(([predictedRank, competitorId]) => {
-                            const comp = WCAGuideApp.competitors[competitorId];
-                            if (!comp) return; // Skip if competitor not found
-                            
-                            // Find actual position
-                            let actualPosition = null;
-                            Object.entries(actualResults).forEach(([rank, actualId]) => {
-                                if (actualId === competitorId) {
-                                    actualPosition = rank;
-                                }
-                            });
-
-                            const resultCard = document.createElement('div');
-                            resultCard.style.cssText = `
-                                background: #f7fafc;
-                                border: 2px solid ${actualPosition ? '#48bb78' : '#e2e8f0'};
-                                border-radius: 15px;
-                                padding: 15px;
-                                margin-bottom: 10px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                            `;
-
-                            resultCard.innerHTML = `
-                                <div style="display: flex; align-items: center;">
-                                    <img src="${comp.photoThumbUrl}" 
-                                         style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;"
-                                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-                                    <div>
-                                        <div style="font-weight: bold;">${comp.name}</div>
-                                        <div style="font-size: 14px; color: #718096;">
-                                            Predicted: ${predictedRank}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="text-align: right;">
-                                    ${actualPosition ? 
-                                        `<div style="color: #48bb78; font-weight: bold;">✓ ${actualPosition}</div>` : 
-                                        '<div style="color: #e53e3e;">Not in top 5</div>'
-                                    }
-                                </div>
-                            `;
-
-                            predSection.appendChild(resultCard);
-                        });
-                        
-                        content.appendChild(predSection);
-                        
-                        // Divider
-                        content.innerHTML += '<hr style="margin: 30px 0; border-color: #e2e8f0;">';
-                    }
-
-                    // Second section: Actual results
-                    const resultsSection = document.createElement('div');
-                    resultsSection.innerHTML = '<h3 style="margin-bottom: 15px;">Actual Results:</h3>';
-
-                    const getMedal = (rank) => {
-    if (rank.startsWith('1st')) return '🥇';
-    if (rank.startsWith('2nd')) return '🥈';
-    if (rank.startsWith('3rd')) return '🥉';
-    if (rank.startsWith('4th')) return '4️⃣';
-    if (rank.startsWith('5th')) return '5️⃣';
-    return '🏆';
-};
-                    
-                    Object.entries(actualResults).forEach(([rank, competitorId]) => {
-                        if (!competitorId) return; // Skip null entries
-                        
-                        const comp = WCAGuideApp.competitors[competitorId];
-                        if (!comp) return; // Skip if competitor not found
-                        
-                        const winnerCard = document.createElement('div');
-                        winnerCard.style.cssText = `
-                            background: linear-gradient(135deg, #f9d976 0%, #f39f86 100%);
-                            border: 2px solid #f39f86;
-                            border-radius: 15px;
-                            padding: 15px;
-                            margin-bottom: 10px;
-                            display: flex;
-                            align-items: center;
-                        `;
-
-                       
-                           winnerCard.innerHTML = `
-    <div style="font-size: 30px; margin-right: 15px;">${getMedal(rank)}</div>
-                            <img src="${comp.photoThumbUrl}" 
-                                 style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;"
-                                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
-                            <div style="flex: 1;">
-                                <div style="font-weight: bold; font-size: 18px;">${comp.name}</div>
-                                <div style="font-size: 14px;">🌍 ${comp.country}</div>
-                            </div>
-                        `;
-
-                        resultsSection.appendChild(winnerCard);
-                    });
-
-                    content.appendChild(resultsSection);
+    // First section: Show how predictions did (if any)
+    if (Object.keys(predictions).length > 0) {
+        const predSection = document.createElement('div');
+        predSection.innerHTML = '<h3 style="margin-bottom: 15px;">Your Predictions:</h3>';
+        
+        Object.entries(predictions).forEach(([predictedRank, competitorId]) => {
+            const comp = WCAGuideApp.competitors[competitorId];
+            if (!comp) return; // Skip if competitor not found
+            
+            // Find actual position
+            let actualPosition = null;
+            Object.entries(actualResults).forEach(([rank, actualId]) => {
+                if (actualId === competitorId) {
+                    actualPosition = rank;
                 }
-            },
+            });
 
+            const resultCard = document.createElement('div');
+            resultCard.style.cssText = `
+                background: #f7fafc;
+                border: 2px solid ${actualPosition ? '#48bb78' : '#e2e8f0'};
+                border-radius: 15px;
+                padding: 15px;
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+            `;
+
+            resultCard.innerHTML = `
+                <div style="display: flex; align-items: center;">
+                    <img src="${comp.photoThumbUrl}" 
+                         style="width: 50px; height: 50px; border-radius: 50%; margin-right: 15px;"
+                         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Crect width=%2250%22 height=%2250%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2210%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+                    <div>
+                        <div style="font-weight: bold;">${comp.name}</div>
+                        <div style="font-size: 14px; color: #718096;">
+                            Predicted: ${predictedRank}
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: right;">
+                    ${actualPosition ? 
+                        `<div style="color: #48bb78; font-weight: bold;">✓ ${actualPosition}</div>` : 
+                        '<div style="color: #e53e3e;">Not in top 5</div>'
+                    }
+                </div>
+            `;
+
+            // Add info button
+            const infoBtn = document.createElement('button');
+            infoBtn.style.cssText = 'position: absolute; top: 10px; right: 10px; background: #5a67d8; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 14px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;';
+            infoBtn.innerHTML = 'ℹ️';
+            infoBtn.onclick = (e) => {
+                e.stopPropagation();
+                WCAGuideApp.browse.showCompetitorDetail(competitorId);
+            };
+            resultCard.appendChild(infoBtn);
+
+            predSection.appendChild(resultCard);
+        });
+        
+        content.appendChild(predSection);
+        
+        // Divider
+        content.innerHTML += '<hr style="margin: 30px 0; border-color: #e2e8f0;">';
+    }
+
+    // Second section: Actual results
+    const resultsSection = document.createElement('div');
+    resultsSection.innerHTML = '<h3 style="margin-bottom: 15px;">Actual Results:</h3>';
+
+    const getMedal = (rank) => {
+        if (rank.startsWith('1st')) return '🥇';
+        if (rank.startsWith('2nd')) return '🥈';
+        if (rank.startsWith('3rd')) return '🥉';
+        if (rank.startsWith('4th')) return '4️⃣';
+        if (rank.startsWith('5th')) return '5️⃣';
+        return '🏆';
+    };
+    
+    Object.entries(actualResults).forEach(([rank, competitorId]) => {
+        if (!competitorId) return; // Skip null entries
+        
+        const comp = WCAGuideApp.competitors[competitorId];
+        if (!comp) return; // Skip if competitor not found
+        
+        const winnerCard = document.createElement('div');
+        winnerCard.style.cssText = `
+            background: linear-gradient(135deg, #f9d976 0%, #f39f86 100%);
+            border: 2px solid #f39f86;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        `;
+
+        winnerCard.innerHTML = `
+            <div style="font-size: 30px; margin-right: 15px;">${getMedal(rank)}</div>
+            <img src="${comp.photoThumbUrl}" 
+                 style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px;"
+                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22%3E%3Crect width=%2260%22 height=%2260%22 fill=%22%23ddd%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2212%22%3ENo Photo%3C/text%3E%3C/svg%3E'">
+            <div style="flex: 1;">
+                <div style="font-weight: bold; font-size: 18px;">${comp.name}</div>
+                <div style="font-size: 14px;">🌍 ${comp.country}</div>
+            </div>
+        `;
+
+        // Add info button
+        const infoBtnWinner = document.createElement('button');
+        infoBtnWinner.style.cssText = 'position: absolute; top: 15px; right: 15px; background: #5a67d8; color: white; border: none; width: 28px; height: 28px; border-radius: 50%; font-size: 14px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;';
+        infoBtnWinner.innerHTML = 'ℹ️';
+        infoBtnWinner.onclick = (e) => {
+            e.stopPropagation();
+            WCAGuideApp.browse.showCompetitorDetail(competitorId);
+        };
+        winnerCard.appendChild(infoBtnWinner);
+
+        resultsSection.appendChild(winnerCard);
+    });
+
+    content.appendChild(resultsSection);
+}
             // Games module
             games: {
                 currentGame: null,
