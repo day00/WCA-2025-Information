@@ -1060,8 +1060,17 @@
       "222"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 1,
+        "average": 1.84,
+        "best": 1.71,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016SINY01": {
@@ -1255,6 +1264,7 @@
     "difficulty": "easy",
     "isFinalist": {
       "222": true,
+      "333": true,
       "333oh": true
     },
     "wca2025Qualifying": {
@@ -1262,6 +1272,12 @@
         "seed": 17,
         "average": 1.62,
         "best": 1.18,
+        "achievement": ""
+      },
+      "333": {
+        "seed": 12,
+        "average": 6.09,
+        "best": 5.25,
         "achievement": ""
       },
       "333oh": {
@@ -2489,8 +2505,17 @@
       "333ft"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 6,
+        "average": 2.04,
+        "best": 1.91,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2008DONG06": {
@@ -2809,8 +2834,17 @@
       "555bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 12,
+        "average": 2.26,
+        "best": 1.52,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2021DUNA01": {
@@ -2928,7 +2962,8 @@
     "isFinalist": {
       "222": true,
       "555": true,
-      "clock": true
+      "clock": true,
+      "sq1": true
     },
     "wca2025Qualifying": {
       "222": {
@@ -2947,6 +2982,12 @@
         "seed": 11,
         "average": 3.37,
         "best": 2.7,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 2,
+        "average": 5.64,
+        "best": 4.42,
         "achievement": ""
       }
     },
@@ -3060,7 +3101,8 @@
     "difficulty": "easy",
     "isFinalist": {
       "222": true,
-      "333oh": true
+      "333oh": true,
+      "sq1": true
     },
     "wca2025Qualifying": {
       "222": {
@@ -3073,6 +3115,12 @@
         "seed": 13,
         "average": 10.41,
         "best": 9.45,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 7,
+        "average": 6.64,
+        "best": 5.69,
         "achievement": ""
       }
     },
@@ -3302,8 +3350,24 @@
       "333oh"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 8,
+        "average": 17.79,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 8,
+        "average": 17.79,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2015KUCA01": {
@@ -3427,13 +3491,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "333oh": true
+      "333oh": true,
+      "skewb": true
     },
     "wca2025Qualifying": {
       "333oh": {
         "seed": 19,
         "average": 10.85,
         "best": 9.74,
+        "achievement": ""
+      },
+      "skewb": {
+        "seed": 10,
+        "average": 2.21,
+        "best": 1.59,
         "achievement": ""
       }
     },
@@ -3678,8 +3749,24 @@
       "444bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 1,
+        "average": 12.96,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 1,
+        "average": 12.96,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2014CHIC01": {
@@ -3802,8 +3889,17 @@
       "sq1"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "sq1": {
+        "seed": 17,
+        "average": 7.85,
+        "best": 7.12,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2012BEAH01": {
@@ -3921,6 +4017,7 @@
     "isFinalist": {
       "444": true,
       "555": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
@@ -3935,6 +4032,12 @@
         "average": 42.38,
         "best": 33.2,
         "achievement": "NR"
+      },
+      "666": {
+        "seed": 6,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
       },
       "777": {
         "seed": 8,
@@ -4694,13 +4797,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "444": true
+      "444": true,
+      "skewb": true
     },
     "wca2025Qualifying": {
       "444": {
         "seed": 15,
         "average": 25.21,
         "best": 20.09,
+        "achievement": ""
+      },
+      "skewb": {
+        "seed": 2,
+        "average": 1.88,
+        "best": 1.42,
         "achievement": ""
       }
     },
@@ -4824,9 +4934,16 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "666": {
+        "seed": 11,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
+      },
       "777": {
         "seed": 9,
         "average": 2,
@@ -5053,6 +5170,7 @@
     "difficulty": "easy",
     "isFinalist": {
       "555": true,
+      "666": true,
       "333oh": true
     },
     "wca2025Qualifying": {
@@ -5061,6 +5179,12 @@
         "average": 45.61,
         "best": 44.39,
         "achievement": "PR"
+      },
+      "666": {
+        "seed": 18,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
       },
       "333oh": {
         "seed": 4,
@@ -5937,6 +6061,7 @@
     "difficulty": "easy",
     "isFinalist": {
       "555": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
@@ -5944,6 +6069,12 @@
         "seed": 14,
         "average": 44.37,
         "best": 40.75,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 3,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -6690,13 +6821,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "555": true
+      "555": true,
+      "666": true
     },
     "wca2025Qualifying": {
       "555": {
         "seed": 9,
         "average": 42.32,
         "best": 38.2,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 7,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       }
     },
@@ -7046,10 +7184,17 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "666": true,
       "777": true,
       "minx": true
     },
     "wca2025Qualifying": {
+      "666": {
+        "seed": 16,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
+      },
       "777": {
         "seed": 17,
         "average": 2,
@@ -7143,8 +7288,24 @@
       "333mbf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 11,
+        "average": 18.29,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 11,
+        "average": 18.29,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016SIGG01": {
@@ -7268,8 +7429,24 @@
       "444bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 13,
+        "average": 18.77,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 13,
+        "average": 18.77,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022JAME02": {
@@ -7705,8 +7882,17 @@
       "222"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "sq1": {
+        "seed": 1,
+        "average": 5.61,
+        "best": 5.08,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017SEOH01": {
@@ -7908,6 +8094,7 @@
     "difficulty": "easy",
     "isFinalist": {
       "555": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
@@ -7916,6 +8103,12 @@
         "average": 40.32,
         "best": 37.05,
         "achievement": "PR"
+      },
+      "666": {
+        "seed": 8,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
       },
       "777": {
         "seed": 6,
@@ -8216,8 +8409,17 @@
       "222"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 17,
+        "average": 2.39,
+        "best": 2.03,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017PALI04": {
@@ -8542,13 +8744,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "777": true
+      "777": true,
+      "sq1": true
     },
     "wca2025Qualifying": {
       "777": {
         "seed": 11,
         "average": 2,
         "best": 1,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 20,
+        "average": 7.89,
+        "best": 6.51,
         "achievement": ""
       }
     },
@@ -9043,8 +9252,24 @@
       "333bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 19,
+        "average": 20.03,
+        "best": 20.61,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 19,
+        "average": 20.03,
+        "best": 20.61,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018BERE01": {
@@ -9559,8 +9784,24 @@
       "333mbf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 5,
+        "average": 16.53,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 5,
+        "average": 16.53,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022PLUG01": {
@@ -10371,14 +10612,28 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 15,
+        "average": 6.13,
+        "best": 5.25,
+        "achievement": ""
+      },
       "444": {
         "seed": 6,
         "average": 21.65,
         "best": 20.96,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 10,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -10909,8 +11164,24 @@
       "333bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 16,
+        "average": 19.16,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 16,
+        "average": 19.16,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022JONE11": {
@@ -11613,8 +11884,24 @@
       "444bf"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 10,
+        "average": 18.22,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 10,
+        "average": 18.22,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016HUNG08": {
@@ -11737,9 +12024,16 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "666": {
+        "seed": 2,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
+      },
       "777": {
         "seed": 3,
         "average": 1,
@@ -11992,16 +12286,30 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
+      "666": true,
       "777": true,
       "333oh": true,
       "pyram": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 5,
+        "average": 5.51,
+        "best": 4.56,
+        "achievement": ""
+      },
       "444": {
         "seed": 16,
         "average": 25.25,
         "best": 19.66,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 20,
+        "average": 0,
+        "best": 0,
         "achievement": ""
       },
       "777": {
@@ -12255,8 +12563,24 @@
       "333bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 6,
+        "average": 16.77,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 6,
+        "average": 16.77,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2015ANTO04": {
@@ -12583,10 +12907,18 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
-      "555": true
+      "555": true,
+      "666": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 13,
+        "average": 6.1,
+        "best": 4.93,
+        "achievement": ""
+      },
       "444": {
         "seed": 7,
         "average": 23.84,
@@ -12597,6 +12929,12 @@
         "seed": 7,
         "average": 41.88,
         "best": 37.72,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 17,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       }
     },
@@ -12676,12 +13014,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
       "555": true,
+      "666": true,
       "777": true,
       "333oh": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 4,
+        "average": 5.32,
+        "best": 5.06,
+        "achievement": ""
+      },
       "444": {
         "seed": 1,
         "average": 20.95,
@@ -12692,6 +13038,12 @@
         "seed": 2,
         "average": 36.48,
         "best": 33.05,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 1,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -12835,8 +13187,17 @@
       "333ft"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "sq1": {
+        "seed": 6,
+        "average": 6.5,
+        "best": 5.4,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017NIEL03": {
@@ -13070,8 +13431,24 @@
       "444bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 18,
+        "average": 19.71,
+        "best": 21.35,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 18,
+        "average": 19.71,
+        "best": 21.35,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2013KRAS02": {
@@ -14054,8 +14431,31 @@
       "444bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true,
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 3,
+        "average": 15.48,
+        "best": 16.92,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 3,
+        "average": 15.48,
+        "best": 16.92,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 9,
+        "average": 6.99,
+        "best": 5.79,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2018ELLA01": {
@@ -14242,8 +14642,17 @@
       "222"
     ],
     "difficulty": "medium",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 5,
+        "average": 2.04,
+        "best": 1.71,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2012PONC02": {
@@ -14357,13 +14766,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "555": true
+      "555": true,
+      "666": true
     },
     "wca2025Qualifying": {
       "555": {
         "seed": 12,
         "average": 42.65,
         "best": 39.81,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 12,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       }
     },
@@ -14853,6 +15269,7 @@
     "isFinalist": {
       "444": true,
       "555": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
@@ -14866,6 +15283,12 @@
         "seed": 13,
         "average": 44.03,
         "best": 41.06,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 15,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -15445,8 +15868,24 @@
       "333oh"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 14,
+        "average": 18.87,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 14,
+        "average": 18.87,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017AGGA01": {
@@ -15567,8 +16006,17 @@
       "222"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "sq1": {
+        "seed": 3,
+        "average": 5.72,
+        "best": 4.51,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2017VILL41": {
@@ -16102,14 +16550,28 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 14,
+        "average": 6.11,
+        "best": 5.32,
+        "achievement": ""
+      },
       "444": {
         "seed": 5,
         "average": 21.4,
         "best": 19.5,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 5,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -16617,8 +17079,24 @@
       "555bf"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 4,
+        "average": 15.94,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 4,
+        "average": 15.94,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2016FEIS01": {
@@ -16885,13 +17363,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "222": true
+      "222": true,
+      "333": true
     },
     "wca2025Qualifying": {
       "222": {
         "seed": 3,
         "average": 1.34,
         "best": 0.72,
+        "achievement": ""
+      },
+      "333": {
+        "seed": 9,
+        "average": 5.77,
+        "best": 4.94,
         "achievement": ""
       }
     },
@@ -16998,12 +17483,20 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
       "555": true,
+      "666": true,
       "777": true,
       "minx": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 7,
+        "average": 5.74,
+        "best": 5.08,
+        "achievement": ""
+      },
       "444": {
         "seed": 4,
         "average": 21.4,
@@ -17014,6 +17507,12 @@
         "seed": 4,
         "average": 40.68,
         "best": 35.58,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 13,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -17151,8 +17650,24 @@
       "333ft"
     ],
     "difficulty": "easy",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "333bf": true,
+      "333mbf": true
+    },
+    "wca2025Qualifying": {
+      "333bf": {
+        "seed": 2,
+        "average": 15.42,
+        "best": 0,
+        "achievement": ""
+      },
+      "333mbf": {
+        "seed": 2,
+        "average": 15.42,
+        "best": 0,
+        "achievement": ""
+      }
+    },
     "funFacts": [
       "Former 3x3 world champion",
       "Known for consistency under pressure",
@@ -17585,11 +18100,19 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "333": true,
       "444": true,
       "555": true,
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 3,
+        "average": 5.1,
+        "best": 4.34,
+        "achievement": ""
+      },
       "444": {
         "seed": 3,
         "average": 21.23,
@@ -17600,6 +18123,12 @@
         "seed": 1,
         "average": 35.49,
         "best": 33.05,
+        "achievement": ""
+      },
+      "666": {
+        "seed": 4,
+        "average": 1,
+        "best": 1,
         "achievement": ""
       },
       "777": {
@@ -18050,8 +18579,17 @@
       "222"
     ],
     "difficulty": "hard",
-    "isFinalist": {},
-    "wca2025Qualifying": {},
+    "isFinalist": {
+      "skewb": true
+    },
+    "wca2025Qualifying": {
+      "skewb": {
+        "seed": 3,
+        "average": 1.89,
+        "best": 1.57,
+        "achievement": ""
+      }
+    },
     "funFacts": []
   },
   "2022KAPU01": {
@@ -18512,6 +19050,7 @@
     "difficulty": "easy",
     "isFinalist": {
       "222": true,
+      "333": true,
       "pyram": true
     },
     "wca2025Qualifying": {
@@ -18519,6 +19058,12 @@
         "seed": 1,
         "average": 1.18,
         "best": 0.99,
+        "achievement": ""
+      },
+      "333": {
+        "seed": 1,
+        "average": 4.58,
+        "best": 3.62,
         "achievement": ""
       },
       "pyram": {
@@ -19077,7 +19622,7 @@
     },
     "funFacts": []
   },
- "2018KHAN28": {
+  "2018KHAN28": {
     "name": "Zayn Khanani",
     "country": "United States",
     "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2018KHAN28/1710128612.jpeg",
@@ -19092,25 +19637,132 @@
     },
     "worldRankings": {
       "222": {
-        "single": 1,
-        "singleTime": 50,
-        "average": 3,
-        "averageTime": 92
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
       },
       "333": {
-        "single": 34,
-        "singleTime": 471,
-        "average": 253,
-        "averageTime": 669
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 1
+      },
+      "444": {
+        "single": 50,
+        "singleTime": 3,
+        "average": 92,
+        "averageTime": 34
+      },
+      "555": {
+        "single": 471,
+        "singleTime": 253,
+        "average": 669,
+        "averageTime": 0
+      },
+      "666": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "777": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "333bf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "333fm": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "333oh": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "333mbf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "444bf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "555bf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "clock": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "minx": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "pyram": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "skewb": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "sq1": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
       }
     },
     "topEvents": [
       "222",
-      "333"
+      "333",
+      " "
     ],
     "difficulty": "easy",
     "isFinalist": {
-      "222": true
+      "222": true,
+      "333": true,
+      "444": true,
+      "555": true,
+      "666": true,
+      "777": true,
+      "333bf": true,
+      "333fm": true,
+      "333oh": true,
+      "333mbf": true,
+      "444bf": true,
+      "555bf": true,
+      "clock": true,
+      "minx": true,
+      "pyram": true,
+      "skewb": true,
+      "sq1": true
     },
     "wca2025Qualifying": {
       "222": {
@@ -19118,6 +19770,102 @@
         "average": 1.37,
         "best": 0.86,
         "achievement": ""
+      },
+      "333": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "444": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "555": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "666": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "777": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333fm": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333oh": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333mbf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "444bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "555bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "clock": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "minx": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "pyram": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "skewb": {
+        "seed": 9,
+        "average": 2.19,
+        "best": 1.69,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
       }
     },
     "funFacts": []
@@ -19671,9 +20419,16 @@
     ],
     "difficulty": "hard",
     "isFinalist": {
+      "333": true,
       "333oh": true
     },
     "wca2025Qualifying": {
+      "333": {
+        "seed": 10,
+        "average": 5.96,
+        "best": 5.59,
+        "achievement": ""
+      },
       "333oh": {
         "seed": 6,
         "average": 9.83,
@@ -22033,7 +22788,8 @@
     "difficulty": "medium",
     "isFinalist": {
       "222": true,
-      "pyram": true
+      "pyram": true,
+      "sq1": true
     },
     "wca2025Qualifying": {
       "222": {
@@ -22046,6 +22802,12 @@
         "seed": 19,
         "average": 1.91,
         "best": 1.65,
+        "achievement": ""
+      },
+      "sq1": {
+        "seed": 11,
+        "average": 7.2,
+        "best": 6.74,
         "achievement": ""
       }
     },
@@ -23727,103 +24489,253 @@
     "funFacts": []
   },
   "2017SUNC02": {
-  "name": "Christopher Sun",
-  "country": "USA",
-  "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868.jpg",
-  "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868_thumb.jpg",
-  "gender": "m",
-  "competitions": 48,
-  "medals": {
-    "gold": 514,
-    "silver": 422,
-    "bronze": 23,
-    "total": 959
+    "name": "Christopher Sun",
+    "country": "United States",
+    "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868.jpg",
+    "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868_thumb.jpg",
+    "gender": "m",
+    "competitions": 48,
+    "medals": {
+      "gold": 514,
+      "silver": 422,
+      "bronze": 23,
+      "total": 959
+    },
+    "worldRankings": {
+      "222": {
+        "single": 311,
+        "singleTime": 80,
+        "average": 395,
+        "averageTime": 172
+      },
+      "333": {
+        "single": 122,
+        "singleTime": 465,
+        "average": 79,
+        "averageTime": 597
+      },
+      "444": {
+        "single": 33,
+        "singleTime": 2051,
+        "average": 37,
+        "averageTime": 2413
+      },
+      "555": {
+        "single": 47,
+        "singleTime": 4054,
+        "average": 37,
+        "averageTime": 4494
+      },
+      "666": {
+        "single": 90,
+        "singleTime": 8274,
+        "average": 75,
+        "averageTime": 8774
+      },
+      "777": {
+        "single": 110,
+        "singleTime": 13068,
+        "average": 129,
+        "averageTime": 14193
+      },
+      "333bf": {
+        "single": 169,
+        "singleTime": 2167,
+        "average": 530,
+        "averageTime": 5334
+      },
+      "333fm": {
+        "single": 2827,
+        "singleTime": 27,
+        "average": 1978,
+        "averageTime": 3800
+      },
+      "333oh": {
+        "single": 1090,
+        "singleTime": 1106,
+        "average": 807,
+        "averageTime": 1350
+      },
+      "333mbf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "444bf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "555bf": {
+        "single": 0,
+        "singleTime": 0,
+        "average": 0,
+        "averageTime": 0
+      },
+      "clock": {
+        "single": 5112,
+        "singleTime": 902,
+        "average": 4321,
+        "averageTime": 1017
+      },
+      "minx": {
+        "single": 205,
+        "singleTime": 3616,
+        "average": 234,
+        "averageTime": 4188
+      },
+      "pyram": {
+        "single": 1470,
+        "singleTime": 216,
+        "average": 3129,
+        "averageTime": 462
+      },
+      "skewb": {
+        "single": 4581,
+        "singleTime": 346,
+        "average": 1411,
+        "averageTime": 430
+      },
+      "sq1": {
+        "single": 543,
+        "singleTime": 775,
+        "average": 791,
+        "averageTime": 1188
+      }
+    },
+    "topEvents": [
+      "444",
+      "555",
+      "666"
+    ],
+    "difficulty": "easy",
+    "isFinalist": {
+      "222": true,
+      "333": true,
+      "444": true,
+      "555": true,
+      "666": true,
+      "777": true,
+      "333bf": true,
+      "333fm": true,
+      "333oh": true,
+      "333mbf": true,
+      "444bf": true,
+      "555bf": true,
+      "clock": true,
+      "minx": true,
+      "pyram": true,
+      "skewb": true,
+      "sq1": true
+    },
+    "wca2025Qualifying": {
+      "222": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "444": {
+        "seed": 18,
+        "average": 25.48,
+        "best": 24.34,
+        "achievement": ""
+      },
+      "555": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "666": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "777": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333fm": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333oh": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "333mbf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "444bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "555bf": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "clock": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "minx": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "pyram": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "skewb": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      },
+      "sq1": {
+        "seed": 0,
+        "average": 0,
+        "best": 0,
+        "achievement": " "
+      }
+    },
+    "funFacts": []
   },
-  "worldRankings": {
-    "222": {
-      "single": 311,
-      "singleTime": 80,
-      "average": 395,
-      "averageTime": 172
-    },
-    "333": {
-      "single": 122,
-      "singleTime": 465,
-      "average": 79,
-      "averageTime": 597
-    },
-    "444": {
-      "single": 33,
-      "singleTime": 2051,
-      "average": 37,
-      "averageTime": 2413
-    },
-    "555": {
-      "single": 47,
-      "singleTime": 4054,
-      "average": 37,
-      "averageTime": 4494
-    },
-    "666": {
-      "single": 90,
-      "singleTime": 8274,
-      "average": 75,
-      "averageTime": 8774
-    },
-    "333oh": {
-      "single": 1090,
-      "singleTime": 1106,
-      "average": 807,
-      "averageTime": 1350
-    },
-    "clock": {
-      "single": 5112,
-      "singleTime": 902
-    },
-    "minx": {
-      "single": 205,
-      "singleTime": 3616,
-      "average": 234,
-      "averageTime": 4188
-    },
-    "pyram": {
-      "single": 1470,
-      "singleTime": 216,
-      "average": 3129,
-      "averageTime": 462
-    },
-    "skewb": {
-      "single": 4581,
-      "singleTime": 346,
-      "average": 1411,
-      "averageTime": 430
-    },
-    "sq1": {
-      "single": 543,
-      "singleTime": 775,
-      "average": 791,
-      "averageTime": 1188
-    }
-  },
-  "topEvents": [
-    "444",
-    "555",
-    "666"
-  ],
-  "difficulty": "easy",
-  "isFinalist": {
-    "444": true
-  },
-  "wca2025Qualifying": {
-    "444": {
-      "seed": 18,
-      "average": 25.48,
-      "best": 24.34,
-      "achievement": ""
-    }
-  },
-  "funFacts": []
-},
   "2019BRUN02": {
     "name": "Claudio Matias Cancino Bruna",
     "country": "Chile",
@@ -24356,9 +25268,16 @@
     ],
     "difficulty": "medium",
     "isFinalist": {
+      "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "666": {
+        "seed": 14,
+        "average": 1,
+        "best": 1,
+        "achievement": ""
+      },
       "777": {
         "seed": 18,
         "average": 2,
@@ -24612,13 +25531,27 @@
     ],
     "difficulty": "medium",
     "isFinalist": {
-      "777": true
+      "666": true,
+      "777": true,
+      "skewb": true
     },
     "wca2025Qualifying": {
+      "666": {
+        "seed": 19,
+        "average": 0,
+        "best": 0,
+        "achievement": ""
+      },
       "777": {
         "seed": 20,
         "average": 2,
         "best": 1,
+        "achievement": ""
+      },
+      "skewb": {
+        "seed": 13,
+        "average": 2.31,
+        "best": 1.61,
         "achievement": ""
       }
     },
