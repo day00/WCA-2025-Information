@@ -23726,140 +23726,104 @@
     },
     "funFacts": []
   },
-"2017SUNC02": {
-  "name": "Christopher Sun",
-  "country": "United States",
-  "photoUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868.jpg",
-  "photoThumbUrl": "https://avatars.worldcubeassociation.org/uploads/user/avatar/2017SUNC02/1719433868_thumb.jpg",
-  "gender": "m",
-  "competitions": 48,
-  "medals": {
-    "gold": 514,
-    "silver": 422,
-    "bronze": 23,
-    "total": 959
+  "2017SUNC01": {
+    "name": "Christopher Sun",
+    "country": "USA",
+    "photoUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "photoThumbUrl": "https://assets.worldcubeassociation.org/assets/8994b17/assets/missing_avatar_thumb-d77f478a307a91a9d4a083ad197012a391d5410f6dd26cb0b0e3118a5de71438.png",
+    "gender": "m",
+    "competitions": 9,
+    "medals": {
+      "gold": 0,
+      "silver": 0,
+      "bronze": 1,
+      "total": 1
+    },
+    "worldRankings": {
+      "222": {
+        "single": 23436,
+        "singleTime": 303,
+        "average": 5475,
+        "averageTime": 328
+      },
+      "333": {
+        "single": 8320,
+        "singleTime": 843,
+        "average": 6248,
+        "averageTime": 985
+      },
+      "444": {
+        "single": 4356,
+        "singleTime": 3494,
+        "average": 2562,
+        "averageTime": 3690
+      },
+      "555": {
+        "single": 11853,
+        "singleTime": 9819,
+        "average": 11412,
+        "averageTime": 10768
+      },
+      "666": {
+        "single": 6583,
+        "singleTime": 19000,
+        "average": 6348,
+        "averageTime": 20088
+      },
+      "333oh": {
+        "single": 9023,
+        "singleTime": 1771,
+        "average": 6332,
+        "averageTime": 1987
+      },
+      "clock": {
+        "single": 20358,
+        "singleTime": 2626
+      },
+      "minx": {
+        "single": 7112,
+        "singleTime": 8405,
+        "average": 7757,
+        "averageTime": 9869
+      },
+      "pyram": {
+        "single": 18516,
+        "singleTime": 551,
+        "average": 22519,
+        "averageTime": 920
+      },
+      "skewb": {
+        "single": 16224,
+        "singleTime": 597,
+        "average": 10782,
+        "averageTime": 781
+      },
+      "sq1": {
+        "single": 4829,
+        "singleTime": 1756,
+        "average": 4117,
+        "averageTime": 2215
+      }
+    },
+    "topEvents": [
+      "444",
+      "sq1",
+      "666"
+    ],
+    "difficulty": "hard",
+    "isFinalist": {
+      "444": true
+    },
+    "wca2025Qualifying": {
+      "444": {
+        "seed": 18,
+        "average": 25.48,
+        "best": 24.34,
+        "achievement": ""
+      }
+    },
+    "funFacts": []
   },
-  "worldRankings": {
-    "222": {
-      "single": 759,
-      "singleTime": 80,
-      "average": 395,
-      "averageTime": 172
-    },
-    "333": {
-      "single": 313,
-      "singleTime": 465,
-      "average": 79,
-      "averageTime": 597
-    },
-    "444": {
-      "single": 37,
-      "singleTime": 2051,
-      "average": 33,
-      "averageTime": 2413
-    },
-    "555": {
-      "single": 81,
-      "singleTime": 4054,
-      "average": 37,
-      "averageTime": 4494
-    },
-    "666": {
-      "single": 24,
-      "singleTime": 8274,
-      "average": 75,
-      "averageTime": 8774
-    },
-    "777": {
-      "single": 27,
-      "singleTime": 13068,
-      "average": 129,
-      "averageTime": 14193
-    },
-    "333bf": {
-      "single": 364,
-      "singleTime": 2167,
-      "average": 530,
-      "averageTime": 5334
-    },
-    "333fm": {
-      "single": 497,
-      "singleTime": 27,
-      "average": 1978,
-      "averageTime": 3800
-    },
-    "333oh": {
-      "single": 248,
-      "singleTime": 1106,
-      "average": 807,
-      "averageTime": 1350
-    },
-    "333mbf": {
-      "single": 33,
-      "singleTime": 931113100
-    },
-    "444bf": {
-      "single": 25,
-      "singleTime": 16927,
-      "average": 54,
-      "averageTime": 19457
-    },
-    "555bf": {
-      "single": 15,
-      "singleTime": 38289,
-      "average": 52,
-      "averageTime": 55736
-    },
-    "clock": {
-      "single": 12571,
-      "singleTime": 902,
-      "average": 4321,
-      "averageTime": 1017
-    },
-    "minx": {
-      "single": 44,
-      "singleTime": 3616,
-      "average": 23,
-      "averageTime": 4188
-    },
-    "pyram": {
-      "single": 3043,
-      "singleTime": 216,
-      "average": 3129,
-      "averageTime": 462
-    },
-    "skewb": {
-      "single": 978,
-      "singleTime": 346,
-      "average": 1411,
-      "averageTime": 430
-    },
-    "sq1": {
-      "single": 159,
-      "singleTime": 775,
-      "average": 79,
-      "averageTime": 1188
-    }
-  },
-  "topEvents": [
-    "666",
-    "777",
-    "minx"
-  ],
-  "difficulty": "easy",
-  "isFinalist": {
-    "444": true
-  },
-  "wca2025Qualifying": {
-    "444": {
-      "seed": 18,
-      "average": 25.48,
-      "best": 24.34,
-      "achievement": ""
-    }
-  },
-  "funFacts": []
-}
   "2019BRUN02": {
     "name": "Claudio Matias Cancino Bruna",
     "country": "Chile",
