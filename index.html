@@ -3783,41 +3783,44 @@ nextEvent() {
                 },
 
                 generateQuestions(gameType, difficulty, count) {
-                    const questions = [];
-                    
-                    for (let i = 0; i < count; i++) {
-                        let question;
-                        
-                        switch (gameType) {
-                            case 'faces':
-                                question = this.generatePhotoQuestion(difficulty);
-                                break;
-                            case 'countries':
-                                question = this.generateCountryQuestion(difficulty);
-                                break;
-                            case 'speed':
-                                question = this.generateSpeedQuestion(difficulty);
-                                break;
-                            case 'facts':
-                                question = this.generateFactQuestion(difficulty);
-                                break;
-                            case 'mixed':
-                                // Rotate through different types including achievement questions
-                                const types = ['faces', 'countries', 'speed', 'facts', 'achievements'];
-                                const type = types[i % types.length];
-                                if (type === 'achievements') {
-                                    question = this.generateAchievementQuestion(difficulty);
-                                } else {
-                                    question = this.generateQuestions(type, difficulty, 1)[0];
-                                }
-                                break;
-                        }
-                        
-                        if (question) questions.push(question);
-                    }
-                    
-                    return questions;
-                },
+    const questions = [];
+    
+    for (let i = 0; i < count; i++) {
+        let question;
+        
+        switch (gameType) {
+            case 'faces':
+                question = this.generatePhotoQuestion(difficulty);
+                break;
+            case 'countries':
+                question = this.generateCountryQuestion(difficulty);
+                break;
+            case 'speed':
+                question = this.generateSpeedQuestion(difficulty);
+                break;
+            case 'facts':
+                question = this.generateFactQuestion(difficulty);
+                break;
+            case 'mixed':
+                // Rotate through different types including achievement questions
+                const types = ['faces', 'countries', 'speed', 'facts', 'achievements'];
+                const type = types[i % types.length];
+                if (type === 'achievements') {
+                    question = this.generateAchievementQuestion(difficulty);
+                } else {
+                    question = this.generateQuestions(type, difficulty, 1)[0];
+                }
+                break;
+            case 'tournament':
+                question = this.generateTournamentQuestion(difficulty);
+                break;
+        }
+        
+        if (question) questions.push(question);
+    }
+    
+    return questions;
+},
 
                 generatePhotoQuestion(difficulty) {
                     const competitors = Object.values(WCAGuideApp.competitors)
