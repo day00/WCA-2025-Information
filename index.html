@@ -3822,13 +3822,56 @@ nextEvent() {
     return questions;
 },
 generateTournamentQuestion(difficulty) {
-    // Simple test question to make sure everything works
-    return {
-        type: 'tournament',
-        question: `Test: Who won gold in 3x3x3?`,
-        correctAnswer: 'Yiheng Wang',
-        options: ['Yiheng Wang', 'Max Park', 'Luke Garrett', 'Tymon K.']
+    // Get all competitors with finals data
+    const competitorsWithFinals = Object.entries(WCAGuideApp.competitors)
+        .filter(([id, comp]) => comp.wca2025Finals && Object.keys(comp.wca2025Finals).length > 0);
+    
+    if (competitorsWithFinals.length === 0) {
+        return this.generateFactQuestion(difficulty);
+    }
+    
+    // Define question types based on difficulty
+    const questionTypes = {
+        easy: ['whoWonGold', 'whoWonMedal', 'photoWinner', 'multipleGolds'],
+        medium: ['whoFinishedPosition', 'nationalRecord', 'biggestUpset', 'fastestTime', 'compareTimes'],
+        hard: ['exactPlacement', 'specificPosition', 'mostEvents', 'winningTime', 'seedToPosition']
     };
+    
+    const availableTypes = questionTypes[difficulty];
+    const selectedType = availableTypes[Math.floor(Math.random() * availableTypes.length)];
+    
+    switch (selectedType) {
+        case 'whoWonGold':
+            return this.generateWhoWonGoldQuestion();
+        case 'whoWonMedal':
+            return this.generateWhoWonMedalQuestion();
+        case 'photoWinner':
+            return this.generatePhotoWinnerQuestion();
+        case 'multipleGolds':
+            return this.generateMultipleGoldsQuestion();
+        case 'whoFinishedPosition':
+            return this.generateWhoFinishedPositionQuestion();
+        case 'nationalRecord':
+            return this.generateNationalRecordQuestion();
+        case 'biggestUpset':
+            return this.generateBiggestUpsetQuestion();
+        case 'fastestTime':
+            return this.generateFastestTimeQuestion();
+        case 'compareTimes':
+            return this.generateCompareTimesQuestion();
+        case 'exactPlacement':
+            return this.generateExactPlacementQuestion();
+        case 'specificPosition':
+            return this.generateSpecificPositionQuestion();
+        case 'mostEvents':
+            return this.generateMostEventsQuestion();
+        case 'winningTime':
+            return this.generateWinningTimeQuestion();
+        case 'seedToPosition':
+            return this.generateSeedToPositionQuestion();
+        default:
+            return this.generateFactQuestion(difficulty);
+    }
 },
                 generatePhotoQuestion(difficulty) {
                     const competitors = Object.values(WCAGuideApp.competitors)
