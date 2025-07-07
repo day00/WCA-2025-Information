@@ -3821,7 +3821,15 @@ nextEvent() {
     
     return questions;
 },
-
+generateTournamentQuestion(difficulty) {
+    // Simple test question to make sure everything works
+    return {
+        type: 'tournament',
+        question: `Test: Who won gold in 3x3x3?`,
+        correctAnswer: 'Yiheng Wang',
+        options: ['Yiheng Wang', 'Max Park', 'Luke Garrett', 'Tymon K.']
+    };
+},
                 generatePhotoQuestion(difficulty) {
                     const competitors = Object.values(WCAGuideApp.competitors)
                         .filter(c => c.difficulty === difficulty || difficulty === 'mixed');
