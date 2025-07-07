@@ -3758,16 +3758,17 @@ nextEvent() {
                         `${this.getGameName(gameType)} - Choose Difficulty`;
                 },
 
-                getGameName(gameType) {
-                    const names = {
-                        faces: 'Faces Quiz',
-                        countries: 'Countries Match',
-                        speed: 'Speed Stats',
-                        facts: 'Cube Facts',
-                        mixed: 'Mix It Up!'
-                    };
-                    return names[gameType] || gameType;
-                },
+               getGameName(gameType) {
+    const names = {
+        faces: 'Faces Quiz',
+        countries: 'Countries Match',
+        speed: 'Speed Stats',
+        facts: 'Cube Facts',
+        mixed: 'Mix It Up!',
+        tournament: '2025 WCA Finals'
+    };
+    return names[gameType] || gameType;
+},
 
                 startGame(difficulty) {
                     this.currentDifficulty = difficulty;
