@@ -2964,7 +2964,24 @@ const results = WCAGuideApp.eventResults[eventId];
                                 ${finalistEvents.length > 1 ? 
                                     `Making finals in ${finalistEvents.length} events!<br>` : 
                                     'Qualified for finals in:'}<br>
-                                ${finalistEvents.map(event => `• ${event}`).join('<br>')}
+                                ${Object.entries(comp.isFinalist).map(([eventId, isFinalist]) => {
+    if (!isFinalist) return '';
+    const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
+    const qualifying = comp.wca2025Qualifying?.[eventId];
+    const finals = comp.wca2025Finals?.[eventId];
+    
+    let eventInfo = `• <strong>${eventName}</strong>`;
+    
+    if (qualifying) {
+        eventInfo += `<br>&nbsp;&nbsp;&nbsp;Qualifying: Seed #${qualifying.seed}, Average: ${WCAGuideApp.browse.formatTime(qualifying.average)}, Best: ${WCAGuideApp.browse.formatTime(qualifying.best)}`;
+    }
+    
+    if (finals) {
+        eventInfo += `<br>&nbsp;&nbsp;&nbsp;Finals: ${finals.placement === 1 ? '🥇' : finals.placement === 2 ? '🥈' : finals.placement === 3 ? '🥉' : '#' + finals.placement}, Average: ${WCAGuideApp.browse.formatTime(finals.average)}, Best: ${WCAGuideApp.browse.formatTime(finals.best)}`;
+    }
+    
+    return eventInfo;
+}).filter(x => x).join('<br>')}
                             </div>
                             ${performanceHtml ? `
                                 <h4 style="color: #234e52; margin-top: 20px; margin-bottom: 10px;">📊 Qualifying Performance</h4>
