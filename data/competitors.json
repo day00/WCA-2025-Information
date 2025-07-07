@@ -205,12 +205,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 17,
-        "average": 3.58,
-        "best": 2.99,
+        "average": 358,
+        "best": 299,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 11,
+        "average": 397,
+        "best": 305,
+        "achievement": ""
+      }
+    }
   },
   "2022SALA09": {
     "name": "Aarni Salakari",
@@ -320,8 +328,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 8,
-        "average": 3.28,
-        "best": 2.76,
+        "average": 328,
+        "best": 276,
         "achievement": "NR"
       }
     },
@@ -329,7 +337,15 @@
       "Set Finnish National Record in Clock at WCA 2025 (2.76)",
       "World top 10 Clock solver",
       "Clock finalist seed #8"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 5,
+        "average": 343,
+        "best": 286,
+        "achievement": ""
+      }
+    }
   },
   "2017DEBS01": {
     "name": "Adrian Dębski",
@@ -563,12 +579,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 4,
-        "average": 28.31,
-        "best": 26.07,
+        "average": 2831,
+        "best": 2607,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 5,
+        "average": 3028,
+        "best": 2858,
+        "achievement": ""
+      }
+    }
   },
   "2023LARR09": {
     "name": "Aitor Ibañez Larrea",
@@ -750,8 +774,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 3,
-        "average": 3.07,
-        "best": 2.67,
+        "average": 307,
+        "best": 267,
         "achievement": "PR"
       }
     },
@@ -759,7 +783,15 @@
       "Set Personal Record in Clock at WCA 2025 (2.67)",
       "Rising US Clock talent",
       "Clock finalist seed #3"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 9,
+        "average": 373,
+        "best": 277,
+        "achievement": ""
+      }
+    }
   },
   "2018RICC02": {
     "name": "Alessandro Ricci",
@@ -937,12 +969,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 14,
-        "average": 3.48,
-        "best": 3.18,
+        "average": 348,
+        "best": 318,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 19,
+        "average": 0,
+        "best": 332,
+        "achievement": ""
+      }
+    }
   },
   "2023LANG03": {
     "name": "Alex Rosado Saez de Langarica",
@@ -1066,12 +1106,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 1,
-        "average": 1.84,
-        "best": 1.71,
+        "average": 184,
+        "best": 171,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 4,
+        "average": 187,
+        "best": 147,
+        "achievement": ""
+      }
+    }
   },
   "2016SINY01": {
     "name": "Alexei Sinyavin",
@@ -1181,12 +1229,26 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 9,
-        "average": 30.73,
-        "best": 26.17,
+        "average": 3073,
+        "best": 2617,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 13,
+        "average": 2367,
+        "best": 22,
+        "achievement": ""
+      },
+      "minx": {
+        "placement": 7,
+        "average": 3088,
+        "best": 2764,
+        "achievement": ""
+      }
+    }
   },
   "2017TSVE02": {
     "name": "Alexey Tsvetkov",
@@ -1270,24 +1332,44 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 17,
-        "average": 1.62,
-        "best": 1.18,
+        "average": 162,
+        "best": 118,
         "achievement": ""
       },
       "333": {
         "seed": 12,
-        "average": 6.09,
-        "best": 5.25,
+        "average": 609,
+        "best": 525,
         "achievement": ""
       },
       "333oh": {
         "seed": 11,
-        "average": 10.23,
-        "best": 8.12,
+        "average": 1023,
+        "best": 812,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 14,
+        "average": 169,
+        "best": 114,
+        "achievement": ""
+      },
+      "333": {
+        "placement": 15,
+        "average": 659,
+        "best": 515,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 5,
+        "average": 965,
+        "best": 818,
+        "achievement": ""
+      }
+    }
   },
   "2014NORD02": {
     "name": "Amos Nordman",
@@ -1503,7 +1585,15 @@
     "difficulty": "medium",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555bf": {
+        "placement": 5,
+        "average": 20854,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2015BARH01": {
     "name": "Anders Barhaugen",
@@ -1619,8 +1709,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 5,
-        "average": 3.14,
-        "best": 2.77,
+        "average": 314,
+        "best": 277,
         "achievement": "PR"
       }
     },
@@ -1628,7 +1718,15 @@
       "Set Personal Record in Clock at WCA 2025 (2.77)",
       "Norwegian Clock specialist",
       "Clock finalist seed #5"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 4,
+        "average": 333,
+        "best": 309,
+        "achievement": ""
+      }
+    }
   },
   "2022MAOA01": {
     "name": "Andrew Mao",
@@ -1803,7 +1901,15 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555bf": {
+        "placement": 13,
+        "average": 33821,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2015CHEA01": {
     "name": "Andrey Che",
@@ -2028,8 +2134,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 4,
-        "average": 3.09,
-        "best": 2.6,
+        "average": 309,
+        "best": 260,
         "achievement": ""
       }
     },
@@ -2037,7 +2143,15 @@
       "Polish Clock champion",
       "World top 15 in Clock",
       "Clock finalist seed #4 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 1,
+        "average": 284,
+        "best": 254,
+        "achievement": ""
+      }
+    }
   },
   "2012PATE01": {
     "name": "Antonie Paterakis",
@@ -2158,12 +2272,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 9,
-        "average": 1.43,
-        "best": 1.22,
+        "average": 143,
+        "best": 122,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 7,
+        "average": 138,
+        "best": 101,
+        "achievement": ""
+      }
+    }
   },
   "2012ZHAN08": {
     "name": "Anyu Zhang",
@@ -2395,7 +2517,15 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 17,
+        "average": 24,
+        "best": 23,
+        "achievement": ""
+      }
+    }
   },
   "2017BLAC06": {
     "name": "Ash Black",
@@ -2511,12 +2641,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 6,
-        "average": 2.04,
-        "best": 1.91,
+        "average": 204,
+        "best": 191,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 7,
+        "average": 206,
+        "best": 179,
+        "achievement": ""
+      }
+    }
   },
   "2008DONG06": {
     "name": "Baiqiang Dong",
@@ -2840,12 +2978,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 12,
-        "average": 2.26,
-        "best": 1.52,
+        "average": 226,
+        "best": 152,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 12,
+        "average": 257,
+        "best": 134,
+        "achievement": ""
+      }
+    }
   },
   "2021DUNA01": {
     "name": "Brendyn Dunagan",
@@ -2968,26 +3114,26 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 16,
-        "average": 1.61,
-        "best": 1.21,
+        "average": 161,
+        "best": 121,
         "achievement": ""
       },
       "555": {
         "seed": 20,
-        "average": 45.7,
-        "best": 41.79,
+        "average": 4570,
+        "best": 4179,
         "achievement": "PR"
       },
       "clock": {
         "seed": 11,
-        "average": 3.37,
-        "best": 2.7,
+        "average": 337,
+        "best": 270,
         "achievement": ""
       },
       "sq1": {
         "seed": 2,
-        "average": 5.64,
-        "best": 4.42,
+        "average": 564,
+        "best": 442,
         "achievement": ""
       }
     },
@@ -2995,7 +3141,33 @@
       "Made finals in both Clock and 5x5x5 at WCA 2025",
       "Set personal record in 5x5x5 qualifying (41.79)",
       "One of few competitors to make multiple finals"
-    ]
+    ],
+    "wca2025Finals": {
+      "222": {
+        "placement": 16,
+        "average": 171,
+        "best": 137,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 16,
+        "average": 4745,
+        "best": 4443,
+        "achievement": ""
+      },
+      "clock": {
+        "placement": 2,
+        "average": 286,
+        "best": 248,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 3,
+        "average": 580,
+        "best": 540,
+        "achievement": ""
+      }
+    }
   },
   "2013JOHN10": {
     "name": "Brian Johnson",
@@ -3107,24 +3279,50 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 4,
-        "average": 1.36,
-        "best": 1.28,
+        "average": 136,
+        "best": 128,
         "achievement": ""
       },
       "333oh": {
         "seed": 13,
-        "average": 10.41,
-        "best": 9.45,
+        "average": 1041,
+        "best": 945,
         "achievement": ""
       },
       "sq1": {
         "seed": 7,
-        "average": 6.64,
-        "best": 5.69,
+        "average": 664,
+        "best": 569,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 10,
+        "average": 151,
+        "best": 133,
+        "achievement": ""
+      },
+      "333fm": {
+        "placement": 6,
+        "average": 2267,
+        "best": 20,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 19,
+        "average": 1175,
+        "best": 1035,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 5,
+        "average": 621,
+        "best": 528,
+        "achievement": ""
+      }
+    }
   },
   "2017KWAN05": {
     "name": "Burno Li Chak Kwan (李澤堃)",
@@ -3226,17 +3424,38 @@
     ],
     "difficulty": "medium",
     "isFinalist": {
-      "444": true
+      "444": true,
+      "555": true
     },
     "wca2025Qualifying": {
       "444": {
         "seed": 11,
-        "average": 24.91,
-        "best": 18.93,
+        "average": 2491,
+        "best": 1893,
+        "achievement": ""
+      },
+      "555": {
+        "seed": 8,
+        "average": 42,
+        "best": 3967,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 12,
+        "average": 2506,
+        "best": 2461,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 20,
+        "average": 5142,
+        "best": 4748,
+        "achievement": ""
+      }
+    }
   },
   "2015TANG04": {
     "name": "Calix Tang",
@@ -3357,18 +3576,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 8,
-        "average": 17.79,
+        "average": 1779,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 8,
-        "average": 17.79,
+        "average": 1779,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 7,
+        "average": 1822,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2015KUCA01": {
     "name": "Carter Kucala",
@@ -3497,18 +3724,44 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 19,
-        "average": 10.85,
-        "best": 9.74,
+        "average": 1085,
+        "best": 974,
         "achievement": ""
       },
       "skewb": {
         "seed": 10,
-        "average": 2.21,
-        "best": 1.59,
+        "average": 221,
+        "best": 159,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 4,
+        "average": 22,
+        "best": 21,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 20,
+        "average": 1307,
+        "best": 1128,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 16,
+        "average": 35946,
+        "best": 0,
+        "achievement": ""
+      },
+      "skewb": {
+        "placement": 8,
+        "average": 242,
+        "best": 172,
+        "achievement": ""
+      }
+    }
   },
   "2018THOM29": {
     "name": "Carter Thomas",
@@ -3622,8 +3875,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 2,
-        "average": 2.91,
-        "best": 2.48,
+        "average": 291,
+        "best": 248,
         "achievement": ""
       }
     },
@@ -3631,7 +3884,15 @@
       "USA Clock specialist",
       "World #4 average in Clock",
       "Clock finalist seed #2 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 14,
+        "average": 431,
+        "best": 333,
+        "achievement": ""
+      }
+    }
   },
   "2019EGGI02": {
     "name": "Charlie Eggins",
@@ -3756,18 +4017,32 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 1,
-        "average": 12.96,
+        "average": 1296,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 1,
-        "average": 12.96,
+        "average": 1296,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 1,
+        "average": 1443,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 15,
+        "average": 35542,
+        "best": 44211,
+        "achievement": "PR"
+      }
+    }
   },
   "2014CHIC01": {
     "name": "Christopher Chi",
@@ -3895,12 +4170,26 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 17,
-        "average": 7.85,
-        "best": 7.12,
+        "average": 785,
+        "best": 712,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 7,
+        "average": 2267,
+        "best": 21,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 19,
+        "average": 893,
+        "best": 712,
+        "achievement": ""
+      }
+    }
   },
   "2012BEAH01": {
     "name": "Ciarán Beahan",
@@ -4023,26 +4312,26 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 9,
-        "average": 24.3,
-        "best": 23.07,
+        "average": 2430,
+        "best": 2307,
         "achievement": ""
       },
       "555": {
         "seed": 10,
-        "average": 42.38,
-        "best": 33.2,
+        "average": 4238,
+        "best": 3320,
         "achievement": "NR"
       },
       "666": {
         "seed": 6,
-        "average": 1,
-        "best": 1,
+        "average": 8005,
+        "best": 7714,
         "achievement": ""
       },
       "777": {
         "seed": 8,
-        "average": 2,
-        "best": 1,
+        "average": 12038,
+        "best": 11354,
         "achievement": ""
       }
     },
@@ -4050,7 +4339,33 @@
       "Set Irish National Record at WCA 2025 in 5x5x5 (33.20)",
       "One of Europe's top big cube solvers",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "444": {
+        "placement": 5,
+        "average": 2269,
+        "best": 2090,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 6,
+        "average": 4176,
+        "best": 3949,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 10,
+        "average": 7916,
+        "best": 7222,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 12,
+        "average": 12439,
+        "best": 11184,
+        "achievement": ""
+      }
+    }
   },
   "2022TUCK09": {
     "name": "Clement D. Tucker",
@@ -4139,18 +4454,32 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 15,
-        "average": 3.57,
-        "best": 2.71,
+        "average": 357,
+        "best": 271,
         "achievement": ""
       },
       "pyram": {
         "seed": 7,
-        "average": 1.74,
-        "best": 1.17,
+        "average": 174,
+        "best": 117,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 20,
+        "average": 0,
+        "best": 603,
+        "achievement": ""
+      },
+      "pyram": {
+        "placement": 19,
+        "average": 437,
+        "best": 238,
+        "achievement": ""
+      }
+    }
   },
   "2022JOHN14": {
     "name": "Connor Johnson",
@@ -4803,18 +5132,32 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 15,
-        "average": 25.21,
-        "best": 20.09,
+        "average": 2521,
+        "best": 2009,
         "achievement": ""
       },
       "skewb": {
         "seed": 2,
-        "average": 1.88,
-        "best": 1.42,
+        "average": 188,
+        "best": 142,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 19,
+        "average": 2767,
+        "best": 2541,
+        "achievement": ""
+      },
+      "skewb": {
+        "placement": 2,
+        "average": 167,
+        "best": 131,
+        "achievement": ""
+      }
+    }
   },
   "2017PARK05": {
     "name": "DongSoo Park (박동수)",
@@ -4940,18 +5283,32 @@
     "wca2025Qualifying": {
       "666": {
         "seed": 11,
-        "average": 1,
-        "best": 1,
+        "average": 8345,
+        "best": 7379,
         "achievement": ""
       },
       "777": {
         "seed": 9,
-        "average": 2,
-        "best": 1,
+        "average": 12199,
+        "best": 11715,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "666": {
+        "placement": 7,
+        "average": 7865,
+        "best": 7513,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 4,
+        "average": 10940,
+        "best": 10495,
+        "achievement": ""
+      }
+    }
   },
   "2018RICH05": {
     "name": "Drake Denton Richard",
@@ -5053,12 +5410,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 12,
-        "average": 3.39,
-        "best": 2.82,
+        "average": 339,
+        "best": 282,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 18,
+        "average": 645,
+        "best": 469,
+        "achievement": ""
+      }
+    }
   },
   "2019RAMO05": {
     "name": "Dwyane Ramos",
@@ -5176,20 +5541,20 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 19,
-        "average": 45.61,
-        "best": 44.39,
+        "average": 4561,
+        "best": 4439,
         "achievement": "PR"
       },
       "666": {
         "seed": 18,
-        "average": 1,
-        "best": 1,
+        "average": 8643,
+        "best": 8243,
         "achievement": ""
       },
       "333oh": {
         "seed": 4,
-        "average": 9.4,
-        "best": 8.17,
+        "average": 940,
+        "best": 817,
         "achievement": ""
       }
     },
@@ -5197,7 +5562,27 @@
       "Set Personal Record in 5x5x5 at WCA 2025 (44.39)",
       "New Zealand champion",
       "Made 5x5x5 finals"
-    ]
+    ],
+    "wca2025Finals": {
+      "555": {
+        "placement": 19,
+        "average": 4925,
+        "best": 4698,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 20,
+        "average": 9185,
+        "best": 8156,
+        "achievement": "NR"
+      },
+      "333oh": {
+        "placement": 7,
+        "average": 984,
+        "best": 819,
+        "achievement": ""
+      }
+    }
   },
   "2019BAUM02": {
     "name": "Dylan Baumbach",
@@ -5499,12 +5884,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 19,
-        "average": 3.69,
-        "best": 3.15,
+        "average": 369,
+        "best": 315,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 10,
+        "average": 396,
+        "best": 321,
+        "achievement": ""
+      }
+    }
   },
   "2015BROW03": {
     "name": "Elijah Brown",
@@ -5966,12 +6359,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 8,
-        "average": 1.41,
-        "best": 1.02,
+        "average": 141,
+        "best": 102,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 20,
+        "average": 264,
+        "best": 97,
+        "achievement": ""
+      }
+    }
   },
   "2022KAOE01": {
     "name": "Emmanuel Kao",
@@ -6067,24 +6468,44 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 14,
-        "average": 44.37,
-        "best": 40.75,
+        "average": 4437,
+        "best": 4075,
         "achievement": ""
       },
       "666": {
         "seed": 3,
-        "average": 1,
-        "best": 1,
+        "average": 7589,
+        "best": 7510,
         "achievement": ""
       },
       "777": {
         "seed": 4,
-        "average": 1,
-        "best": 1,
+        "average": 11270,
+        "best": 10628,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555": {
+        "placement": 8,
+        "average": 4280,
+        "best": 3981,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 11,
+        "average": 8018,
+        "best": 7667,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 7,
+        "average": 11708,
+        "best": 11249,
+        "achievement": ""
+      }
+    }
   },
   "2017TENU01": {
     "name": "Enrico Tenuti",
@@ -6280,12 +6701,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 9,
-        "average": 3.3,
-        "best": 3.16,
+        "average": 330,
+        "best": 316,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 7,
+        "average": 346,
+        "best": 261,
+        "achievement": ""
+      }
+    }
   },
   "2013BROW04": {
     "name": "Evan Brown",
@@ -6605,12 +7034,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 17,
-        "average": 1.9,
-        "best": 1.44,
+        "average": 190,
+        "best": 144,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 1,
+        "average": 171,
+        "best": 146,
+        "achievement": ""
+      }
+    }
   },
   "2016RACH01": {
     "name": "Fahmi Aulia Rachman",
@@ -6827,14 +7264,14 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 9,
-        "average": 42.32,
-        "best": 38.2,
+        "average": 4232,
+        "best": 3820,
         "achievement": ""
       },
       "666": {
         "seed": 7,
-        "average": 1,
-        "best": 1,
+        "average": 8034,
+        "best": 7691,
         "achievement": ""
       }
     },
@@ -6844,7 +7281,21 @@
       "First sub-6 average in 3x3",
       "Considered one of the GOATs of speedcubing",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "555": {
+        "placement": 12,
+        "average": 4494,
+        "best": 4136,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 13,
+        "average": 8261,
+        "best": 7835,
+        "achievement": ""
+      }
+    }
   },
   "2022BROK03": {
     "name": "Filip Brokos",
@@ -7191,24 +7642,44 @@
     "wca2025Qualifying": {
       "666": {
         "seed": 16,
-        "average": 1,
-        "best": 1,
+        "average": 8588,
+        "best": 8182,
         "achievement": ""
       },
       "777": {
         "seed": 17,
-        "average": 2,
-        "best": 2,
+        "average": 13106,
+        "best": 12525,
         "achievement": ""
       },
       "minx": {
         "seed": 20,
-        "average": 34.2,
-        "best": 31.58,
+        "average": 3420,
+        "best": 3158,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "666": {
+        "placement": 14,
+        "average": 8328,
+        "best": 7997,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 16,
+        "average": 12751,
+        "best": 11802,
+        "achievement": ""
+      },
+      "minx": {
+        "placement": 20,
+        "average": 3971,
+        "best": 3845,
+        "achievement": ""
+      }
+    }
   },
   "2013HUAN29": {
     "name": "Gianfranco Huanqui",
@@ -7295,18 +7766,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 11,
-        "average": 18.29,
+        "average": 1829,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 11,
-        "average": 18.29,
+        "average": 1829,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 14,
+        "average": 2035,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016SIGG01": {
     "name": "Graham Siggins",
@@ -7436,18 +7915,38 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 13,
-        "average": 18.77,
+        "average": 1877,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 13,
-        "average": 18.77,
+        "average": 1877,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 15,
+        "average": 2333,
+        "best": 0,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 7,
+        "average": 10964,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 6,
+        "average": 24323,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2022JAME02": {
     "name": "Greyson James",
@@ -7561,12 +8060,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 20,
-        "average": 3.71,
-        "best": 3.47,
+        "average": 371,
+        "best": 347,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 8,
+        "average": 358,
+        "best": 297,
+        "achievement": ""
+      }
+    }
   },
   "2018WANG35": {
     "name": "Guanbo Wang",
@@ -7888,12 +8395,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 1,
-        "average": 5.61,
-        "best": 5.08,
+        "average": 561,
+        "best": 508,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 2,
+        "average": 539,
+        "best": 496,
+        "achievement": ""
+      }
+    }
   },
   "2017SEOH01": {
     "name": "Heewon Seo",
@@ -7993,12 +8508,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 6,
-        "average": 29.75,
-        "best": 28.98,
+        "average": 2975,
+        "best": 2898,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 3,
+        "average": 2993,
+        "best": 2664,
+        "achievement": ""
+      }
+    }
   },
   "2018LICH05": {
     "name": "Henry Lichner",
@@ -8100,20 +8623,20 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 3,
-        "average": 40.32,
-        "best": 37.05,
+        "average": 4032,
+        "best": 3705,
         "achievement": "PR"
       },
       "666": {
         "seed": 8,
-        "average": 1,
-        "best": 1,
+        "average": 8173,
+        "best": 7240,
         "achievement": ""
       },
       "777": {
         "seed": 6,
-        "average": 1,
-        "best": 1,
+        "average": 11727,
+        "best": 11465,
         "achievement": ""
       }
     },
@@ -8121,7 +8644,27 @@
       "Set Personal Record in 5x5x5 at WCA 2025 (37.05)",
       "US big cube specialist",
       "5x5x5 finalist seed #3"
-    ]
+    ],
+    "wca2025Finals": {
+      "555": {
+        "placement": 9,
+        "average": 4337,
+        "best": 3626,
+        "achievement": "PR"
+      },
+      "666": {
+        "placement": 3,
+        "average": 7409,
+        "best": 7188,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 15,
+        "average": 12628,
+        "best": 12105,
+        "achievement": ""
+      }
+    }
   },
   "2017FENG10": {
     "name": "Hill Pong Yong Feng",
@@ -8415,12 +8958,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 17,
-        "average": 2.39,
-        "best": 2.03,
+        "average": 239,
+        "best": 203,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 1,
+        "average": 164,
+        "best": 144,
+        "achievement": ""
+      }
+    }
   },
   "2017PALI04": {
     "name": "Inigo Miguel B. Palisoc",
@@ -8508,12 +9059,20 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 17,
-        "average": 45.11,
-        "best": 42.45,
+        "average": 4511,
+        "best": 4245,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555": {
+        "placement": 14,
+        "average": 4557,
+        "best": 4382,
+        "achievement": ""
+      }
+    }
   },
   "2015LEON02": {
     "name": "Ivan Li Ka Leong",
@@ -8750,18 +9309,32 @@
     "wca2025Qualifying": {
       "777": {
         "seed": 11,
-        "average": 2,
-        "best": 1,
+        "average": 12570,
+        "best": 11376,
         "achievement": ""
       },
       "sq1": {
         "seed": 20,
-        "average": 7.89,
-        "best": 6.51,
+        "average": 789,
+        "best": 651,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "777": {
+        "placement": 9,
+        "average": 12088,
+        "best": 11296,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 17,
+        "average": 864,
+        "best": 794,
+        "achievement": ""
+      }
+    }
   },
   "2022BROW01": {
     "name": "Jacob Sherwen Brown",
@@ -9259,18 +9832,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 19,
-        "average": 20.03,
-        "best": 20.61,
+        "average": 2003,
+        "best": 2061,
         "achievement": ""
       },
       "333mbf": {
         "seed": 19,
-        "average": 20.03,
-        "best": 20.61,
+        "average": 2003,
+        "best": 2061,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 18,
+        "average": 2513,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2018BERE01": {
     "name": "János Bereczki",
@@ -9486,12 +10067,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 3,
-        "average": 9.4,
-        "best": 7.82,
+        "average": 940,
+        "best": 782,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 3,
+        "average": 915,
+        "best": 817,
+        "achievement": ""
+      }
+    }
   },
   "2022WOLF02": {
     "name": "Jasper Wolfe-Tham",
@@ -9583,8 +10172,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 6,
-        "average": 3.22,
-        "best": 2.92,
+        "average": 322,
+        "best": 292,
         "achievement": "PR"
       }
     },
@@ -9592,7 +10181,15 @@
       "Set Personal Record in Clock at WCA 2025 (2.92)",
       "US Clock specialist",
       "Clock finalist seed #6"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 12,
+        "average": 407,
+        "best": 349,
+        "achievement": ""
+      }
+    }
   },
   "2012MCNE01": {
     "name": "Jayden McNeill",
@@ -9712,7 +10309,15 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 10,
+        "average": 23,
+        "best": 22,
+        "achievement": ""
+      }
+    }
   },
   "2015PARK08": {
     "name": "Jeff Park",
@@ -9791,18 +10396,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 5,
-        "average": 16.53,
+        "average": 1653,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 5,
-        "average": 16.53,
+        "average": 1653,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 4,
+        "average": 1761,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2022PLUG01": {
     "name": "Jonathan Plug",
@@ -9904,12 +10517,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 16,
-        "average": 1.88,
-        "best": 1.4,
+        "average": 188,
+        "best": 140,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 3,
+        "average": 204,
+        "best": 138,
+        "achievement": ""
+      }
+    }
   },
   "2022MEDE02": {
     "name": "Jonathan Pires Medeiros",
@@ -10087,8 +10708,8 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 1,
-        "average": 2.86,
-        "best": 2.64,
+        "average": 286,
+        "best": 264,
         "achievement": "NR"
       }
     },
@@ -10097,7 +10718,15 @@
       "Set Canadian National Record at WCA 2025 (2.64)",
       "YouTube channel 'JWongCubing' with 50k+ subscribers",
       "Clock finalist seed #1 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 15,
+        "average": 486,
+        "best": 288,
+        "achievement": ""
+      }
+    }
   },
   "2015GUZM03": {
     "name": "Joseph Guzman",
@@ -10373,8 +11002,8 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 11,
-        "average": 32.01,
-        "best": 30.39,
+        "average": 3201,
+        "best": 3039,
         "achievement": ""
       }
     },
@@ -10382,7 +11011,15 @@
       "Peruvian National Champion",
       "Multiple South American records",
       "Continental champion"
-    ]
+    ],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 12,
+        "average": 3308,
+        "best": 2883,
+        "achievement": ""
+      }
+    }
   },
   "2019HUNG16": {
     "name": "Đỗ Quang Hưng",
@@ -10614,36 +11251,75 @@
     "isFinalist": {
       "333": true,
       "444": true,
+      "555": true,
       "666": true,
       "777": true
     },
     "wca2025Qualifying": {
       "333": {
         "seed": 15,
-        "average": 6.13,
-        "best": 5.25,
+        "average": 613,
+        "best": 525,
         "achievement": ""
       },
       "444": {
         "seed": 6,
-        "average": 21.65,
-        "best": 20.96,
+        "average": 2165,
+        "best": 2096,
+        "achievement": ""
+      },
+      "555": {
+        "seed": 5,
+        "average": 4097,
+        "best": 3871,
         "achievement": ""
       },
       "666": {
         "seed": 10,
-        "average": 1,
-        "best": 1,
+        "average": 8220,
+        "best": 7917,
         "achievement": ""
       },
       "777": {
         "seed": 10,
-        "average": 2,
-        "best": 1,
+        "average": 12345,
+        "best": 11915,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 16,
+        "average": 790,
+        "best": 617,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 7,
+        "average": 2303,
+        "best": 2101,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 3,
+        "average": 4043,
+        "best": 3635,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 12,
+        "average": 8188,
+        "best": 7692,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 13,
+        "average": 12518,
+        "best": 12092,
+        "achievement": ""
+      }
+    }
   },
   "2023GUOK01": {
     "name": "Kaixi Guo",
@@ -11171,13 +11847,13 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 16,
-        "average": 19.16,
+        "average": 1916,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 16,
-        "average": 19.16,
+        "average": 1916,
         "best": 0,
         "achievement": ""
       }
@@ -11280,12 +11956,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 16,
-        "average": 3.58,
-        "best": 2.96,
+        "average": 358,
+        "best": 296,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 6,
+        "average": 345,
+        "best": 272,
+        "achievement": ""
+      }
+    }
   },
   "2017CHOI07": {
     "name": "Kyeongmin Choi",
@@ -11413,12 +12097,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 5,
-        "average": 29.46,
-        "best": 26.39,
+        "average": 2946,
+        "best": 2639,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 11,
+        "average": 32,
+        "best": 2942,
+        "achievement": ""
+      }
+    }
   },
   "2022GIBS04": {
     "name": "Lachlan Gibson",
@@ -11572,12 +12264,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 2,
-        "average": 26.48,
-        "best": 25.14,
+        "average": 2648,
+        "best": 2514,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 1,
+        "average": 2631,
+        "best": 2491,
+        "achievement": ""
+      }
+    }
   },
   "2018ALAM08": {
     "name": "Leon Marcell Alamanda",
@@ -11790,7 +12490,15 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 1,
+        "average": 2033,
+        "best": 20,
+        "achievement": ""
+      }
+    }
   },
   "2014CHEN37": {
     "name": "Liam Chen",
@@ -11891,18 +12599,32 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 10,
-        "average": 18.22,
+        "average": 1822,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 10,
-        "average": 18.22,
+        "average": 1822,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 9,
+        "average": 1914,
+        "best": 0,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 5,
+        "average": 10125,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016HUNG08": {
     "name": "Lim Hung (林弘)",
@@ -12024,24 +12746,51 @@
     ],
     "difficulty": "easy",
     "isFinalist": {
+      "555": true,
       "666": true,
       "777": true
     },
     "wca2025Qualifying": {
+      "555": {
+        "seed": 11,
+        "average": 4263,
+        "best": 3653,
+        "achievement": ""
+      },
       "666": {
         "seed": 2,
-        "average": 1,
-        "best": 1,
+        "average": 7563,
+        "best": 7409,
         "achievement": ""
       },
       "777": {
         "seed": 3,
-        "average": 1,
-        "best": 1,
+        "average": 10915,
+        "best": 10041,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555": {
+        "placement": 13,
+        "average": 4544,
+        "best": 4214,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 9,
+        "average": 7896,
+        "best": 7289,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 3,
+        "average": 10859,
+        "best": 10545,
+        "achievement": ""
+      }
+    }
   },
   "2022YING02": {
     "name": "Lim Jia Ying",
@@ -12296,14 +13045,14 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 5,
-        "average": 5.51,
-        "best": 4.56,
+        "average": 551,
+        "best": 456,
         "achievement": ""
       },
       "444": {
         "seed": 16,
-        "average": 25.25,
-        "best": 19.66,
+        "average": 2525,
+        "best": 1966,
         "achievement": ""
       },
       "666": {
@@ -12314,20 +13063,20 @@
       },
       "777": {
         "seed": 13,
-        "average": 2,
-        "best": 1,
+        "average": 12713,
+        "best": 11834,
         "achievement": ""
       },
       "333oh": {
         "seed": 8,
-        "average": 10.07,
-        "best": 8.87,
+        "average": 1007,
+        "best": 887,
         "achievement": ""
       },
       "pyram": {
         "seed": 6,
-        "average": 1.73,
-        "best": 1.36,
+        "average": 173,
+        "best": 136,
         "achievement": ""
       }
     },
@@ -12335,7 +13084,45 @@
       "Known for unique solving style and finger tricks",
       "US National Champion",
       "Popular in the speedcubing community"
-    ]
+    ],
+    "wca2025Finals": {
+      "333": {
+        "placement": 11,
+        "average": 605,
+        "best": 468,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 9,
+        "average": 2458,
+        "best": 2250,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 18,
+        "average": 8914,
+        "best": 8819,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 20,
+        "average": 16674,
+        "best": 13487,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 4,
+        "average": 954,
+        "best": 740,
+        "achievement": ""
+      },
+      "pyram": {
+        "placement": 8,
+        "average": 236,
+        "best": 197,
+        "achievement": ""
+      }
+    }
   },
   "2014CZAP01": {
     "name": "Maciej Czapiewski",
@@ -12570,18 +13357,38 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 6,
-        "average": 16.77,
+        "average": 1677,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 6,
-        "average": 16.77,
+        "average": 1677,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 3,
+        "average": 1524,
+        "best": 0,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 6,
+        "average": 10749,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 3,
+        "average": 19744,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2015ANTO04": {
     "name": "Manuel Prieto de Antón",
@@ -12915,26 +13722,26 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 13,
-        "average": 6.1,
-        "best": 4.93,
+        "average": 610,
+        "best": 493,
         "achievement": ""
       },
       "444": {
         "seed": 7,
-        "average": 23.84,
-        "best": 20.98,
+        "average": 2384,
+        "best": 2098,
         "achievement": ""
       },
       "555": {
         "seed": 7,
-        "average": 41.88,
-        "best": 37.72,
+        "average": 4188,
+        "best": 3772,
         "achievement": ""
       },
       "666": {
         "seed": 17,
-        "average": 1,
-        "best": 1,
+        "average": 8637,
+        "best": 8386,
         "achievement": ""
       }
     },
@@ -12942,7 +13749,33 @@
       "US big cube specialist",
       "Known for smooth turning style",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "333": {
+        "placement": 5,
+        "average": 547,
+        "best": 511,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 4,
+        "average": 2231,
+        "best": 1949,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 5,
+        "average": 4165,
+        "best": 3775,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 16,
+        "average": 8584,
+        "best": 8250,
+        "achievement": ""
+      }
+    }
   },
   "2012PARK03": {
     "name": "Max Park",
@@ -13024,38 +13857,38 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 4,
-        "average": 5.32,
-        "best": 5.06,
+        "average": 532,
+        "best": 506,
         "achievement": ""
       },
       "444": {
         "seed": 1,
-        "average": 20.95,
-        "best": 19.13,
+        "average": 2095,
+        "best": 1913,
         "achievement": ""
       },
       "555": {
         "seed": 2,
-        "average": 36.48,
-        "best": 33.05,
+        "average": 3648,
+        "best": 3305,
         "achievement": ""
       },
       "666": {
         "seed": 1,
-        "average": 1,
-        "best": 1,
+        "average": 7445,
+        "best": 7104,
         "achievement": ""
       },
       "777": {
         "seed": 5,
-        "average": 1,
-        "best": 1,
+        "average": 11339,
+        "best": 10801,
         "achievement": ""
       },
       "333oh": {
         "seed": 5,
-        "average": 9.47,
-        "best": 8.8,
+        "average": 947,
+        "best": 880,
         "achievement": ""
       }
     },
@@ -13065,7 +13898,45 @@
       "Over 400 world records in career",
       "Autism awareness advocate",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "333": {
+        "placement": 10,
+        "average": 592,
+        "best": 521,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 8,
+        "average": 2309,
+        "best": 1786,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 2,
+        "average": 3637,
+        "best": 3467,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 1,
+        "average": 7192,
+        "best": 7078,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 1,
+        "average": 10323,
+        "best": 10298,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 2,
+        "average": 906,
+        "best": 711,
+        "achievement": ""
+      }
+    }
   },
   "2017SIAU02": {
     "name": "Max Siauw",
@@ -13193,12 +14064,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 6,
-        "average": 6.5,
-        "best": 5.4,
+        "average": 650,
+        "best": 540,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 8,
+        "average": 723,
+        "best": 547,
+        "achievement": ""
+      }
+    }
   },
   "2017NIEL03": {
     "name": "Michael Nielsen",
@@ -13304,12 +14183,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 3,
-        "average": 1.6,
-        "best": 1.25,
+        "average": 160,
+        "best": 125,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 2,
+        "average": 201,
+        "best": 125,
+        "achievement": ""
+      }
+    }
   },
   "2021TRIP01": {
     "name": "Michael Tripodi",
@@ -13438,18 +14325,32 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 18,
-        "average": 19.71,
-        "best": 21.35,
+        "average": 1971,
+        "best": 2135,
         "achievement": ""
       },
       "333mbf": {
         "seed": 18,
-        "average": 19.71,
-        "best": 21.35,
+        "average": 1971,
+        "best": 2135,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 8,
+        "average": 1877,
+        "best": 2882,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 4,
+        "average": 9694,
+        "best": 9939,
+        "achievement": "CR"
+      }
+    }
   },
   "2013KRAS02": {
     "name": "Michał Krasowski",
@@ -13885,12 +14786,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 1,
-        "average": 8.14,
-        "best": 6.96,
+        "average": 814,
+        "best": 696,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 6,
+        "average": 980,
+        "best": 792,
+        "achievement": ""
+      }
+    }
   },
   "2022CAMP02": {
     "name": "Nicolas Campanario",
@@ -14082,12 +14991,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 7,
-        "average": 30.55,
-        "best": 27.76,
+        "average": 3055,
+        "best": 2776,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 4,
+        "average": 2995,
+        "best": 2759,
+        "achievement": ""
+      }
+    }
   },
   "2022PHAN03": {
     "name": "Nigel Phang",
@@ -14439,24 +15356,56 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 3,
-        "average": 15.48,
-        "best": 16.92,
+        "average": 1548,
+        "best": 1692,
         "achievement": ""
       },
       "333mbf": {
         "seed": 3,
-        "average": 15.48,
-        "best": 16.92,
+        "average": 1548,
+        "best": 1692,
         "achievement": ""
       },
       "sq1": {
         "seed": 9,
-        "average": 6.99,
-        "best": 5.79,
+        "average": 699,
+        "best": 579,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 5,
+        "average": 1805,
+        "best": 0,
+        "achievement": ""
+      },
+      "333fm": {
+        "placement": 16,
+        "average": 24,
+        "best": 21,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 9,
+        "average": 12199,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 8,
+        "average": 27913,
+        "best": 0,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 12,
+        "average": 758,
+        "best": 685,
+        "achievement": ""
+      }
+    }
   },
   "2018ELLA01": {
     "name": "Omar Ellabban",
@@ -14648,12 +15597,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 5,
-        "average": 2.04,
-        "best": 1.71,
+        "average": 204,
+        "best": 171,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 6,
+        "average": 193,
+        "best": 139,
+        "achievement": ""
+      }
+    }
   },
   "2012PONC02": {
     "name": "Patrick Ponce",
@@ -14772,14 +15729,14 @@
     "wca2025Qualifying": {
       "555": {
         "seed": 12,
-        "average": 42.65,
-        "best": 39.81,
+        "average": 4265,
+        "best": 3981,
         "achievement": ""
       },
       "666": {
         "seed": 12,
-        "average": 1,
-        "best": 1,
+        "average": 8400,
+        "best": 7690,
         "achievement": ""
       }
     },
@@ -14787,7 +15744,21 @@
       "Former 3x3 world record holder (4.69)",
       "First person to solve 3x3 under 5 seconds in competition",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "555": {
+        "placement": 11,
+        "average": 4418,
+        "best": 4123,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 8,
+        "average": 7895,
+        "best": 7607,
+        "achievement": ""
+      }
+    }
   },
   "2017GADG01": {
     "name": "Pranav Gadge",
@@ -14975,12 +15946,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 13,
-        "average": 3.43,
-        "best": 3.13,
+        "average": 343,
+        "best": 313,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 16,
+        "average": 486,
+        "best": 290,
+        "achievement": ""
+      }
+    }
   },
   "2020BARA02": {
     "name": "Radomił Baran",
@@ -15275,30 +16254,56 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 8,
-        "average": 23.9,
-        "best": 22.1,
+        "average": 2390,
+        "best": 2210,
         "achievement": ""
       },
       "555": {
         "seed": 13,
-        "average": 44.03,
-        "best": 41.06,
+        "average": 4402,
+        "best": 4106,
         "achievement": ""
       },
       "666": {
         "seed": 15,
-        "average": 1,
-        "best": 1,
+        "average": 8549,
+        "best": 8419,
         "achievement": ""
       },
       "777": {
         "seed": 12,
-        "average": 2,
-        "best": 1,
+        "average": 12702,
+        "best": 11841,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 10,
+        "average": 2460,
+        "best": 2208,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 15,
+        "average": 4709,
+        "best": 3743,
+        "achievement": "NR"
+      },
+      "666": {
+        "placement": 15,
+        "average": 8343,
+        "best": 7625,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 10,
+        "average": 12187,
+        "best": 12146,
+        "achievement": ""
+      }
+    }
   },
   "2022RUDA02": {
     "name": "Roman Rudakov",
@@ -15409,12 +16414,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 13,
-        "average": 1.54,
-        "best": 1.05,
+        "average": 154,
+        "best": 105,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 15,
+        "average": 169,
+        "best": 116,
+        "achievement": ""
+      }
+    }
   },
   "2007HESS01": {
     "name": "Rowe Hessler",
@@ -15745,7 +16758,21 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444bf": {
+        "placement": 2,
+        "average": 8905,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 4,
+        "average": 19948,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016PILA03": {
     "name": "Ryan Pilat",
@@ -15875,18 +16902,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 14,
-        "average": 18.87,
+        "average": 1887,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 14,
-        "average": 18.87,
+        "average": 1887,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 16,
+        "average": 2437,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2017AGGA01": {
     "name": "Sameer Aggarwal",
@@ -16012,12 +17047,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 3,
-        "average": 5.72,
-        "best": 4.51,
+        "average": 572,
+        "best": 451,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 1,
+        "average": 501,
+        "best": 363,
+        "achievement": ""
+      }
+    }
   },
   "2017VILL41": {
     "name": "Sean Patrick Villanueva",
@@ -16195,12 +17238,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 2,
-        "average": 1.52,
-        "best": 1.32,
+        "average": 152,
+        "best": 132,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 14,
+        "average": 320,
+        "best": 153,
+        "achievement": ""
+      }
+    }
   },
   "2010WEYE02": {
     "name": "Sebastian Weyer",
@@ -16313,14 +17364,14 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 2,
-        "average": 21.19,
-        "best": 17.96,
+        "average": 2119,
+        "best": 1796,
         "achievement": ""
       },
       "555": {
         "seed": 16,
-        "average": 44.89,
-        "best": 42.92,
+        "average": 4489,
+        "best": 4292,
         "achievement": ""
       }
     },
@@ -16328,7 +17379,21 @@
       "Former 4x4 world record holder",
       "German National Champion multiple times",
       "Made 5x5x5 finals at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "444": {
+        "placement": 1,
+        "average": 2029,
+        "best": 1851,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 10,
+        "average": 4376,
+        "best": 4148,
+        "achievement": ""
+      }
+    }
   },
   "2011TRON02": {
     "name": "Sebastiano Tronto",
@@ -16552,36 +17617,75 @@
     "isFinalist": {
       "333": true,
       "444": true,
+      "555": true,
       "666": true,
       "777": true
     },
     "wca2025Qualifying": {
       "333": {
         "seed": 14,
-        "average": 6.11,
-        "best": 5.32,
+        "average": 611,
+        "best": 532,
         "achievement": ""
       },
       "444": {
         "seed": 5,
-        "average": 21.4,
-        "best": 19.5,
+        "average": 2140,
+        "best": 1950,
+        "achievement": ""
+      },
+      "555": {
+        "seed": 6,
+        "average": 4170,
+        "best": 4074,
         "achievement": ""
       },
       "666": {
         "seed": 5,
-        "average": 1,
-        "best": 1,
+        "average": 7948,
+        "best": 7899,
         "achievement": ""
       },
       "777": {
         "seed": 1,
-        "average": 1,
-        "best": 1,
+        "average": 10861,
+        "best": 10497,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 14,
+        "average": 633,
+        "best": 565,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 15,
+        "average": 2562,
+        "best": 2122,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 7,
+        "average": 4222,
+        "best": 3831,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 4,
+        "average": 7589,
+        "best": 7359,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 6,
+        "average": 11509,
+        "best": 10734,
+        "achievement": ""
+      }
+    }
   },
   "2011BANS02": {
     "name": "Shivam Bansal",
@@ -16706,7 +17810,15 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444bf": {
+        "placement": 16,
+        "average": 15826,
+        "best": 18658,
+        "achievement": "NR"
+      }
+    }
   },
   "2016KELL12": {
     "name": "Simon Kellum",
@@ -16830,12 +17942,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 18,
-        "average": 1.9,
-        "best": 1.65,
+        "average": 190,
+        "best": 165,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 12,
+        "average": 285,
+        "best": 208,
+        "achievement": ""
+      }
+    }
   },
   "2021PRAS02": {
     "name": "Simon Praschl",
@@ -16957,7 +18077,21 @@
     "difficulty": "easy",
     "isFinalist": {},
     "wca2025Qualifying": {},
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444bf": {
+        "placement": 3,
+        "average": 9128,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 2,
+        "average": 17734,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016CHAP04": {
     "name": "Stanley Chapel",
@@ -17086,18 +18220,44 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 4,
-        "average": 15.94,
+        "average": 1594,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 4,
-        "average": 15.94,
+        "average": 1594,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 6,
+        "average": 1818,
+        "best": 0,
+        "achievement": ""
+      },
+      "333fm": {
+        "placement": 17,
+        "average": 24,
+        "best": 23,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 1,
+        "average": 5976,
+        "best": 6232,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 1,
+        "average": 13374,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016FEIS01": {
     "name": "Sujan Feist",
@@ -17161,12 +18321,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 2,
-        "average": 1.33,
-        "best": 1.05,
+        "average": 133,
+        "best": 105,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 1,
+        "average": 117,
+        "best": 81,
+        "achievement": ""
+      }
+    }
   },
   "2022BRAG03": {
     "name": "Szymon Brągiel",
@@ -17369,18 +18537,32 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 3,
-        "average": 1.34,
-        "best": 0.72,
+        "average": 134,
+        "best": 72,
         "achievement": ""
       },
       "333": {
         "seed": 9,
-        "average": 5.77,
-        "best": 4.94,
+        "average": 577,
+        "best": 494,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 4,
+        "average": 128,
+        "best": 95,
+        "achievement": ""
+      },
+      "333": {
+        "placement": 6,
+        "average": 550,
+        "best": 507,
+        "achievement": ""
+      }
+    }
   },
   "2019TARA09": {
     "name": "Timofei Tarasenko",
@@ -17493,42 +18675,80 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 7,
-        "average": 5.74,
-        "best": 5.08,
+        "average": 574,
+        "best": 508,
         "achievement": ""
       },
       "444": {
         "seed": 4,
-        "average": 21.4,
-        "best": 18.69,
+        "average": 2140,
+        "best": 1869,
         "achievement": ""
       },
       "555": {
         "seed": 4,
-        "average": 40.68,
-        "best": 35.58,
+        "average": 4068,
+        "best": 3558,
         "achievement": ""
       },
       "666": {
         "seed": 13,
-        "average": 1,
-        "best": 1,
+        "average": 8490,
+        "best": 7652,
         "achievement": ""
       },
       "777": {
         "seed": 7,
-        "average": 2,
-        "best": 1,
+        "average": 12035,
+        "best": 11571,
         "achievement": ""
       },
       "minx": {
         "seed": 1,
         "average": 26,
-        "best": 24.63,
+        "best": 2463,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 7,
+        "average": 560,
+        "best": 428,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 2,
+        "average": 2040,
+        "best": 1884,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 4,
+        "average": 4163,
+        "best": 3536,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 5,
+        "average": 7784,
+        "best": 7445,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 5,
+        "average": 11314,
+        "best": 10625,
+        "achievement": "NR"
+      },
+      "minx": {
+        "placement": 2,
+        "average": 2740,
+        "best": 2496,
+        "achievement": ""
+      }
+    }
   },
   "2015CHER07": {
     "name": "Tommy Cherry",
@@ -17657,13 +18877,13 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 2,
-        "average": 15.42,
+        "average": 1542,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 2,
-        "average": 15.42,
+        "average": 1542,
         "best": 0,
         "achievement": ""
       }
@@ -17672,7 +18892,15 @@
       "Former 3x3 world champion",
       "Known for consistency under pressure",
       "US National team member"
-    ]
+    ],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 2,
+        "average": 1464,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2021PIET01": {
     "name": "Tomasz Pietruszka",
@@ -18109,32 +19337,32 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 3,
-        "average": 5.1,
-        "best": 4.34,
+        "average": 510,
+        "best": 434,
         "achievement": ""
       },
       "444": {
         "seed": 3,
-        "average": 21.23,
-        "best": 18.9,
+        "average": 2123,
+        "best": 1890,
         "achievement": ""
       },
       "555": {
         "seed": 1,
-        "average": 35.49,
-        "best": 33.05,
+        "average": 3549,
+        "best": 3305,
         "achievement": ""
       },
       "666": {
         "seed": 4,
-        "average": 1,
-        "best": 1,
+        "average": 7855,
+        "best": 7660,
         "achievement": ""
       },
       "777": {
         "seed": 2,
-        "average": 1,
-        "best": 1,
+        "average": 10902,
+        "best": 10319,
         "achievement": ""
       }
     },
@@ -18144,7 +19372,39 @@
       "Known for practicing 8+ hours daily",
       "Revolutionary turning style",
       "5x5x5 finalist seed #1 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "333": {
+        "placement": 3,
+        "average": 498,
+        "best": 461,
+        "achievement": ""
+      },
+      "444": {
+        "placement": 3,
+        "average": 2138,
+        "best": 2066,
+        "achievement": ""
+      },
+      "555": {
+        "placement": 1,
+        "average": 3431,
+        "best": 3167,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 2,
+        "average": 7286,
+        "best": 7037,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 2,
+        "average": 10856,
+        "best": 10237,
+        "achievement": ""
+      }
+    }
   },
   "2013MARC05": {
     "name": "Vako Marchilashvili",
@@ -18344,18 +19604,32 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 20,
-        "average": 25.62,
-        "best": 21.04,
+        "average": 2562,
+        "best": 2104,
         "achievement": ""
       },
       "555": {
         "seed": 18,
-        "average": 45.2,
-        "best": 44.36,
+        "average": 4520,
+        "best": 4436,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 14,
+        "average": 2561,
+        "best": 2072,
+        "achievement": "PR"
+      },
+      "555": {
+        "placement": 18,
+        "average": 4759,
+        "best": 4360,
+        "achievement": ""
+      }
+    }
   },
   "2015CECC01": {
     "name": "Vicenzo Guerino Cecchini",
@@ -18585,12 +19859,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 3,
-        "average": 1.89,
-        "best": 1.57,
+        "average": 189,
+        "best": 157,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 17,
+        "average": 292,
+        "best": 201,
+        "achievement": ""
+      }
+    }
   },
   "2022KAPU01": {
     "name": "Volodymyr Kapustianskyi",
@@ -18690,12 +19972,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 10,
-        "average": 3.34,
-        "best": 1.93,
+        "average": 334,
+        "best": 193,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 3,
+        "average": 303,
+        "best": 236,
+        "achievement": ""
+      }
+    }
   },
   "2014WENW01": {
     "name": "Wong Chong Wen",
@@ -18864,12 +20154,20 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 2,
-        "average": 4.83,
-        "best": 3.96,
+        "average": 483,
+        "best": 396,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 2,
+        "average": 449,
+        "best": 395,
+        "achievement": ""
+      }
+    }
   },
   "2017WANY29": {
     "name": "Yifan Wang",
@@ -19066,20 +20364,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 1,
-        "average": 1.18,
-        "best": 0.99,
+        "average": 118,
+        "best": 99,
         "achievement": ""
       },
       "333": {
         "seed": 1,
-        "average": 4.58,
-        "best": 3.62,
+        "average": 458,
+        "best": 362,
         "achievement": ""
       },
       "pyram": {
         "seed": 10,
-        "average": 1.79,
-        "best": 1.19,
+        "average": 179,
+        "best": 119,
         "achievement": ""
       }
     },
@@ -19087,7 +20385,27 @@
       "One of the youngest top speedcubers in the world (born 2014)",
       "Has broken multiple youth world records",
       "Known for incredibly fast improvement curve"
-    ]
+    ],
+    "wca2025Finals": {
+      "222": {
+        "placement": 2,
+        "average": 119,
+        "best": 102,
+        "achievement": ""
+      },
+      "333": {
+        "placement": 1,
+        "average": 423,
+        "best": 380,
+        "achievement": ""
+      },
+      "pyram": {
+        "placement": 13,
+        "average": 289,
+        "best": 228,
+        "achievement": ""
+      }
+    }
   },
   "2012LIUY03": {
     "name": "Yiwei Liu",
@@ -19625,12 +20943,20 @@
     "wca2025Qualifying": {
       "clock": {
         "seed": 18,
-        "average": 3.65,
-        "best": 3.4,
+        "average": 365,
+        "best": 340,
         "achievement": "PR"
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "clock": {
+        "placement": 13,
+        "average": 423,
+        "best": 369,
+        "achievement": ""
+      }
+    }
   },
   "2018KHAN28": {
     "name": "Zayn Khanani",
@@ -19777,8 +21103,8 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 5,
-        "average": 1.37,
-        "best": 0.86,
+        "average": 137,
+        "best": 86,
         "achievement": ""
       },
       "333": {
@@ -19867,8 +21193,8 @@
       },
       "skewb": {
         "seed": 9,
-        "average": 2.19,
-        "best": 1.69,
+        "average": 219,
+        "best": 169,
         "achievement": ""
       },
       "sq1": {
@@ -19878,7 +21204,21 @@
         "achievement": " "
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 3,
+        "average": 120,
+        "best": 96,
+        "achievement": ""
+      },
+      "skewb": {
+        "placement": 3,
+        "average": 172,
+        "best": 163,
+        "achievement": ""
+      }
+    }
   },
   "2024LIZH03": {
     "name": "Zhaokun Li",
@@ -20352,8 +21692,8 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 2,
-        "average": 9.25,
-        "best": 8.79,
+        "average": 925,
+        "best": 879,
         "achievement": ""
       }
     },
@@ -20361,7 +21701,15 @@
       "One of the top female speedcubers globally",
       "Consistently makes finals at major competitions",
       "Strong at One-Handed solving"
-    ]
+    ],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 10,
+        "average": 1015,
+        "best": 860,
+        "achievement": ""
+      }
+    }
   },
   "2023CUAR03": {
     "name": "Neo Cuares",
@@ -20435,14 +21783,14 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 10,
-        "average": 5.96,
-        "best": 5.59,
+        "average": 596,
+        "best": 559,
         "achievement": ""
       },
       "333oh": {
         "seed": 6,
-        "average": 9.83,
-        "best": 8.18,
+        "average": 983,
+        "best": 818,
         "achievement": ""
       }
     },
@@ -20450,7 +21798,21 @@
       "One of Philippines' top cubers",
       "Strong One-Handed solver",
       "3x3 OH finalist seed #6 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "333": {
+        "placement": 9,
+        "average": 591,
+        "best": 516,
+        "achievement": ""
+      },
+      "333oh": {
+        "placement": 1,
+        "average": 866,
+        "best": 696,
+        "achievement": "PR"
+      }
+    }
   },
   "2017TUNG13": {
     "name": "Anto Kam (甘浩東)",
@@ -20579,12 +21941,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 7,
-        "average": 9.83,
-        "best": 8.79,
+        "average": 983,
+        "best": 879,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 11,
+        "average": 1018,
+        "best": 1007,
+        "achievement": ""
+      }
+    }
   },
   "2017GOLU01": {
     "name": "Theo Goluboff",
@@ -20709,12 +22079,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 9,
-        "average": 10.14,
-        "best": 8.56,
+        "average": 1014,
+        "best": 856,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 12,
+        "average": 1026,
+        "best": 784,
+        "achievement": ""
+      }
+    }
   },
   "2016HONG03": {
     "name": "Yoochan Hong (홍유찬)",
@@ -20825,12 +22203,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 10,
-        "average": 10.2,
-        "best": 9.52,
+        "average": 1020,
+        "best": 952,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 8,
+        "average": 994,
+        "best": 871,
+        "achievement": ""
+      }
+    }
   },
   "2008SUNZ01": {
     "name": "Zhouheng Sun (孙舟横)",
@@ -20915,12 +22301,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 12,
-        "average": 10.27,
-        "best": 8.47,
+        "average": 1027,
+        "best": 847,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 9,
+        "average": 1002,
+        "best": 811,
+        "achievement": ""
+      }
+    }
   },
   "2016CORV01": {
     "name": "Alejandro Daniel Salceda Corvera",
@@ -21025,12 +22419,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 14,
-        "average": 10.52,
-        "best": 9.21,
+        "average": 1052,
+        "best": 921,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 15,
+        "average": 1060,
+        "best": 967,
+        "achievement": ""
+      }
+    }
   },
   "2016PARK02": {
     "name": "Eli Parker",
@@ -21137,12 +22539,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 15,
-        "average": 10.56,
-        "best": 8.45,
+        "average": 1056,
+        "best": 845,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 13,
+        "average": 1037,
+        "best": 890,
+        "achievement": ""
+      }
+    }
   },
   "2017LAMB06": {
     "name": "Andreas Lambropoulos",
@@ -21261,12 +22671,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 16,
-        "average": 10.62,
-        "best": 9.96,
+        "average": 1062,
+        "best": 996,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 16,
+        "average": 1104,
+        "best": 1029,
+        "achievement": ""
+      }
+    }
   },
   "2012TYCK01": {
     "name": "Luke Tycksen",
@@ -21377,15 +22795,23 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 17,
-        "average": 10.64,
-        "best": 10.23,
+        "average": 1064,
+        "best": 1023,
         "achievement": ""
       }
     },
     "funFacts": [
       "Young rising star in US cubing",
       "Multiple national age-group records"
-    ]
+    ],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 14,
+        "average": 1052,
+        "best": 937,
+        "achievement": ""
+      }
+    }
   },
   "2017BRIG03": {
     "name": "Joseph Briggs",
@@ -21456,14 +22882,22 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 18,
-        "average": 10.75,
-        "best": 7.99,
+        "average": 1075,
+        "best": 799,
         "achievement": ""
       }
     },
     "funFacts": [
       "Set One-Handed PR at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 17,
+        "average": 1110,
+        "best": 1051,
+        "achievement": ""
+      }
+    }
   },
   "2013MEND03": {
     "name": "Louis de Mendonça",
@@ -21576,12 +23010,20 @@
     "wca2025Qualifying": {
       "333oh": {
         "seed": 20,
-        "average": 10.89,
-        "best": 8.73,
+        "average": 1089,
+        "best": 873,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333oh": {
+        "placement": 18,
+        "average": 1152,
+        "best": 981,
+        "achievement": ""
+      }
+    }
   },
   "2016TRAG01": {
     "name": "Parker Trager",
@@ -21702,15 +23144,23 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 1,
-        "average": 1.52,
-        "best": 1.25,
+        "average": 152,
+        "best": 125,
         "achievement": ""
       }
     },
     "funFacts": [
       "Pyraminx specialist",
       "Pyraminx finalist seed #1 at WCA 2025"
-    ]
+    ],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 6,
+        "average": 218,
+        "best": 192,
+        "achievement": ""
+      }
+    }
   },
   "2022SILV37": {
     "name": "David F. Andron-Silva",
@@ -21815,12 +23265,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 4,
-        "average": 1.66,
-        "best": 1.16,
+        "average": 166,
+        "best": 116,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 10,
+        "average": 249,
+        "best": 216,
+        "achievement": ""
+      }
+    }
   },
   "2018CREE01": {
     "name": "Kerry Creech",
@@ -21947,12 +23405,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 5,
-        "average": 1.72,
-        "best": 1.29,
+        "average": 172,
+        "best": 129,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 7,
+        "average": 231,
+        "best": 160,
+        "achievement": ""
+      }
+    }
   },
   "2018WILS10": {
     "name": "Keon Wilson",
@@ -22061,12 +23527,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 8,
-        "average": 1.76,
-        "best": 1.08,
+        "average": 176,
+        "best": 108,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 20,
+        "average": 536,
+        "best": 188,
+        "achievement": ""
+      }
+    }
   },
   "2019MEAD03": {
     "name": "Kyle Meade",
@@ -22179,12 +23653,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 9,
-        "average": 1.77,
-        "best": 1.63,
+        "average": 177,
+        "best": 163,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 4,
+        "average": 204,
+        "best": 149,
+        "achievement": ""
+      }
+    }
   },
   "2022NAGA02": {
     "name": "Yuki Nagai",
@@ -22295,12 +23777,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 11,
-        "average": 1.79,
-        "best": 1.46,
+        "average": 179,
+        "best": 146,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 16,
+        "average": 343,
+        "best": 233,
+        "achievement": ""
+      }
+    }
   },
   "2017BENN03": {
     "name": "Jacob Bennett",
@@ -22353,12 +23843,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 12,
-        "average": 1.81,
-        "best": 1.55,
+        "average": 181,
+        "best": 155,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 17,
+        "average": 352,
+        "best": 221,
+        "achievement": ""
+      }
+    }
   },
   "2022HRDL01": {
     "name": "Mazar Hrdlicka",
@@ -22459,12 +23957,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 13,
-        "average": 1.83,
-        "best": 1.63,
+        "average": 183,
+        "best": 163,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 18,
+        "average": 413,
+        "best": 234,
+        "achievement": ""
+      }
+    }
   },
   "2017PETE04": {
     "name": "Tripp Peters",
@@ -22591,12 +24097,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 14,
-        "average": 1.83,
-        "best": 1.74,
+        "average": 183,
+        "best": 174,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 15,
+        "average": 337,
+        "best": 2,
+        "achievement": ""
+      }
+    }
   },
   "2018HIBS01": {
     "name": "Jakub Hibszer",
@@ -22687,15 +24201,23 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 15,
-        "average": 1.86,
-        "best": 1.16,
+        "average": 186,
+        "best": 116,
         "achievement": ""
       }
     },
     "funFacts": [
       "From Poland's strong cubing community",
       "Multi-event competitor"
-    ]
+    ],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 5,
+        "average": 209,
+        "best": 192,
+        "achievement": ""
+      }
+    }
   },
   "2016LIJI05": {
     "name": "Jiazhou Li (李佳洲)",
@@ -22804,24 +24326,44 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 7,
-        "average": 1.4,
-        "best": 0.87,
+        "average": 140,
+        "best": 87,
         "achievement": ""
       },
       "pyram": {
         "seed": 19,
-        "average": 1.91,
-        "best": 1.65,
+        "average": 191,
+        "best": 165,
         "achievement": ""
       },
       "sq1": {
         "seed": 11,
-        "average": 7.2,
-        "best": 6.74,
+        "average": 720,
+        "best": 674,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 11,
+        "average": 152,
+        "best": 126,
+        "achievement": ""
+      },
+      "pyram": {
+        "placement": 11,
+        "average": 258,
+        "best": 190,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 9,
+        "average": 741,
+        "best": 574,
+        "achievement": ""
+      }
+    }
   },
   "2015KAME02": {
     "name": "Marcus Kamen",
@@ -22934,12 +24476,20 @@
     "wca2025Qualifying": {
       "pyram": {
         "seed": 20,
-        "average": 1.91,
-        "best": 1.8,
+        "average": 191,
+        "best": 180,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "pyram": {
+        "placement": 9,
+        "average": 239,
+        "best": 210,
+        "achievement": ""
+      }
+    }
   },
   "2018LIUN01": {
     "name": "Nancy Liu",
@@ -23016,12 +24566,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 6,
-        "average": 1.37,
-        "best": 1.21,
+        "average": 137,
+        "best": 121,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 12,
+        "average": 157,
+        "best": 135,
+        "achievement": ""
+      }
+    }
   },
   "2016JONE04": {
     "name": "Jode Brewster",
@@ -23148,12 +24706,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 10,
-        "average": 1.46,
-        "best": 1.32,
+        "average": 146,
+        "best": 132,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 18,
+        "average": 199,
+        "best": 153,
+        "achievement": ""
+      }
+    }
   },
   "2018ZHUA10": {
     "name": "Ethan Zhuang",
@@ -23242,12 +24808,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 11,
-        "average": 1.48,
-        "best": 1.33,
+        "average": 148,
+        "best": 133,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 5,
+        "average": 129,
+        "best": 98,
+        "achievement": ""
+      }
+    }
   },
   "2019GAOY01": {
     "name": "Yuki Gao",
@@ -23342,12 +24916,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 12,
-        "average": 1.51,
-        "best": 1.38,
+        "average": 151,
+        "best": 138,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 8,
+        "average": 142,
+        "best": 113,
+        "achievement": ""
+      }
+    }
   },
   "2019YAOJ01": {
     "name": "Jerry Yao",
@@ -23460,12 +25042,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 14,
-        "average": 1.56,
-        "best": 1.28,
+        "average": 156,
+        "best": 128,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 17,
+        "average": 174,
+        "best": 134,
+        "achievement": ""
+      }
+    }
   },
   "2018PATT04": {
     "name": "Phoenix Patterson",
@@ -23572,12 +25162,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 15,
-        "average": 1.59,
-        "best": 1.01,
+        "average": 159,
+        "best": 101,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 19,
+        "average": 235,
+        "best": 118,
+        "achievement": ""
+      }
+    }
   },
   "2022MIRA06": {
     "name": "Gabriel Alonso Ibáñez Miranda",
@@ -23688,12 +25286,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 18,
-        "average": 1.63,
-        "best": 1.19,
+        "average": 163,
+        "best": 119,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 9,
+        "average": 148,
+        "best": 122,
+        "achievement": ""
+      }
+    }
   },
   "2022DINC01": {
     "name": "Ayden Dincher",
@@ -23810,12 +25416,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 19,
-        "average": 1.66,
-        "best": 1.47,
+        "average": 166,
+        "best": 147,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 6,
+        "average": 137,
+        "best": 119,
+        "achievement": ""
+      }
+    }
   },
   "2017HERN11": {
     "name": "Joaquin Ruenes Hernández",
@@ -23922,12 +25536,20 @@
     "wca2025Qualifying": {
       "222": {
         "seed": 20,
-        "average": 1.67,
-        "best": 1.27,
+        "average": 167,
+        "best": 127,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "222": {
+        "placement": 13,
+        "average": 162,
+        "best": 123,
+        "achievement": ""
+      }
+    }
   },
   "2017JAMP01": {
     "name": "Ashten Jampayas",
@@ -24028,12 +25650,20 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 10,
-        "average": 24.42,
-        "best": 23.24,
+        "average": 2442,
+        "best": 2324,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 20,
+        "average": 3043,
+        "best": 2408,
+        "achievement": ""
+      }
+    }
   },
   "2019VUJC01": {
     "name": "Alexander Vujcich",
@@ -24129,18 +25759,32 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 12,
-        "average": 24.93,
-        "best": 21.94,
+        "average": 2493,
+        "best": 2194,
         "achievement": ""
       },
       "minx": {
         "seed": 3,
-        "average": 27.33,
+        "average": 2733,
         "best": 26,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 18,
+        "average": 2737,
+        "best": 2149,
+        "achievement": ""
+      },
+      "minx": {
+        "placement": 8,
+        "average": 3118,
+        "best": 2762,
+        "achievement": ""
+      }
+    }
   },
   "2010WUIF01": {
     "name": "Yi-Fan Wu (吳亦凡)",
@@ -24253,12 +25897,20 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 13,
-        "average": 25.01,
-        "best": 23.12,
+        "average": 2501,
+        "best": 2312,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 11,
+        "average": 2503,
+        "best": 2241,
+        "achievement": ""
+      }
+    }
   },
   "2017RAND06": {
     "name": "Ari Randers-Pehrson",
@@ -24369,12 +26021,20 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 14,
-        "average": 25.07,
-        "best": 23.21,
+        "average": 2507,
+        "best": 2321,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 6,
+        "average": 2295,
+        "best": 2097,
+        "achievement": ""
+      }
+    }
   },
   "2014BAIR01": {
     "name": "Ray Bai",
@@ -24491,12 +26151,20 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 17,
-        "average": 25.4,
-        "best": 23.42,
+        "average": 2540,
+        "best": 2342,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 16,
+        "average": 2627,
+        "best": 2359,
+        "achievement": ""
+      }
+    }
   },
   "2017SUNC02": {
     "name": "Christopher Sun",
@@ -24655,8 +26323,8 @@
       },
       "444": {
         "seed": 18,
-        "average": 25.48,
-        "best": 24.34,
+        "average": 2548,
+        "best": 2434,
         "achievement": ""
       },
       "555": {
@@ -24744,7 +26412,15 @@
         "achievement": " "
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 17,
+        "average": 2648,
+        "best": 2189,
+        "achievement": ""
+      }
+    }
   },
   "2019BRUN02": {
     "name": "Claudio Matias Cancino Bruna",
@@ -24827,12 +26503,20 @@
     "wca2025Qualifying": {
       "444": {
         "seed": 19,
-        "average": 25.58,
-        "best": 23.18,
+        "average": 2558,
+        "best": 2318,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "444": {
+        "placement": 13,
+        "average": 2521,
+        "best": 2014,
+        "achievement": "NR"
+      }
+    }
   },
   "2009HAYS01": {
     "name": "Kevin Hays",
@@ -24945,12 +26629,20 @@
     "wca2025Qualifying": {
       "777": {
         "seed": 14,
-        "average": 2,
-        "best": 2,
+        "average": 12732,
+        "best": 12080,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "777": {
+        "placement": 8,
+        "average": 12034,
+        "best": 11533,
+        "achievement": ""
+      }
+    }
   },
   "2018NGHA02": {
     "name": "Hayden Ng (吳宇晞)",
@@ -25061,12 +26753,20 @@
     "wca2025Qualifying": {
       "777": {
         "seed": 15,
-        "average": 2,
-        "best": 2,
+        "average": 13066,
+        "best": 12426,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "777": {
+        "placement": 17,
+        "average": 12858,
+        "best": 11892,
+        "achievement": ""
+      }
+    }
   },
   "2018GRAH05": {
     "name": "Kate Grahame",
@@ -25195,12 +26895,20 @@
     "wca2025Qualifying": {
       "777": {
         "seed": 16,
-        "average": 2,
-        "best": 2,
+        "average": 13091,
+        "best": 12344,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "777": {
+        "placement": 18,
+        "average": 13068,
+        "best": 12919,
+        "achievement": ""
+      }
+    }
   },
   "2015WEIB03": {
     "name": "Benjamin Wei",
@@ -25284,18 +26992,32 @@
     "wca2025Qualifying": {
       "666": {
         "seed": 14,
-        "average": 1,
-        "best": 1,
+        "average": 8517,
+        "best": 8370,
         "achievement": ""
       },
       "777": {
         "seed": 18,
-        "average": 2,
-        "best": 2,
+        "average": 13173,
+        "best": 12491,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "666": {
+        "placement": 19,
+        "average": 9033,
+        "best": 8508,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 11,
+        "average": 12226,
+        "best": 11828,
+        "achievement": ""
+      }
+    }
   },
   "2018RUSH01": {
     "name": "Daniel Rush",
@@ -25416,12 +27138,20 @@
     "wca2025Qualifying": {
       "777": {
         "seed": 19,
-        "average": 2,
-        "best": 2,
+        "average": 13229,
+        "best": 12951,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "777": {
+        "placement": 19,
+        "average": 13850,
+        "best": 13520,
+        "achievement": ""
+      }
+    }
   },
   "2019YANG94": {
     "name": "Cian-Jyun Yang (楊謙君)",
@@ -25554,18 +27284,38 @@
       },
       "777": {
         "seed": 20,
-        "average": 2,
-        "best": 1,
+        "average": 13260,
+        "best": 11842,
         "achievement": ""
       },
       "skewb": {
         "seed": 13,
-        "average": 2.31,
-        "best": 1.61,
+        "average": 231,
+        "best": 161,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "666": {
+        "placement": 17,
+        "average": 8657,
+        "best": 8280,
+        "achievement": ""
+      },
+      "777": {
+        "placement": 14,
+        "average": 12555,
+        "best": 12100,
+        "achievement": ""
+      },
+      "skewb": {
+        "placement": 18,
+        "average": 294,
+        "best": 211,
+        "achievement": ""
+      }
+    }
   },
   "2022LEEB01": {
     "name": "Beth Lee",
@@ -25666,12 +27416,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 8,
-        "average": 30.68,
-        "best": 28.13,
+        "average": 3068,
+        "best": 2813,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 9,
+        "average": 3129,
+        "best": 2967,
+        "achievement": ""
+      }
+    }
   },
   "2015MACK06": {
     "name": "Zeke Mackay",
@@ -25800,12 +27558,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 10,
-        "average": 31.84,
-        "best": 28.71,
+        "average": 3184,
+        "best": 2871,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 17,
+        "average": 3426,
+        "best": 3109,
+        "achievement": ""
+      }
+    }
   },
   "2021OTSU01": {
     "name": "Jamie Otsu",
@@ -25926,12 +27692,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 12,
-        "average": 32.52,
-        "best": 31.88,
+        "average": 3252,
+        "best": 3188,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 14,
+        "average": 3323,
+        "best": 2966,
+        "achievement": "NR"
+      }
+    }
   },
   "2022URBI01": {
     "name": "Sebastián Urbina",
@@ -26026,12 +27800,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 13,
-        "average": 32.57,
-        "best": 30.55,
+        "average": 3257,
+        "best": 3055,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 10,
+        "average": 3177,
+        "best": 2855,
+        "achievement": ""
+      }
+    }
   },
   "2018KUCZ01": {
     "name": "Lucas Kuczaj",
@@ -26136,12 +27918,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 14,
-        "average": 32.66,
-        "best": 28.55,
+        "average": 3266,
+        "best": 2855,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 6,
+        "average": 3079,
+        "best": 2953,
+        "achievement": ""
+      }
+    }
   },
   "2016MORA24": {
     "name": "Sean Moran",
@@ -26268,12 +28058,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 15,
-        "average": 33.18,
-        "best": 31.73,
+        "average": 3318,
+        "best": 3173,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 18,
+        "average": 3435,
+        "best": 2997,
+        "achievement": ""
+      }
+    }
   },
   "2014ZYCH01": {
     "name": "Jan Zych",
@@ -26386,12 +28184,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 16,
-        "average": 33.26,
-        "best": 31.61,
+        "average": 3326,
+        "best": 3161,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 19,
+        "average": 3572,
+        "best": 3132,
+        "achievement": ""
+      }
+    }
   },
   "2014HIRA05": {
     "name": "Masayuki Hirai (平井雅之)",
@@ -26484,12 +28290,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 17,
-        "average": 33.55,
-        "best": 30.12,
+        "average": 3355,
+        "best": 3012,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 15,
+        "average": 3366,
+        "best": 3162,
+        "achievement": ""
+      }
+    }
   },
   "2023LION02": {
     "name": "Matthew Liong",
@@ -26590,12 +28404,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 18,
-        "average": 33.84,
-        "best": 30.1,
+        "average": 3384,
+        "best": 3010,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 13,
+        "average": 3313,
+        "best": 2925,
+        "achievement": ""
+      }
+    }
   },
   "2016DAVI02": {
     "name": "Ethan Davis",
@@ -26722,12 +28544,20 @@
     "wca2025Qualifying": {
       "minx": {
         "seed": 19,
-        "average": 33.84,
-        "best": 31.36,
+        "average": 3384,
+        "best": 3136,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "minx": {
+        "placement": 16,
+        "average": 3371,
+        "best": 3197,
+        "achievement": ""
+      }
+    }
   },
   "2015GRIE02": {
     "name": "Luke Griesser",
@@ -26828,12 +28658,20 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 6,
-        "average": 5.66,
-        "best": 5.36,
+        "average": 566,
+        "best": 536,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 12,
+        "average": 605,
+        "best": 567,
+        "achievement": ""
+      }
+    }
   },
   "2023CAOQ01": {
     "name": "Qixian Cao (曹岂娴)",
@@ -26866,12 +28704,20 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 8,
-        "average": 5.76,
-        "best": 4.33,
+        "average": 576,
+        "best": 433,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 4,
+        "average": 543,
+        "best": 441,
+        "achievement": ""
+      }
+    }
   },
   "2015MILL01": {
     "name": "Dylan Miller",
@@ -26976,12 +28822,20 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 11,
-        "average": 6.08,
-        "best": 5.34,
+        "average": 608,
+        "best": 534,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 8,
+        "average": 585,
+        "best": 522,
+        "achievement": ""
+      }
+    }
   },
   "2018KUZM02": {
     "name": "Olaf Kuźmiński",
@@ -27088,12 +28942,20 @@
     "wca2025Qualifying": {
       "333": {
         "seed": 16,
-        "average": 6.18,
-        "best": 5.38,
+        "average": 618,
+        "best": 538,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333": {
+        "placement": 13,
+        "average": 608,
+        "best": 476,
+        "achievement": ""
+      }
+    }
   },
   "2017SARE03": {
     "name": "Arhaan Sareen",
@@ -27189,17 +29051,38 @@
     ],
     "difficulty": "medium",
     "isFinalist": {
+      "555": true,
       "666": true
     },
     "wca2025Qualifying": {
+      "555": {
+        "seed": 15,
+        "average": 4461,
+        "best": 4165,
+        "achievement": ""
+      },
       "666": {
         "seed": 9,
-        "average": 1,
-        "best": 1,
+        "average": 8201,
+        "best": 7946,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "555": {
+        "placement": 17,
+        "average": 4750,
+        "best": 4386,
+        "achievement": ""
+      },
+      "666": {
+        "placement": 6,
+        "average": 7848,
+        "best": 7315,
+        "achievement": ""
+      }
+    }
   },
   "2016BARO04": {
     "name": "Ben Baron",
@@ -27325,18 +29208,32 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 7,
-        "average": 17.76,
+        "average": 1776,
         "best": 21,
         "achievement": ""
       },
       "333mbf": {
         "seed": 7,
-        "average": 17.76,
+        "average": 1776,
         "best": 21,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 13,
+        "average": 20,
+        "best": 0,
+        "achievement": ""
+      },
+      "555bf": {
+        "placement": 19,
+        "average": 41075,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2018HABE02": {
     "name": "Jens Haber",
@@ -27392,18 +29289,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 9,
-        "average": 17.83,
+        "average": 1783,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 9,
-        "average": 17.83,
+        "average": 1783,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 10,
+        "average": 1953,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016KLAS01": {
     "name": "Jake Klassen",
@@ -27523,18 +29428,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 12,
-        "average": 18.46,
+        "average": 1846,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 12,
-        "average": 18.46,
+        "average": 1846,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 11,
+        "average": 1955,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2013EGDA02": {
     "name": "Martin Vædele Egdal",
@@ -27664,18 +29577,38 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 15,
-        "average": 18.94,
+        "average": 1894,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 15,
-        "average": 18.94,
+        "average": 1894,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 17,
+        "average": 2440,
+        "best": 0,
+        "achievement": ""
+      },
+      "444bf": {
+        "placement": 10,
+        "average": 13485,
+        "best": 14762,
+        "achievement": "NR"
+      },
+      "555bf": {
+        "placement": 18,
+        "average": 39540,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2022THOM14": {
     "name": "Brayden Thompson",
@@ -27803,18 +29736,26 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 17,
-        "average": 19.43,
+        "average": 1943,
         "best": 0,
         "achievement": ""
       },
       "333mbf": {
         "seed": 17,
-        "average": 19.43,
+        "average": 1943,
         "best": 0,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333bf": {
+        "placement": 12,
+        "average": 1993,
+        "best": 0,
+        "achievement": ""
+      }
+    }
   },
   "2016RUIZ05": {
     "name": "Iker Carrasco Ruiz",
@@ -27937,7 +29878,7 @@
     "wca2025Qualifying": {
       "333bf": {
         "seed": 20,
-        "average": 20.25,
+        "average": 2025,
         "best": 0,
         "achievement": ""
       }
@@ -28047,12 +29988,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 4,
-        "average": 2.03,
-        "best": 1.57,
+        "average": 203,
+        "best": 157,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 10,
+        "average": 245,
+        "best": 171,
+        "achievement": ""
+      }
+    }
   },
   "2015WITM01": {
     "name": "Mattheo de Wit",
@@ -28179,12 +30128,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 7,
-        "average": 2.11,
-        "best": 1.87,
+        "average": 211,
+        "best": 187,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 13,
+        "average": 259,
+        "best": 183,
+        "achievement": ""
+      }
+    }
   },
   "2019BENC04": {
     "name": "Ariel Benchetrit",
@@ -28259,12 +30216,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 8,
-        "average": 2.18,
-        "best": 1.65,
+        "average": 218,
+        "best": 165,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 11,
+        "average": 247,
+        "best": 149,
+        "achievement": ""
+      }
+    }
   },
   "2014LAFO01": {
     "name": "Anthony Lafourcade",
@@ -28381,12 +30346,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 11,
-        "average": 2.23,
-        "best": 1.79,
+        "average": 223,
+        "best": 179,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 16,
+        "average": 287,
+        "best": 165,
+        "achievement": ""
+      }
+    }
   },
   "2014OKAD01": {
     "name": "Noriyuki Okada (岡田典之)",
@@ -28483,12 +30456,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 14,
-        "average": 2.34,
-        "best": 1.59,
+        "average": 234,
+        "best": 159,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 15,
+        "average": 262,
+        "best": 186,
+        "achievement": ""
+      }
+    }
   },
   "2022PARR10": {
     "name": "Max Parris",
@@ -28605,12 +30586,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 15,
-        "average": 2.35,
-        "best": 1.73,
+        "average": 235,
+        "best": 173,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 19,
+        "average": 318,
+        "best": 179,
+        "achievement": ""
+      }
+    }
   },
   "2022SUSS01": {
     "name": "Dean Jacob Adamo Susskind",
@@ -28707,12 +30696,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 16,
-        "average": 2.35,
-        "best": 1.94,
+        "average": 235,
+        "best": 194,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 5,
+        "average": 188,
+        "best": 147,
+        "achievement": ""
+      }
+    }
   },
   "2018GOME06": {
     "name": "Jaime Calzado Gomez",
@@ -28833,12 +30830,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 18,
-        "average": 2.42,
-        "best": 2.13,
+        "average": 242,
+        "best": 213,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 9,
+        "average": 243,
+        "best": 197,
+        "achievement": ""
+      }
+    }
   },
   "2021DENK01": {
     "name": "Michał Denkiewicz",
@@ -28945,12 +30950,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 19,
-        "average": 2.44,
-        "best": 1.67,
+        "average": 244,
+        "best": 167,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 20,
+        "average": 0,
+        "best": 168,
+        "achievement": ""
+      }
+    }
   },
   "2017MALO02": {
     "name": "Elias Malomgré",
@@ -29059,12 +31072,20 @@
     "wca2025Qualifying": {
       "skewb": {
         "seed": 20,
-        "average": 2.45,
-        "best": 1.79,
+        "average": 245,
+        "best": 179,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "skewb": {
+        "placement": 14,
+        "average": 262,
+        "best": 176,
+        "achievement": ""
+      }
+    }
   },
   "2014DETL01": {
     "name": "Rasmus Stub Detlefsen",
@@ -29181,12 +31202,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 4,
-        "average": 6.17,
-        "best": 4.57,
+        "average": 617,
+        "best": 457,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 4,
+        "average": 615,
+        "best": 491,
+        "achievement": ""
+      }
+    }
   },
   "2014KARN02": {
     "name": "Daniel Karnaukh",
@@ -29307,12 +31336,26 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 5,
-        "average": 6.47,
-        "best": 6.16,
+        "average": 647,
+        "best": 616,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "333fm": {
+        "placement": 14,
+        "average": 2367,
+        "best": 23,
+        "achievement": ""
+      },
+      "sq1": {
+        "placement": 6,
+        "average": 670,
+        "best": 648,
+        "achievement": ""
+      }
+    }
   },
   "2019CATE01": {
     "name": "Dominic Cater",
@@ -29425,12 +31468,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 8,
-        "average": 6.92,
-        "best": 5.87,
+        "average": 692,
+        "best": 587,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 7,
+        "average": 712,
+        "best": 635,
+        "achievement": ""
+      }
+    }
   },
   "2015BART05": {
     "name": "Aiden Bartlett",
@@ -29547,12 +31598,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 10,
-        "average": 7.07,
-        "best": 6.77,
+        "average": 707,
+        "best": 677,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 11,
+        "average": 757,
+        "best": 550,
+        "achievement": ""
+      }
+    }
   },
   "2016GOTT01": {
     "name": "Benjamin Gottschalk",
@@ -29673,12 +31732,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 12,
-        "average": 7.25,
-        "best": 6.15,
+        "average": 725,
+        "best": 615,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 13,
+        "average": 762,
+        "best": 695,
+        "achievement": ""
+      }
+    }
   },
   "2024CORK01": {
     "name": "Isaac Corker",
@@ -29787,12 +31854,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 13,
-        "average": 7.33,
-        "best": 5.98,
+        "average": 733,
+        "best": 598,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 15,
+        "average": 827,
+        "best": 577,
+        "achievement": ""
+      }
+    }
   },
   "2021PANN01": {
     "name": "Eeshir Pannun",
@@ -29869,12 +31944,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 14,
-        "average": 7.5,
-        "best": 6.72,
+        "average": 750,
+        "best": 672,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 14,
+        "average": 769,
+        "best": 696,
+        "achievement": ""
+      }
+    }
   },
   "2014FANG01": {
     "name": "Samuel Fang",
@@ -29995,12 +32078,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 15,
-        "average": 7.67,
-        "best": 6.38,
+        "average": 767,
+        "best": 638,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 16,
+        "average": 839,
+        "best": 550,
+        "achievement": ""
+      }
+    }
   },
   "2022ZARI01": {
     "name": "Guy Zarian",
@@ -30105,12 +32196,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 16,
-        "average": 7.81,
-        "best": 7.03,
+        "average": 781,
+        "best": 703,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 10,
+        "average": 748,
+        "best": 640,
+        "achievement": ""
+      }
+    }
   },
   "2023YUNG02": {
     "name": "Liu Yik Yung (劉益融)",
@@ -30197,12 +32296,20 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 18,
-        "average": 7.85,
-        "best": 7.36,
+        "average": 785,
+        "best": 736,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 20,
+        "average": 1013,
+        "best": 665,
+        "achievement": ""
+      }
+    }
   },
   "2016CHEN53": {
     "name": "Anshu Chennuru",
@@ -30267,11 +32374,19 @@
     "wca2025Qualifying": {
       "sq1": {
         "seed": 19,
-        "average": 7.88,
-        "best": 6.04,
+        "average": 788,
+        "best": 604,
         "achievement": ""
       }
     },
-    "funFacts": []
+    "funFacts": [],
+    "wca2025Finals": {
+      "sq1": {
+        "placement": 18,
+        "average": 877,
+        "best": 647,
+        "achievement": ""
+      }
+    }
   }
 }
