@@ -3998,6 +3998,408 @@ generateMultipleGoldsQuestion() {
         options: ['1', '2', '3', '4'].slice(0, 4).sort((a, b) => a - b)
     };
 },
+                // Medium tournament questions
+generateWhoFinishedPositionQuestion() {
+    const positions = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                if (finals.placement >= 4 && finals.placement <= 10) {
+                    positions.push({
+                        name: comp.name,
+                        event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                        eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                        placement: finals.placement
+                    });
+                }
+            });
+        }
+    });
+    
+    if (positions.length === 0) return this.generateFactQuestion('medium');
+    
+    const position = positions[Math.floor(Math.random() * positions.length)];
+    const placementText = WCAGuideApp.games.getPlacementText(position.placement);
+    
+    return {
+        type: 'tournament',
+        question: `Who finished ${placementText} in ${position.eventIcon} ${position.event}?`,
+        correctAnswer: position.name,
+        options: this.shuffleArray([position.name, ...this.getRandomNames(3, position.name)])
+    };
+},
+
+generateNationalRecordQuestion() {
+    const records = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals || comp.wca2025Qualifying) {
+            // Check finals
+            if (comp.wca2025Finals) {
+                Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                    if (finals.achievement === 'NR' || finals.achievement === 'WR') {
+                        records.push({
+                            name: comp.name,
+                            event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                            eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                            type: finals.achievement,
+                            round: 'finals'
+                        });
+                    }
+                });
+            }
+            // Check qualifying
+            if (comp.wca2025Qualifying) {
+                Object.entries(comp.wca2025Qualifying).forEach(([eventId, qual]) => {
+                    if (qual.achievement === 'NR' || qual.achievement === 'WR') {
+                        records.push({
+                            name: comp.name,
+                            event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                            eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                            type: qual.achievement,
+                            round: 'qualifying'
+                        });
+                    }
+                });
+            }
+        }
+    });
+    
+    if (records.length === 0) return this.generateFactQuestion('medium');
+    
+    const record = records[Math.floor(Math.random() * records.length)];
+    const recordType = record.type === 'WR' ? '🌍 WORLD RECORD' : 'National Record';
+    
+    return {
+        type: 'tournament',
+        question: `Who set a ${recordType} in ${record.eventIcon} ${record.event}?`,
+        correctAnswer: record.name,
+        options: this.shuffleArray([record.name, ...this.getRandomNames(3, record.name)])
+    };
+},
+
+generateBiggestUpsetQuestion() {
+    const upsets = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Qualifying) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                const qualifying = comp.wca2025Qualifying[eventId];
+                if (qualifying && finals.placement <= 3 && qualifying.seed >= 10) {
+                    upsets.push({
+                        name: comp.name,
+                        event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                        eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                        seed: qualifying.seed,
+                        final: finals.placement,
+                        improvement: qualifying.seed - finals.placement
+                    });
+                }
+            });
+        }
+    });
+    
+    if (upsets.length === 0) {
+        // Ask about any improvement instead
+        return this.generateSeedImprovementQuestion();
+    }
+    
+    upsets.sort((a, b) => b.improvement - a.improvement);
+    const upset = upsets[0];
+    const medal = upset.final === 1 ? '🥇' : upset.final === 2 ? '🥈' : '🥉';
+    
+    return {
+        type: 'tournament',
+        question: `Who went from seed #${upset.seed} to win ${medal} in ${upset.eventIcon} ${upset.event}?`,
+        correctAnswer: upset.name,
+        options: this.shuffleArray([upset.name, ...this.getRandomNames(3, upset.name)])
+    };
+},
+
+generateFastestTimeQuestion() {
+    const events = Object.keys(WCAGuideApp.gameConfig.events).filter(e => e !== 'flight' && e !== 'dayafter' && e !== 'daytwo' && e !== 'memories');
+    const event = events[Math.floor(Math.random() * events.length)];
+    
+    const times = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Finals[event]) {
+            times.push({
+                name: comp.name,
+                time: comp.wca2025Finals[event].best,
+                average: comp.wca2025Finals[event].average
+            });
+        }
+    });
+    
+    if (times.length < 4) return this.generateFactQuestion('medium');
+    
+    times.sort((a, b) => a.time - b.time);
+    const fastest = times[0];
+    const eventName = WCAGuideApp.gameConfig.events[event]?.name || event;
+    const eventIcon = WCAGuideApp.gameConfig.events[event]?.icon || '🎲';
+    
+    return {
+        type: 'tournament',
+        question: `Who had the fastest single time in ${eventIcon} ${eventName} finals?`,
+        correctAnswer: fastest.name,
+        options: this.shuffleArray(times.slice(0, 4).map(t => t.name))
+    };
+},
+
+generateCompareTimesQuestion() {
+    const events = Object.keys(WCAGuideApp.gameConfig.events).filter(e => e !== 'flight' && e !== 'dayafter' && e !== 'daytwo' && e !== 'memories');
+    const event = events[Math.floor(Math.random() * events.length)];
+    
+    const winners = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Finals[event] && comp.wca2025Finals[event].placement <= 3) {
+            winners.push({
+                name: comp.name,
+                placement: comp.wca2025Finals[event].placement,
+                time: comp.wca2025Finals[event].average,
+                photo: comp.photoThumbUrl
+            });
+        }
+    });
+    
+    if (winners.length < 2) return this.generateFactQuestion('medium');
+    
+    const eventName = WCAGuideApp.gameConfig.events[event]?.name || event;
+    const eventIcon = WCAGuideApp.gameConfig.events[event]?.icon || '🎲';
+    const winner = winners.find(w => w.placement === 1) || winners[0];
+    
+    // Find a non-winner time
+    const otherTimes = Object.entries(WCAGuideApp.competitors)
+        .filter(([id, comp]) => comp.wca2025Finals?.[event] && comp.wca2025Finals[event].placement > 3)
+        .map(([id, comp]) => ({
+            time: comp.wca2025Finals[event].average,
+            name: comp.name
+        }));
+    
+    if (otherTimes.length === 0) return this.generateFastestTimeQuestion();
+    
+    const other = otherTimes[Math.floor(Math.random() * otherTimes.length)];
+    const winnerTime = WCAGuideApp.browse.formatTime(winner.time);
+    const otherTime = WCAGuideApp.browse.formatTime(other.time);
+    
+    return {
+        type: 'tournament',
+        question: `Which time won 🥇 GOLD in ${eventIcon} ${eventName}?`,
+        correctAnswer: winnerTime,
+        options: this.shuffleArray([winnerTime, otherTime])
+    };
+},
+
+generateSeedImprovementQuestion() {
+    const improvements = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Qualifying) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                const qualifying = comp.wca2025Qualifying[eventId];
+                if (qualifying && finals.placement < qualifying.seed) {
+                    improvements.push({
+                        name: comp.name,
+                        improvement: qualifying.seed - finals.placement
+                    });
+                }
+            });
+        }
+    });
+    
+    if (improvements.length === 0) return this.generateFactQuestion('medium');
+    
+    improvements.sort((a, b) => b.improvement - a.improvement);
+    const biggest = improvements[0];
+    
+    return {
+        type: 'tournament',
+        question: `Which competitor improved the most positions from their seed (${biggest.improvement} spots)?`,
+        correctAnswer: biggest.name,
+        options: this.shuffleArray([biggest.name, ...this.getRandomNames(3, biggest.name)])
+    };
+},
+                // Hard tournament questions
+generateExactPlacementQuestion() {
+    const placements = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                placements.push({
+                    name: comp.name,
+                    event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                    eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                    placement: finals.placement
+                });
+            });
+        }
+    });
+    
+    if (placements.length === 0) return this.generateFactQuestion('hard');
+    
+    const placement = placements[Math.floor(Math.random() * placements.length)];
+    
+    // Generate placement options around the correct answer
+    const options = [];
+    const correct = placement.placement;
+    options.push(WCAGuideApp.games.getPlacementText(correct));
+    
+    // Add 3 wrong options
+    const wrongPlacements = [
+        Math.max(1, correct - 2),
+        Math.max(1, correct - 1),
+        correct + 1,
+        correct + 2,
+        correct + 3
+    ].filter(p => p !== correct && p <= 20);
+    
+    const wrongOptions = wrongPlacements
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map(p => WCAGuideApp.games.getPlacementText(p));
+    
+    return {
+        type: 'tournament',
+        question: `What place did ${placement.name} finish in ${placement.eventIcon} ${placement.event}?`,
+        correctAnswer: WCAGuideApp.games.getPlacementText(correct),
+        options: this.shuffleArray([...options, ...wrongOptions].slice(0, 4))
+    };
+},
+
+generateSpecificPositionQuestion() {
+    const events = Object.keys(WCAGuideApp.gameConfig.events).filter(e => e !== 'flight' && e !== 'dayafter' && e !== 'daytwo' && e !== 'memories');
+    const event = events[Math.floor(Math.random() * events.length)];
+    
+    const finalists = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Finals[event]) {
+            finalists.push({
+                name: comp.name,
+                placement: comp.wca2025Finals[event].placement
+            });
+        }
+    });
+    
+    if (finalists.length < 10) return this.generateFactQuestion('hard');
+    
+    // Pick a random position between 6-15
+    const position = Math.floor(Math.random() * 10) + 6;
+    const correct = finalists.find(f => f.placement === position);
+    
+    if (!correct) return this.generateExactPlacementQuestion();
+    
+    const eventName = WCAGuideApp.gameConfig.events[event]?.name || event;
+    const eventIcon = WCAGuideApp.gameConfig.events[event]?.icon || '🎲';
+    
+    // Get 3 other competitors from different positions
+    const wrongAnswers = finalists
+        .filter(f => Math.abs(f.placement - position) > 2)
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 3)
+        .map(f => f.name);
+    
+    return {
+        type: 'tournament',
+        question: `Who finished ${WCAGuideApp.games.getPlacementText(position)} in ${eventIcon} ${eventName}?`,
+        correctAnswer: correct.name,
+        options: this.shuffleArray([correct.name, ...wrongAnswers])
+    };
+},
+
+generateMostEventsQuestion() {
+    const eventCounts = {};
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            const count = Object.keys(comp.wca2025Finals).length;
+            if (count > 0) {
+                eventCounts[comp.name] = count;
+            }
+        }
+    });
+    
+    const sorted = Object.entries(eventCounts).sort((a, b) => b[1] - a[1]);
+    if (sorted.length < 4) return this.generateFactQuestion('hard');
+    
+    const mostEvents = sorted[0];
+    
+    return {
+        type: 'tournament',
+        question: `Which competitor made finals in the most events (${mostEvents[1]} events)?`,
+        correctAnswer: mostEvents[0],
+        options: this.shuffleArray(sorted.slice(0, 4).map(s => s[0]))
+    };
+},
+
+generateWinningTimeQuestion() {
+    const events = Object.keys(WCAGuideApp.gameConfig.events).filter(e => e !== 'flight' && e !== 'dayafter' && e !== 'daytwo' && e !== 'memories');
+    const event = events[Math.floor(Math.random() * events.length)];
+    
+    let winner = null;
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Finals[event] && comp.wca2025Finals[event].placement === 1) {
+            winner = {
+                name: comp.name,
+                average: comp.wca2025Finals[event].average,
+                best: comp.wca2025Finals[event].best
+            };
+        }
+    });
+    
+    if (!winner) return this.generateFactQuestion('hard');
+    
+    const eventName = WCAGuideApp.gameConfig.events[event]?.name || event;
+    const eventIcon = WCAGuideApp.gameConfig.events[event]?.icon || '🎲';
+    const correctTime = WCAGuideApp.browse.formatTime(winner.average);
+    
+    // Generate similar but wrong times
+    const baseTime = winner.average;
+    const wrongTimes = [
+        WCAGuideApp.browse.formatTime(baseTime + 20),
+        WCAGuideApp.browse.formatTime(baseTime + 50),
+        WCAGuideApp.browse.formatTime(baseTime - 30)
+    ].filter(t => t !== correctTime);
+    
+    return {
+        type: 'tournament',
+        question: `What was the winning average in ${eventIcon} ${eventName}?`,
+        correctAnswer: correctTime,
+        options: this.shuffleArray([correctTime, ...wrongTimes].slice(0, 4))
+    };
+},
+
+generateSeedToPositionQuestion() {
+    const progressions = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals && comp.wca2025Qualifying) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                const qualifying = comp.wca2025Qualifying[eventId];
+                if (qualifying) {
+                    progressions.push({
+                        name: comp.name,
+                        event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                        eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                        seed: qualifying.seed,
+                        final: finals.placement,
+                        change: qualifying.seed - finals.placement
+                    });
+                }
+            });
+        }
+    });
+    
+    if (progressions.length === 0) return this.generateFactQuestion('hard');
+    
+    const progression = progressions[Math.floor(Math.random() * progressions.length)];
+    
+    return {
+        type: 'tournament',
+        question: `${progression.name} was seed #${progression.seed} in ${progression.eventIcon} ${progression.event}. Where did they finish?`,
+        correctAnswer: WCAGuideApp.games.getPlacementText(progression.final),
+        options: this.shuffleArray([
+            WCAGuideApp.games.getPlacementText(progression.final),
+            WCAGuideApp.games.getPlacementText(Math.max(1, progression.final - 2)),
+            WCAGuideApp.games.getPlacementText(progression.final + 2),
+            WCAGuideApp.games.getPlacementText(Math.min(20, progression.final + 4))
+        ].filter((v, i, a) => a.indexOf(v) === i).slice(0, 4))
+    };
+},
                 generatePhotoQuestion(difficulty) {
                     const competitors = Object.values(WCAGuideApp.competitors)
                         .filter(c => c.difficulty === difficulty || difficulty === 'mixed');
@@ -4210,6 +4612,18 @@ generateMultipleGoldsQuestion() {
                     }
                     return arr;
                 },
+                getPlacementText(placement) {
+    if (placement === 1) return '1st';
+    if (placement === 2) return '2nd';
+    if (placement === 3) return '3rd';
+    if (placement === 21) return '21st';
+    if (placement === 22) return '22nd';
+    if (placement === 23) return '23rd';
+    if (placement % 10 === 1) return `${placement}st`;
+    if (placement % 10 === 2) return `${placement}nd`;
+    if (placement % 10 === 3) return `${placement}rd`;
+    return `${placement}th`;
+},
 
                 showQuestion() {
                     const question = this.currentQuestions[this.currentQuestionIndex];
