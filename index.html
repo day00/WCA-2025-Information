@@ -3873,6 +3873,131 @@ generateTournamentQuestion(difficulty) {
             return this.generateFactQuestion(difficulty);
     }
 },
+                // Easy tournament questions
+generateWhoWonGoldQuestion() {
+    const goldWinners = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                if (finals.placement === 1) {
+                    goldWinners.push({
+                        name: comp.name,
+                        event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                        eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲'
+                    });
+                }
+            });
+        }
+    });
+    
+    if (goldWinners.length === 0) return this.generateFactQuestion('easy');
+    
+    const winner = goldWinners[Math.floor(Math.random() * goldWinners.length)];
+    const wrongAnswers = this.getRandomNames(3, winner.name);
+    
+    return {
+        type: 'tournament',
+        question: `Who won 🥇 GOLD in ${winner.eventIcon} ${winner.event}?`,
+        correctAnswer: winner.name,
+        options: this.shuffleArray([winner.name, ...wrongAnswers])
+    };
+},
+
+generateWhoWonMedalQuestion() {
+    const medalists = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            Object.entries(comp.wca2025Finals).forEach(([eventId, finals]) => {
+                if (finals.placement <= 3) {
+                    const medal = finals.placement === 1 ? '🥇' : finals.placement === 2 ? '🥈' : '🥉';
+                    medalists.push({
+                        name: comp.name,
+                        event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                        eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲',
+                        medal: medal,
+                        placement: finals.placement
+                    });
+                }
+            });
+        }
+    });
+    
+    if (medalists.length === 0) return this.generateFactQuestion('easy');
+    
+    const medalist = medalists[Math.floor(Math.random() * medalists.length)];
+    const wrongAnswers = this.getRandomNames(3, medalist.name);
+    
+    return {
+        type: 'tournament',
+        question: `Who won ${medalist.medal} in ${medalist.eventIcon} ${medalist.event}?`,
+        correctAnswer: medalist.name,
+        options: this.shuffleArray([medalist.name, ...wrongAnswers])
+    };
+},
+
+generatePhotoWinnerQuestion() {
+    const winners = [];
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            const golds = Object.entries(comp.wca2025Finals)
+                .filter(([eventId, finals]) => finals.placement === 1)
+                .map(([eventId, finals]) => ({
+                    name: comp.name,
+                    photo: comp.photoUrl,
+                    event: WCAGuideApp.gameConfig.events[eventId]?.name || eventId,
+                    eventIcon: WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲'
+                }));
+            winners.push(...golds);
+        }
+    });
+    
+    if (winners.length === 0) return this.generateFactQuestion('easy');
+    
+    const winner = winners[Math.floor(Math.random() * winners.length)];
+    
+    return {
+        type: 'photo',
+        question: `This competitor won 🥇 GOLD in ${winner.eventIcon} ${winner.event}!`,
+        photoUrl: winner.photo,
+        correctAnswer: winner.name,
+        options: this.shuffleArray([winner.name, ...this.getRandomNames(3, winner.name)])
+    };
+},
+
+generateMultipleGoldsQuestion() {
+    const goldCounts = {};
+    Object.entries(WCAGuideApp.competitors).forEach(([id, comp]) => {
+        if (comp.wca2025Finals) {
+            const golds = Object.values(comp.wca2025Finals).filter(f => f.placement === 1).length;
+            if (golds > 0) {
+                goldCounts[comp.name] = golds;
+            }
+        }
+    });
+    
+    const multipleGolds = Object.entries(goldCounts).filter(([name, count]) => count >= 2);
+    if (multipleGolds.length === 0) {
+        // Ask about single gold winners instead
+        const singleGolds = Object.entries(goldCounts).filter(([name, count]) => count === 1);
+        if (singleGolds.length === 0) return this.generateFactQuestion('easy');
+        
+        const winner = singleGolds[Math.floor(Math.random() * singleGolds.length)];
+        return {
+            type: 'tournament',
+            question: 'How many gold medals did ' + winner[0] + ' win at WCA 2025?',
+            correctAnswer: '1',
+            options: ['0', '1', '2', '3']
+        };
+    }
+    
+    const winner = multipleGolds[Math.floor(Math.random() * multipleGolds.length)];
+    return {
+        type: 'tournament',
+        question: `How many gold medals did ${winner[0]} win at WCA 2025?`,
+        correctAnswer: winner[1].toString(),
+        options: ['1', '2', '3', '4'].slice(0, 4).sort((a, b) => a - b)
+    };
+},
                 generatePhotoQuestion(difficulty) {
                     const competitors = Object.values(WCAGuideApp.competitors)
                         .filter(c => c.difficulty === difficulty || difficulty === 'mixed');
