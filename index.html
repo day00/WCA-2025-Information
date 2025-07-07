@@ -1267,7 +1267,58 @@ this.gameConfig.finals = {
     "666": { time: "2025-07-06T14:50:00", status: "pending" },
     "333bf": { time: "2025-07-06T15:40:00", status: "pending" },
     "sq1": { time: "2025-07-06T15:15:00", status: "pending" },
-    "333": { time: "2025-07-06T16:15:00", status: "pending" }
+    "333": { time: "2025-07-06T16:15:00", status: "pending" },
+    // Add these after the competition events
+"flight": { 
+    time: "2025-07-06T21:00:00", 
+    status: "pending",
+    icon: "✈️",
+    name: "Flight Home",
+    messages: [
+        '🧳 What an amazing WCA Championship! Time to pack up!',
+                '🏆 Did you get all your autographs? Check your bag!',
+                '📸 Hope you took lots of photos with the champions!',
+                '🎯 Practice those algorithms on the plane ride home!',
+                '✈️ Next stop: Home! Keep cubing!',
+                '🎪 What was your favorite event? Think about it!',
+                '🤝 Did you make new cubing friends? Stay in touch!',
+                '🌟 Remember: You saw history being made today!'
+    ]
+},
+"dayafter": { 
+    time: "2025-07-07T12:00:00", 
+    status: "pending",
+    icon: "📅",
+    name: "The Day After",
+    isStatic: true, // No countdown, just show the message
+    message: '🎒 Did you show your friends your WCA souvenirs?'
+},
+"daytwo": { 
+    time: "2025-07-08T12:00:00",
+    status: "pending", 
+    icon: "📸",
+    name: "Share Your Story",
+    isStatic: true,
+    message: '📱 Time to post those championship photos!'
+},
+"memories": { 
+    time: "2025-07-10T12:00:00",
+    status: "pending",
+    icon: "🏆",
+    name: "WCA 2025 Memories", 
+    isStatic: true,
+    isFinal: true, // This is the last event
+    messages: [
+        '🎯 Keep practicing those algorithms!',
+            '📸 Look through your championship photos!',
+            '🧩 Time to beat your personal records!',
+            '🌟 You witnessed cubing history!',
+            '🎮 Play the games to stay sharp!',
+            '📚 Study the champions\' techniques!',
+            '🏃 Getting ready for the next comp?',
+            '✨ What an amazing experience!'
+    ]
+}
 };
 
 // Add event timings for countdown messages
@@ -1681,67 +1732,122 @@ updateFinalsStatus() {
                 }
             },
 
-            updateMainEventDisplay(event, now) {
-                const timeDiff = event.time - now;
-                const minutes = Math.floor(timeDiff / 60000);
-                const hours = Math.floor(minutes / 60);
-                const days = Math.floor(hours / 24);
+          updateMainEventDisplay(event, now) {
+    const timeDiff = event.time - now;
+    const minutes = Math.floor(timeDiff / 60000);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
 
-                const timeEl = document.getElementById('mainEventTime');
-                const messageEl = document.getElementById('mainEventMessage');
+    const timeEl = document.getElementById('mainEventTime');
+    const messageEl = document.getElementById('mainEventMessage');
+    const titleEl = document.querySelector('#mainEventBox h3');
 
-                // If it's happening now
-                if (timeDiff < 0 && timeDiff > -600000) {
-                    timeEl.textContent = '🏆 HAPPENING NOW! 🏆';
-                    messageEl.textContent = 'The moment we\'ve been waiting for!';
-                    messageEl.style.animation = 'pulse 1s infinite';
-                    return;
-                }
+    // Update title if this is a special event
+    if (event.name && event.icon) {
+        titleEl.textContent = `${event.icon} ${event.name}`;
+    }
 
-                // Format time
-                let timeText = 'Sunday at 4:15 PM';
-                if (days <= 1) {
-                    if (hours > 0) {
-                        timeText = `In ${hours}h ${minutes % 60}m`;
-                    } else if (minutes > 0) {
-                        timeText = `In ${minutes}m`;
-                    } else {
-                        timeText = `In ${Math.floor(timeDiff / 1000)}s`;
-                    }
-                }
+    // Handle static events (no countdown)
+    if (event.isStatic && timeDiff < 0) {
+        timeEl.textContent = event.name;
+        
+        // Handle rotating messages or single message
+        if (event.messages) {
+            const messageIndex = Math.floor(now.getTime() / 60000) % event.messages.length;
+            messageEl.textContent = event.messages[messageIndex];
+        } else {
+            messageEl.textContent = event.message;
+        }
+        
+        // Clear any animations
+        messageEl.style.animation = '';
+        
+        // Set gradient based on event
+        if (event.name === 'Flight Home') {
+            document.getElementById('mainEventBox').style.background = 
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        } else if (event.name.includes('Memories')) {
+            document.getElementById('mainEventBox').style.background = 
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)';
+        }
+        
+        return;
+    }
 
-                timeEl.textContent = timeText;
+    // Handle events that are happening now
+    if (timeDiff < 0 && timeDiff > -600000 && !event.isStatic) {
+        timeEl.textContent = '🏆 HAPPENING NOW! 🏆';
+        messageEl.textContent = 'The moment we\'ve been waiting for!';
+        messageEl.style.animation = 'pulse 1s infinite';
+        return;
+    }
 
-                // Special 3x3x3 messages
-                if (minutes <= 5) {
-                    messageEl.textContent = '🚀 THE MAIN EVENT! Let\'s GO!';
-                    messageEl.style.animation = 'pulse 1s infinite';
-                } else if (minutes <= 10) {
-                    messageEl.textContent = '📱 Phones ready for the big moment!';
-                } else if (minutes <= 15) {
-                    messageEl.textContent = '🎯 Find your saved seat & get ready!';
-                } else if (minutes <= 30) {
-                    messageEl.textContent = '⚠️ Arena filling up! Get your seat NOW!';
-                } else if (minutes <= 45) {
-                    messageEl.textContent = '🪑 Get seats for 3x3x3! Prime spots going fast!';
-                } else if (minutes <= 60) {
-                    messageEl.textContent = '🏆 3x3x3 FINALS IN 1 HOUR! Plan your day!';
-                } else if (minutes <= 120) {
-                    messageEl.textContent = '🏃 Send Dad to save seats NOW!';
-                } else if (now.getDay() === 0) { // Sunday
-                    // Check if it's before 1:50 PM (when special messaging stops)
-                    const stopMessagingTime = new Date(event.time);
-                    stopMessagingTime.setHours(13, 50); // 1:50 PM
-                    
-                    if (now < stopMessagingTime) {
-                        messageEl.textContent = 'It\'s going to be CROWDED!';
-                    } else {
-                        messageEl.textContent = '';
-                    }
-                } else {
-                    messageEl.textContent = days > 0 ? `${days} day${days > 1 ? 's' : ''} to go!` : '';
-                }
-            },
+    // Handle rotating messages for countdown events (like flight)
+    if (event.messages && timeDiff > 0) {
+        const messageIndex = Math.floor(now.getTime() / 30000) % event.messages.length;
+        messageEl.textContent = event.messages[messageIndex];
+        
+        // Format countdown
+        if (hours > 0) {
+            timeEl.textContent = `Departure in ${hours}h ${minutes % 60}m`;
+        } else if (minutes > 0) {
+            timeEl.textContent = `Departure in ${minutes}m`;
+        } else {
+            timeEl.textContent = `Departure in ${Math.floor(timeDiff / 1000)}s`;
+        }
+        
+        // Set flight gradient
+        document.getElementById('mainEventBox').style.background = 
+            'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        return;
+    }
+
+    // Original 3x3x3 countdown code
+    titleEl.textContent = '🏆 3x3x3 Finals';
+    
+    // Format time
+    let timeText = 'Sunday at 4:15 PM';
+    if (days <= 1) {
+        if (hours > 0) {
+            timeText = `In ${hours}h ${minutes % 60}m`;
+        } else if (minutes > 0) {
+            timeText = `In ${minutes}m`;
+        } else {
+            timeText = `In ${Math.floor(timeDiff / 1000)}s`;
+        }
+    }
+
+    timeEl.textContent = timeText;
+
+    // Special 3x3x3 messages
+    if (minutes <= 5) {
+        messageEl.textContent = '🚀 THE MAIN EVENT! Let\'s GO!';
+        messageEl.style.animation = 'pulse 1s infinite';
+    } else if (minutes <= 10) {
+        messageEl.textContent = '📱 Phones ready for the big moment!';
+    } else if (minutes <= 15) {
+        messageEl.textContent = '🎯 Find your saved seat & get ready!';
+    } else if (minutes <= 30) {
+        messageEl.textContent = '⚠️ Arena filling up! Get your seat NOW!';
+    } else if (minutes <= 45) {
+        messageEl.textContent = '🪑 Get seats for 3x3x3! Prime spots going fast!';
+    } else if (minutes <= 60) {
+        messageEl.textContent = '🏆 3x3x3 FINALS IN 1 HOUR! Plan your day!';
+    } else if (minutes <= 120) {
+        messageEl.textContent = '🏃 Send Dad to save seats NOW!';
+    } else if (now.getDay() === 0) { // Sunday
+        const stopMessagingTime = new Date(event.time);
+        stopMessagingTime.setHours(13, 50); // 1:50 PM
+        
+        if (now < stopMessagingTime) {
+            messageEl.textContent = 'It\'s going to be CROWDED!';
+        } else {
+            messageEl.textContent = '';
+        }
+    } else {
+        messageEl.textContent = days > 0 ? `${days} day${days > 1 ? 's' : ''} to go!` : '';
+    }
+},
 
   navigate(screen) {
     // Clear countdown when leaving home
