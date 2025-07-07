@@ -755,7 +755,17 @@
             60% { content: '..'; }
             80%, 100% { content: '...'; }
         }
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(229, 62, 62, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(229, 62, 62, 0.8), 0 0 30px rgba(229, 62, 62, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(229, 62, 62, 0.5); }
+}
 
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
         /* Responsive Design */
         @media (max-width: 480px) {
             .container {
@@ -2973,24 +2983,63 @@ const results = WCAGuideApp.eventResults[eventId];
                                 ${finalistEvents.length > 1 ? 
                                     `Making finals in ${finalistEvents.length} events!<br>` : 
                                     'Qualified for finals in:'}<br>
-                                ${Object.entries(comp.isFinalist).map(([eventId, isFinalist]) => {
+                           ${Object.entries(comp.isFinalist).map(([eventId, isFinalist]) => {
     if (!isFinalist) return '';
     const eventName = WCAGuideApp.gameConfig.events[eventId]?.name || eventId;
     const qualifying = comp.wca2025Qualifying?.[eventId];
     const finals = comp.wca2025Finals?.[eventId];
     
-    let eventInfo = `• <strong>${eventName}</strong>`;
+    let eventInfo = `<div style="margin-bottom: 15px; padding: 10px; background: rgba(255,255,255,0.9); border-radius: 10px; border-left: 4px solid ${finals?.placement <= 3 ? '#f6e05e' : '#48bb78'};">`;
+    
+    // Event name with medal if applicable
+    eventInfo += `<div style="font-weight: bold; color: #2d3748; margin-bottom: 8px;">`;
+    eventInfo += `${WCAGuideApp.gameConfig.events[eventId]?.icon || '🎲'} ${eventName}`;
+    if (finals?.placement === 1) eventInfo += ' 🥇';
+    else if (finals?.placement === 2) eventInfo += ' 🥈';
+    else if (finals?.placement === 3) eventInfo += ' 🥉';
+    eventInfo += `</div>`;
+    
+    // Check for world records
+    const hasWR = qualifying?.achievement === 'WR' || finals?.achievement === 'WR';
+    const hasNR = qualifying?.achievement === 'NR' || finals?.achievement === 'NR';
     
     if (qualifying) {
-        eventInfo += `<br>&nbsp;&nbsp;&nbsp;Qualifying: Seed #${qualifying.seed}, Average: ${WCAGuideApp.browse.formatTime(qualifying.average)}, Best: ${WCAGuideApp.browse.formatTime(qualifying.best)}`;
+        eventInfo += `<div style="font-size: 14px; color: #4a5568; margin-bottom: 4px;">`;
+        eventInfo += `<span style="color: #718096;">Qualifying:</span> Seed #${qualifying.seed} | `;
+        eventInfo += `${WCAGuideApp.browse.formatTime(qualifying.average)} avg / ${WCAGuideApp.browse.formatTime(qualifying.best)} single`;
+        
+        if (qualifying.achievement === 'WR') {
+            eventInfo += ` <span style="background: #e53e3e; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-left: 5px;">🌍 WORLD RECORD!</span>`;
+        } else if (qualifying.achievement === 'NR') {
+            eventInfo += ` <span style="background: #f6e05e; color: #744210; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-left: 5px;">National Record!</span>`;
+        }
+        eventInfo += `</div>`;
     }
     
     if (finals) {
-        eventInfo += `<br>&nbsp;&nbsp;&nbsp;Finals: ${finals.placement === 1 ? '🥇' : finals.placement === 2 ? '🥈' : finals.placement === 3 ? '🥉' : '#' + finals.placement}, Average: ${WCAGuideApp.browse.formatTime(finals.average)}, Best: ${WCAGuideApp.browse.formatTime(finals.best)}`;
+        eventInfo += `<div style="font-size: 14px; color: #2d3748;">`;
+        eventInfo += `<span style="color: #4c51bf; font-weight: bold;">Finals:</span> `;
+        eventInfo += `${finals.placement === 1 ? '1st' : finals.placement === 2 ? '2nd' : finals.placement === 3 ? '3rd' : finals.placement + 'th'} place | `;
+        eventInfo += `${WCAGuideApp.browse.formatTime(finals.average)} avg / ${WCAGuideApp.browse.formatTime(finals.best)} single`;
+        
+        if (finals.achievement === 'WR') {
+            eventInfo += ` <span style="background: #e53e3e; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-left: 5px; animation: pulse 2s infinite;">🌍 WORLD RECORD!</span>`;
+        } else if (finals.achievement === 'NR') {
+            eventInfo += ` <span style="background: #f6e05e; color: #744210; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; margin-left: 5px;">National Record!</span>`;
+        }
+        eventInfo += `</div>`;
     }
     
+    // Special highlight for world records
+    if (hasWR) {
+        eventInfo = `<div style="animation: glow 2s ease-in-out infinite; border-radius: 10px;">` + eventInfo;
+        eventInfo += `</div>`;
+    }
+    
+    eventInfo += `</div>`;
+    
     return eventInfo;
-}).filter(x => x).join('<br>')}
+}).filter(x => x).join('')}
                             </div>
                             ${performanceHtml ? `
                                 <h4 style="color: #234e52; margin-top: 20px; margin-bottom: 10px;">📊 Qualifying Performance</h4>
